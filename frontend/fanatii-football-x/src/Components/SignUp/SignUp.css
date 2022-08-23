@@ -5,6 +5,18 @@
 .root-elem{
     background: #474bff;
     background: linear-gradient(0deg, #0b345a 0%, #22c4d6 100%);
+    animation: fadeIn ease-out 2s;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 #header-signup{
