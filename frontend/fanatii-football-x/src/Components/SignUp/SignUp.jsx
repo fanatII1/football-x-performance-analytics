@@ -1,10 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import image from './SignUpImages/Logo.png'
 import './SignUp.css';
 
 function SignUp() {
   const [userData, setUserData] = useState([{}]);
+  const navigate = useNavigate();
   
   /*take user data, store in the array*/
   const handleChange = (e) =>{
@@ -22,6 +24,13 @@ function SignUp() {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(userData)
+    })
+    .then((response)=>{
+      response.json()
+    })
+    .then((token)=>{
+      localStorage.setItem('user_token', token);
+      navigate('/');
     })
   }
 

@@ -1,0 +1,215 @@
+/*Global animation*/
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: translate(-10deg);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0deg);
+    }
+}
+
+/* ---  START STYLES --- */
+.root-elem{
+    background: #fff;
+    /* background: #0b345a; */
+    animation: none;
+}
+
+/*Navbar Styles*/
+nav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0000009c;
+    color: #fff;
+    z-index: 2;
+}
+
+#navbar-items{
+    height: 80%;
+    width: 90%;
+    display: flex;
+    gap: 50%;
+}
+
+.nav-logo{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+}
+
+#nav-list-items{
+    display: flex;
+    list-style-type: none;
+}
+
+.list-item{
+    margin: 0 3%
+}
+
+
+
+/*Intro Section Styles*/
+#Intro-section{
+    height: 400px;
+    position: relative;
+    color: #fff;
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #08274448;
+}
+
+.intro-homepage-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#intro-description{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 1.5s;
+}
+
+
+/*Article-Description Styles*/
+#Article-summary-section{
+    height: 400px;
+}
+
+#Article-summary-container{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: 100%;
+    grid-gap: 2%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2% 0;
+    height: 100%;
+    min-width: 700px;
+    max-width: 965px;
+    overflow: hidden;
+    animation: fadeIn 0.75s;
+}
+
+.article-piece{
+    height: 100%;
+}
+
+.PSL-logo-container{
+    height: 10%;
+}
+
+.PSL-logo-img{
+    display: block;
+    width: 10%;
+    height: 100%;
+}
+
+.article-image-container{
+    height: 55%;
+    margin: 1% 0;
+}
+
+.article-img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.article-paragraph-intro{
+    font-size: 0.8em;
+}
+
+.article-service-paragraph{
+    margin-top: 2%;
+}
+
+
+
+/*Analytics Summary section styles*/
+#Analytics-service-summary-section{
+    height: 400px;
+}
+
+#Analytics-summary-container{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: 100%;
+    grid-gap: 2%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2% 0;
+    height: 100%;
+    min-width: 700px;
+    max-width: 965px;
+    overflow: hidden;
+    animation: fadeIn 0.75s;
+}
+
+.analytics-piece{
+    border-radius: 50px;
+}
+
+.player-analytics{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 2px dotted black;
+    border-radius: 100%;
+}
+
+.analytics-service-description{
+    position: relative;
+}
+
+.analytics-service-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+
+
+/*LiveStream Section Styles*/
+#LiveStream-section{
+    padding: 5%;
+}
+
+#LiveStream-Talk-heading{
+    text-align: center;
+}
+
+.live-stream-container{
+    text-align: center;
+}
+
+.fa-spotify{
+    font-size: 4em;
+    color: #1ed15f;
+}
