@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 /*Schema for users to login*/
-const SignUp_schema = mongoose.Schema({
+const user_schema = mongoose.Schema({
     username: String,
     password: String
 }, {collection: "Users"});
 
-module.exports = mongoose.model('SignUp', SignUp_schema);
+module.exports = mongoose.model('User_model', user_schema);

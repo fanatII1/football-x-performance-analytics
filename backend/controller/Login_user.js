@@ -4,22 +4,22 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const hash = crypto.createHash('sha256');
 
-
-exports.SignUp_User = async function(req, res){
+//module checks user in the db, for login
+//verify the hashed password, then generate the token
+exports.login_user = async function(req, res){
     let username = req.body.username;
     let password = req.body.password;
     hash.update(password)
     let hashed_password = hash.digest('hex')
 
-    let user_model = new User_model({
+    //find user by username and password(hashed)
+    await User_model.find({
         username : username,
-        password: hashed_password
+        password : hashed_password
     })
-
-    return await user_model.save()
     .then(()=>{
         //generate jwt token for authentication
-        let payload = {
+          let payload = {
             role: "user"
         };
 
