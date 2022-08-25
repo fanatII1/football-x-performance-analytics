@@ -37,7 +37,7 @@ function Login() {
 
 
   return (
-    <>
+    <div id='login-main-container'>
     <header id='header-login'>
       <div className="header-logo-container">
         <img src={image} className='logo-img' alt='logo' />
@@ -63,7 +63,7 @@ function Login() {
 
       </div>
    </main>
-    </>
+    </div>
   );
 }
 
