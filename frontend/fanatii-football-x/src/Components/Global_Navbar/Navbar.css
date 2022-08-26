@@ -1,0 +1,61 @@
+/*Navbar Styles*/
+/*navbar in homepage*/
+#nav-home{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0000009c;
+  color: #fff;
+  z-index: 2;
+}
+
+/*navbar in global search page*/
+#nav-search{
+  position: relative;
+  width: 100%;
+  top: 0;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0000009c;
+  color: #fff;
+  z-index: 2;
+}
+
+#navbar-items {
+  height: 80%;
+  width: 90%;
+  display: flex;
+  gap: 50%;
+}
+
+.nav-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
+#nav-list-items {
+  display: flex;
+  list-style-type: none;
+}
+
+.list-item {
+  margin: 0 3%;
+}
+
+@media screen and (max-width: 520px) {
+  .nav-list {
+    display: none;
+  }
+}

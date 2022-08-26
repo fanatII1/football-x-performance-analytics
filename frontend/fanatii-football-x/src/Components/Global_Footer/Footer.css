@@ -1,0 +1,30 @@
+/*Footer Styling*/
+/*homepage-footer*/
+#home-footer{
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+}
+
+/*global search page footer*/
+/*Footer Styling*/
+#search-footer{
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#footer-list{
+  display: flex;
+  justify-content: space-evenly;
+  width: 70%;
+  list-style-type: none;
+}
+  

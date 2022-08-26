@@ -1,29 +1,16 @@
 import React from 'react';
-import image from './HomepageImages/Logo.png';
 import backgroundImage from './HomepageImages/HomeBackground.jpg'
 import PslLogo from './HomepageImages/psl-logo.png'
 import ArticleImage from './HomepageImages/article-image.jpg'
 import analyticsImage from './HomepageImages/analytics4.png'
 import './Homepage.css';
+import Navbar from '../Global_Navbar/Navbar';
+import Footer from '../Global_Footer/Footer'
 
 function Homepage() {
   return (
     <div id='Homepage-main-container'>
-      <nav>
-        <div id='navbar-items'>
-          <div className='logo'>
-            <img src={image} className='nav-logo' alt='Logo' />
-          </div>
-          <div className='nav-list'>
-            <ul id='nav-list-items'>
-              <li className='list-item'>Homepage</li>
-              <li className='list-item'>Login</li>
-              <li className='list-item'>SignUp</li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
+      <Navbar idNav='nav-home'/>
 
       <section id='Intro-section'>
         <img src={backgroundImage} className='intro-homepage-background' alt='background-home' />
@@ -103,14 +90,7 @@ function Homepage() {
             <i className='fa-brands fa-spotify'></i>
         </div>
       </section>
-
-      <footer>
-        <ul id="footer-list">
-          <li>Privacy Policy</li>
-          <li>Terms {'&'} Conditions</li>
-          <li>Cookie Policy</li>
-        </ul>
-      </footer>
+      <Footer idFooter='home-footer'/>
     </div>
   );
 }
