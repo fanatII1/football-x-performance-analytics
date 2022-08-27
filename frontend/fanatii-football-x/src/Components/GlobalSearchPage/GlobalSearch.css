@@ -56,8 +56,8 @@
 .by_name-button, .by_club-button{
     padding: 2%;
     font-weight: bold;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.466);
+    color: #000;
+    background: #fff;
     border: none;
     border-radius: 5px;
     transition: .5s;
