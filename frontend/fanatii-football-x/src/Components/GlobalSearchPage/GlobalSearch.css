@@ -1,6 +1,8 @@
 #GlobalSearch-container{
     height: 100%;
-    background: #f3f3f3;
+    background: #00ff79;
+    background: -webkit-linear-gradient(0deg, #00ff79 0%, #00a2c1 100%);
+    background: linear-gradient(0deg, #00ff79 0%, #00a2c1 100%);
     position: relative;
 }
 
@@ -14,7 +16,7 @@
 
 #search-heading{
     text-align: center;
-    color: #1d95a2;
+    color: #fff;
 }
 
 .search-options{
@@ -52,10 +54,10 @@
 }
 
 .by_name-button, .by_club-button{
-    padding: 1%;
+    padding: 2%;
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(0deg, #0b345a 0%, #22c4d6 100%);
+    background: rgba(0, 0, 0, 0.466);
     border: none;
     border-radius: 5px;
     transition: .5s;

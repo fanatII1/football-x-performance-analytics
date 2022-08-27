@@ -86,7 +86,7 @@ function Homepage() {
 
 
       <section id='LiveStream-section'>
-        <h1 id='LiveStream-Talk-heading'>Catch Our Football LiveStream Talk</h1>
+        <h1 id='LiveStream-Talk-heading'>Catch Our Football Live Stream Fooball Talk</h1>
         <div className='live-stream-container'>
             <i className='fa-brands fa-spotify'></i>
         </div>
