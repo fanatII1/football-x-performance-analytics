@@ -4,7 +4,7 @@ import Login from './Components/Login/Login';
 import SignUp from './Components/SignUp/SignUp';
 import Homepage from './Components/Homepage/Homepage';
 import GlobalSearch from './Components/GlobalSearchPage/GlobalSearch';
-import PlayerSearch from './Components/PlayerSearch/PlayerSearch'
+import ClubSearch from './Components/ClubSearch/ClubSearch'
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
             <Route path='/Login' element={<Login/>}/> 
             <Route path='/SignUp' element={<SignUp/>}/>
             <Route path='/GlobalSearch' element={<GlobalSearch/>}/>
-            <Route path='/GlobalSearch/PlayerSearch' element={<PlayerSearch/>}/>
+            <Route path='/GlobalSearch/ClubSearch' element={<ClubSearch/>}/>
           </Routes>
         </BrowserRouter>
         </>

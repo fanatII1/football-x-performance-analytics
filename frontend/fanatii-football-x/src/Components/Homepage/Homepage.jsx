@@ -27,6 +27,7 @@ function Homepage() {
       </section>
 
 
+      <div className="cont">
       <section id='Article-summary-section'>
         <div id='Article-summary-container'>
             <div className='article-piece'>
@@ -91,6 +92,7 @@ function Homepage() {
         </div>
       </section>
       <Footer idFooter='home-footer'/>
+      </div>
     </div>
   );
 }

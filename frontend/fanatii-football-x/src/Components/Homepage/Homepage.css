@@ -4,16 +4,15 @@
     opacity: 0;
     transform: translate(-10deg);
   }
+
   to {
     opacity: 1;
     transform: translate(0deg);
   }
 }
 
-
 /* ---  START STYLES --- */
 #Homepage-main-container {
-  background: #f3f3f3;
   animation: none;
   height: 100%;
 }
@@ -51,33 +50,30 @@
   animation: fadeIn 1.5s;
 }
 
+.cont {
+  background: #00ff79;
+  background: -webkit-linear-gradient(0deg, #00ff79 0%, #08c0e3 100%);
+  background: linear-gradient(0deg, #00ff79 0%, #08c0e3 100%);
+  color: #fff;
+  padding-top: 2%;
+}
+
 /*Article-Description Styles*/
 #Article-summary-section {
-  height: 400px;
   width: 90%;
   margin: 2% auto;
-  background-color: #fff;
+  background-color: #ffffff75;
 }
 
 #Article-summary-container {
   display: grid;
-  grid-template-columns: 49% 49%;
-  grid-template-rows: 100%;
-  grid-gap: 2%;
-  margin: 0 auto;
+  grid-template-columns: 50% 50%;
   padding: 2%;
-  height: 100%;
-  overflow: hidden;
   animation: fadeIn 0.75s;
 }
 
 .article-piece {
-  height: 100%;
-  overflow: hidden;
-}
-
-.PSL-logo-container {
-  height: 10%;
+  display: grid;
 }
 
 .PSL-logo-img {
@@ -87,7 +83,6 @@
 }
 
 .article-image-container {
-  height: 65%;
   margin: 1% 0;
 }
 
@@ -102,48 +97,34 @@
   font-size: 0.8em;
 }
 
-.article-service-description{
-    position: relative;
+.article-service-description {
+  position: relative;
+  display: grid;
 }
 
-.article-service-container{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+.article-service-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 .article-service-paragraph {
   margin-top: 2%;
 }
 
-@media screen and (max-width: 375px) {
-  #Article-summary-container{
-    grid-gap: 32% !important
-  }
-}
-
 /*Analytics Summary section styles*/
 #Analytics-service-summary-section {
-  height: 400px;
   width: 90%;
   margin: 2% auto;
-  background-color: #fff;
+  background-color: #ffffff75;
 }
 
 #Analytics-summary-container {
   display: grid;
-  grid-template-columns: 40% 40%;
-  grid-template-rows: 100%;
-  grid-gap: 2%;
-  width: 90%;
-  margin: 0 auto;
+  grid-template-columns: 50% 50%;
   padding: 2%;
-  height: 100%;
-  min-width: 700px;
-  max-width: 965px;
-  overflow: hidden;
   animation: fadeIn 0.75s;
 }
 
@@ -156,8 +137,6 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border: 2px dotted black;
-  border-radius: 100%;
 }
 
 .analytics-service-description {
@@ -177,6 +156,7 @@
   margin: 2% auto;
   padding: 2%;
   background-color: #fff;
+  color: #000;
 }
 
 #LiveStream-Talk-heading {
@@ -195,7 +175,6 @@
 /*Responsive activity*/
 @media screen and (max-width: 700px) {
   #Homepage-main-container {
-    background: #fff;
     animation: none;
     height: 100%;
   }
@@ -206,47 +185,37 @@
     color: #fff;
   }
 
-  #Article-summary-section {
-    height: 100%;
-  }
-
-  #Article-summary-container {
+  #Article-summary-container, #Analytics-summary-container {
     display: grid;
     grid-template-columns: none;
-    grid-template-rows: 50%;
-    grid-gap: 10%;
     margin: 0 auto;
     padding: 2%;
-    height: 100%;
-    overflow: hidden;
     animation: fadeIn 0.75s;
   }
-
-  #Analytics-service-summary-section {
-    height: 100%;
-  }
-
-  #Analytics-summary-container {
-    display: grid;
-    grid-template-columns: none;
+  
+  #Analytics-summary-container{
     grid-template-rows: 50% 50%;
-    grid-gap: 1%;
-    width: 90%;
-    margin: 0 auto;
-    padding: 2% 0;
-    height: 100%;
-    min-width: 50%;
-    max-width: 90%;
-    overflow: hidden;
-    animation: fadeIn 0.75s;
+  }
+
+  .article-piece {
+    display: grid;
+  }
+
+  .article-service-description, .analytics-service-description {
+    position: static;
+  }
+
+  .article-service-container, .analytics-service-container{
+    position: static;
+    transform: none;
+    width: 100%;
   }
 
   .player-analytics {
     display: block;
-    width: 100%;
+    width: 50%;
     height: 100%;
     object-fit: contain;
-    border: 2px dotted black;
     margin: 0 auto;
   }
 }

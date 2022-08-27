@@ -4,8 +4,9 @@
 
 #login-main-container{
     height: 100%;
-    background: #474bff;
-    background: linear-gradient(0deg, #0b345a 0%, #22c4d6 100%);
+    background: #00ff79;
+    background: -webkit-linear-gradient(0deg, #00ff79 0%, #00a2c1 100%);
+    background: linear-gradient(0deg, #00ff79 0%, #00a2c1 100%);
     animation: fadeIn ease-out 2s;
 }
 
@@ -39,8 +40,9 @@
     grid-template-columns: 50% 50%;
     grid-auto-columns: 45%;
     width: 50%;
-    -webkit-box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.39);
-    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.39);
+    background: #00ff79;
+    background: -webkit-linear-gradient(0deg, #00ff79 0%, #00a2c1 100%);
+    background: linear-gradient(0deg, #00ff79 0%, #00a2c1 100%);
     border-radius: 20px;
 }
 

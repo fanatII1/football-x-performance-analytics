@@ -1,7 +1,7 @@
 /*Footer Styling*/
 /*homepage-footer*/
 #home-footer{
-  background: #000;
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -11,11 +11,11 @@
 /*global search page footer*/
 /*Footer Styling*/
 #search-footer{
-  background: #000;
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
   display: flex;
   justify-content: center;
-  padding: 2%;
+  padding: 1%;
   position: absolute;
   bottom: 0;
   width: 100%;

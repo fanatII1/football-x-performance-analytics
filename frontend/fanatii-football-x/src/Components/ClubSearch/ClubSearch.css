@@ -1,0 +1,66 @@
+#ClubSearch-main-container{
+    height: 100%;
+    background: #fff;
+}
+
+#Club-options-section{
+    min-width: 250px;
+    max-width: 840px;
+    margin: 2% auto;
+}
+
+@media screen and (min-width: 1025px) {
+    #Club-options-section{
+        min-width: 250px;
+        max-width: 1000px;
+        margin: 2% auto;
+    }
+}
+
+#Teams-heading{
+    text-align: center;
+    color: #000;
+}
+
+#clubs-main-wrapper{
+    display: grid;
+    grid-template-rows: 25% 25% 25% 25%;
+    padding: 2%;
+    border-radius: 10px;
+    background: #ffffff45;
+    color: #fff;
+    font-size: 0.8em;
+    background: #00ff79;
+    background: -webkit-linear-gradient(0deg, #00ff79 0%, #00a2c1 100%);
+    background: linear-gradient(0deg, #00ff79 0%, #00a2c1 100%);
+}
+
+.club-info-wrapper{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+}
+
+.club-image-container{
+    border-right: 2px solid #fff;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.club-badge, .league-image{
+    display: block;
+    width: 50%;
+}
+
+.team-name-wrapper, .league {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.league{
+    padding: 10%;
+    border-left: 2px solid #fff;
+    margin-bottom: 2%;
+}
