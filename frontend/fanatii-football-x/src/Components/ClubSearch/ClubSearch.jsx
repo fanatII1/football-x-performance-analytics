@@ -5,6 +5,9 @@ import Sundowns from './ClubSearchImages/Sundowns.png';
 import Chiefs from './ClubSearchImages/Chiefs.png';
 import Pirates from './ClubSearchImages/Pirates.png';
 import SuperSport from './ClubSearchImages/SuperSport(1).png';
+import CapeTownCity from './ClubSearchImages/CapeTownCity.png'
+import TsGalaxy from './ClubSearchImages/TsGalaxy.png'
+import Maritzburg from './ClubSearchImages/Maritzburg.png'
 import leagueImage from './ClubSearchImages/psl-logo.png'
 import Footer from '../Global_Footer/Footer';
 
@@ -13,7 +16,10 @@ const Clubs = [
   {clubName: 'Mamelodi Sundowns', badge: Sundowns },
   {clubName: 'Kaizer Chiefs', badge: Chiefs }, 
   {clubName: 'Orlando Pirates', badge: Pirates }, 
-  {clubName: 'SuperSport United', badge: SuperSport }
+  {clubName: 'SuperSport United', badge: SuperSport },
+  {clubName: 'Cape Town City', badge: CapeTownCity },
+  {clubName: 'TS Galaxy', badge: TsGalaxy },
+  {clubName: 'Maritzburg United', badge: Maritzburg }
 ];
 
 function ClubSearch() {
@@ -46,7 +52,7 @@ function ClubSearch() {
         </div>
       </section>
 
-      <Footer idFooter='search-footer'/>
+      <Footer idFooter='home-footer'/>
     </div>
   )
 }
