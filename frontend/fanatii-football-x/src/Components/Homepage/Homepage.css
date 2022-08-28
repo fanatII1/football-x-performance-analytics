@@ -60,9 +60,9 @@
 #Article-summary-section {
   width: 90%;
   margin: 2% auto;
-  background: #00ff79;
-  background: -webkit-linear-gradient(0deg, #00ff79 0%, #00a2c1 100%);
-  background: linear-gradient(0deg, #00ff79 0%, #00a2c1 100%);
+  background: #37003c;
+  background: -webkit-linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
+  background: linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
 }
 
 #Article-summary-container {
@@ -119,9 +119,9 @@
 #Analytics-service-summary-section {
   width: 90%;
   margin: 2% auto;
-  background: #00ff79;
-  background: -webkit-linear-gradient(0deg, #00ff79 0%, #00a2c1 100%);
-  background: linear-gradient(0deg, #00ff79 0%, #00a2c1 100%);
+  background: #37003c;
+  background: -webkit-linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
+  background: linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
 }
 
 #Analytics-summary-container {
