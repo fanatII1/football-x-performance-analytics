@@ -4,6 +4,7 @@ import nameImage from './GlobalSearchImages/search-name-image.png';
 import clubImage from './GlobalSearchImages/search-club-image.png';
 import Footer from '../Global_Footer/Footer';
 import './GlobalSearch.css';
+import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom';
 
 function GlobalSearch() {
   return (
@@ -38,6 +39,7 @@ function GlobalSearch() {
       </section>
 
       <Footer idFooter='search-footer'/>
+      <GlobalNavBottom navBottom='search-nav-bottom'/>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import analyticsImage from './HomepageImages/analytics4.png'
 import './Homepage.css';
 import Navbar from '../Global_Navbar/Navbar';
 import Footer from '../Global_Footer/Footer'
+import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom';
 
 function Homepage() {
   return (
@@ -92,6 +93,7 @@ function Homepage() {
         </div>
       </section>
       <Footer idFooter='home-footer'/>
+      <GlobalNavBottom navBottom='home-bottom-nav'/>
       </div>
     </div>
   );

@@ -19,6 +19,7 @@ import Chippa from './ClubSearchImages/Chippa.png';
 import GoldenArrows from './ClubSearchImages/Golden Arrows.png';
 import leagueImage from './ClubSearchImages/psl-logo.png';
 import Footer from '../Global_Footer/Footer';
+import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom';
 
 const Clubs = [
   { clubName: 'Mamelodi Sundowns', badge: Sundowns },
@@ -42,8 +43,8 @@ const Clubs = [
 function ClubSearch() {
   return (
     <>
-      <Navbar idNav='nav-search' />
       <div id='ClubSearch-main-container'>
+      <Navbar idNav='nav-search' />
         <section id='Club-options-section'>
           <h2 id='Teams-heading'>Teams:</h2>
           <div id='clubs-main-wrapper'>
@@ -76,6 +77,7 @@ function ClubSearch() {
         </section>
 
         <Footer idFooter='club-footer' />
+        <GlobalNavBottom navBottom='club-search-nav-bottom'/>
       </div>
     </>
   );

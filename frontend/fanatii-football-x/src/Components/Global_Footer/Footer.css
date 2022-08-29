@@ -6,6 +6,21 @@
   display: flex;
   justify-content: center;
   padding: 1%;
+  font-size: .6em;
+}
+
+@media screen and (max-width: 425px) {
+  #home-footer{
+    display: none;
+  }
+
+  #search-footer{
+    display: none !important;
+  }
+
+  #club-footer{
+    display: none;
+  }
 }
 
 /*global search page footer*/
@@ -19,6 +34,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  font-size: .6em;
 }
 
 #club-footer{
@@ -27,6 +43,10 @@
   display: flex;
   justify-content: center;
   padding: 1%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: .5em;
 }
 
 #footer-list{

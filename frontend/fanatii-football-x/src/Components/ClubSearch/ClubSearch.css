@@ -1,55 +1,25 @@
 #ClubSearch-main-container{
     background: #fff;
+    height: 100%;
+    position: relative;
 }
 
 #Club-options-section{
     min-width: 250px;
-    max-width: 840px;
+    max-width: 80%;
     margin: 0 auto;
 }
 
-
-@media screen and (max-width: 424px) {
-    #ClubSearch-main-container{
-        height: 100%;
-        position: relative;
+@media screen and (min-width: 1024px) {
+    #club-footer{
+        position: static;
     }
 
-    #club-footer{
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+    .root-elem{
+        background: none;
+        background: none;
     }
 }
-
-
-
-@media screen and (min-width: 2560px) {
-    #ClubSearch-main-container{
-        height: 100%;
-        position: relative;
-    }
-
-    #club-footer{
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    #ClubSearch-main-container{
-        height: 100%;
-        position: relative;
-    }
-
-    #club-footer{
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-    }
-}
-
 
 #Teams-heading{
     text-align: center;
@@ -63,7 +33,7 @@
     border-radius: 10px;
     background: #ffffff45;
     color: #fff;
-    font-size: 0.8em;
+    font-size: 0.5em;
     background: #37003c;
     background: -webkit-linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
     background: linear-gradient(0deg, #37003c 0%, #00a2c1 100%);

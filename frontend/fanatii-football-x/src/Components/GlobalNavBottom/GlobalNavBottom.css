@@ -1,0 +1,91 @@
+#home-bottom-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #212121;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+#search-nav-bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #212121;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#club-search-nav-bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #212121;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#home-bottom-nav ul, #search-nav-bottom  ul, #club-search-nav-bottom ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    list-style-type: none;
+    padding: 2%;
+}
+
+#home-bottom-nav ul li, #search-nav-bottom ul li, #club-search-nav-bottom ul li{
+    position: relative;
+    /* height: 70px;
+    width: 70px; */
+    z-index: 1;
+}
+
+#home-bottom-nav ul li a, #search-nav-bottom ul li a, #club-search-nav-bottom ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    color: #ffffffa3;
+}
+
+#home-bottom-nav ul li a .icon, #search-nav-bottom ul li a .icon, #club-search-nav-bottom ul li a .icon{
+    position: relative;
+    display: block;
+    /* line-height: 75px; */
+    text-align: center;
+    transition: .5s;
+}
+
+#home-bottom-nav ul li:hover a .icon, #search-nav-bottom ul li:hover a .icon, #club-search-nav-bottom ul li:hover a .icon{
+    transform: translateY(-50%);
+}
+
+#home-bottom-nav ul li a .text, #search-nav-bottom ul li a .text, #club-search-nav-bottom ul li a .text{
+    position: absolute;
+    font-weight: 400;
+    transition: .5s;
+    opacity: 0;
+    transform: translateY(30%);
+}
+
+#home-bottom-nav ul li:hover a .text, #search-nav-bottom ul li:hover a .text, #club-search-nav-bottom ul li:hover a .text{
+    opacity: 1;
+    transform: translateY(30%);
+}
+
+/*hide bottom nav when in tablet, laptop, desktop and tv screen sizes*/
+@media screen and (min-width: 426px) {
+    #home-bottom-nav, #search-nav-bottom, #club-search-nav-bottom{
+        display: none;
+    }
+}
