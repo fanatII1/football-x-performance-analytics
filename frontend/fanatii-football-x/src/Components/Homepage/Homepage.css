@@ -12,6 +12,10 @@
 }
 
 /* ---  START STYLES --- */
+html{
+  font-size: 16px;
+}
+
 #Homepage-main-container {
   animation: none;
   height: 100%;
@@ -58,11 +62,14 @@
 
 /*Article-Description Styles*/
 #Article-summary-section {
+  max-width: 990px;
   width: 90%;
   margin: 2% auto;
   background: #37003c;
   background: -webkit-linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
   background: linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
+  border-radius: 3px;
+  font-size: 0.8rem;
 }
 
 #Article-summary-container {
@@ -117,11 +124,14 @@
 
 /*Analytics Summary section styles*/
 #Analytics-service-summary-section {
+  max-width: 990px;
   width: 90%;
   margin: 2% auto;
   background: #37003c;
   background: -webkit-linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
   background: linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
+  border-radius: 3px;
+  font-size: 0.8rem;
 }
 
 #Analytics-summary-container {

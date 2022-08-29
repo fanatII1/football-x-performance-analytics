@@ -41,8 +41,6 @@
 
 #home-bottom-nav ul li, #search-nav-bottom ul li, #club-search-nav-bottom ul li{
     position: relative;
-    /* height: 70px;
-    width: 70px; */
     z-index: 1;
 }
 

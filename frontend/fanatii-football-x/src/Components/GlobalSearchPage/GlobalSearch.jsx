@@ -5,6 +5,7 @@ import clubImage from './GlobalSearchImages/search-club-image.png';
 import Footer from '../Global_Footer/Footer';
 import './GlobalSearch.css';
 import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom';
+import {Link} from 'react-router-dom'
 
 function GlobalSearch() {
   return (
@@ -32,7 +33,7 @@ function GlobalSearch() {
                 <img src={clubImage} alt='svg' className='club' />
             </div>
             <div className="club-btn-wrapper">
-                <button className='by_club-button'>Search By Club</button>
+                <button className='by_club-button'><Link to='/GlobalSearch/ClubSearch'>Search By Club</Link></button>
             </div>
           </div>
         </div>

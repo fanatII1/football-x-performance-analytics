@@ -50,8 +50,21 @@
   list-style-type: none;
 }
 
+#nav-list-items .list-item a, #nav-list-items .list-item a:visited{
+  color: black;
+  text-decoration: none;
+}
+
 .list-item {
   margin: 0 3%;
+  background: #fff;
+  padding: 1.5%;
+  transition: .5s;
+  border-radius: 2px;
+}
+
+.li-1:hover, .li-2:hover, .li-3:hover{
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 520px) {

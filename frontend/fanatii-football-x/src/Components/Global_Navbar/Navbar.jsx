@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navbar.css'
 import image from './NavbarImages/Logo.png'
+import {Link} from 'react-router-dom'
 
 function Navbar({idNav}) {
   return (
@@ -12,9 +13,9 @@ function Navbar({idNav}) {
           </div>
           <div className='nav-list'>
             <ul id='nav-list-items'>
-              <li className='list-item'>Homepage</li>
-              <li className='list-item'>Login</li>
-              <li className='list-item'>SignUp</li>
+              <li className='list-item li-1'><Link to='/'>Homepage</Link></li>
+              <li className='list-item li-2'><Link to='/GlobalSearch'>Search</Link></li>
+              <li className='list-item li-3'><Link to='Articles'>Articles</Link></li>
             </ul>
           </div>
         </div>

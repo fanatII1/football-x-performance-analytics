@@ -66,3 +66,8 @@
 .by_name-button:hover, .by_club-button:hover{
     transform: scale(1.1);
 }
+
+.by_club-button a, .by_name-button a, .by_club-button a:visited, .by_name-button a:visited{
+    color: #000;
+    text-decoration: none;
+}
