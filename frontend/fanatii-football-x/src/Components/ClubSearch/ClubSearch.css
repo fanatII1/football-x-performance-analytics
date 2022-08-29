@@ -58,6 +58,14 @@
     align-items: center;
 }
 
+.club-image-container img{
+    transition: .4s;
+}
+
+.club-image-container img:hover{
+    transform: scale(1.1);
+}
+
 .club-badge, .league-image{
     display: block;
     width: 50%;
