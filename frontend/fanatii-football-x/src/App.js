@@ -5,6 +5,8 @@ import SignUp from './Components/SignUp/SignUp';
 import Homepage from './Components/Homepage/Homepage';
 import GlobalSearch from './Components/GlobalSearchPage/GlobalSearch';
 import ClubSearch from './Components/ClubSearch/ClubSearch'
+import Articles
+ from './Components/ArticlesPage/Articles';
 
 function App() {
 
@@ -17,6 +19,7 @@ function App() {
             <Route path='/SignUp' element={<SignUp/>}/>
             <Route path='/GlobalSearch' element={<GlobalSearch/>}/>
             <Route path='/GlobalSearch/ClubSearch' element={<ClubSearch/>}/>
+            <Route path='/Articles' element={<Articles/>}/>
           </Routes>
         </BrowserRouter>
         </>
