@@ -25,7 +25,7 @@ function GlobalNavBottom({navBottom}) {
                 </Link>
             </li>
             <li className='list'>
-                <Link to="/Login">
+                <Link to="/Articles">
                     <span className="icon">
                         <i className='fa-solid fa-newspaper'></i>
                     </span>

@@ -10,6 +10,8 @@ import PodCastOne from './ArticlesImages/podcast(1).jpg'
 import PodCastTwo from './ArticlesImages/podcast(2).jpg'
 import PodCastThree from './ArticlesImages/podcast(3).png'
 import PodCastFour from './ArticlesImages/podcast(4).png'
+import Footer from '../Global_Footer/Footer'
+import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom'
 
 const articlesData = [
     {image: PassNet, heading: "Analysing the passing networks of each Dstv Premiership team", journalist: "Reece Moore"},
@@ -90,6 +92,8 @@ function Articles() {
             </div>
             </div>
         </section>
+        <Footer idFooter='home-footer'/>
+        <GlobalNavBottom navBottom='articles-nav-bottom'/>
     </div>
   )
 }

@@ -5,6 +5,9 @@
     background: #212121;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 #search-nav-bottom{
@@ -14,7 +17,7 @@
     background: #212121;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;    
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -26,12 +29,24 @@
     background: #212121;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;    
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
 
-#home-bottom-nav ul, #search-nav-bottom  ul, #club-search-nav-bottom ul {
+#articles-nav-bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #212121;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;    
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#home-bottom-nav ul, #search-nav-bottom  ul, #club-search-nav-bottom ul, #articles-nav-bottom ul {
     display: flex;
     justify-content: space-evenly;
     width: 70%;
@@ -39,12 +54,12 @@
     padding: 2%;
 }
 
-#home-bottom-nav ul li, #search-nav-bottom ul li, #club-search-nav-bottom ul li{
+#home-bottom-nav ul li, #search-nav-bottom ul li, #club-search-nav-bottom ul li, #articles-nav-bottom ul li{
     position: relative;
     z-index: 1;
 }
 
-#home-bottom-nav ul li a, #search-nav-bottom ul li a, #club-search-nav-bottom ul li a {
+#home-bottom-nav ul li a, #search-nav-bottom ul li a, #club-search-nav-bottom ul li a, #articles-nav-bottom ul li a {
     position: relative;
     display: flex;
     justify-content: center;
@@ -56,7 +71,7 @@
     color: #ffffffa3;
 }
 
-#home-bottom-nav ul li a .icon, #search-nav-bottom ul li a .icon, #club-search-nav-bottom ul li a .icon{
+#home-bottom-nav ul li a .icon, #search-nav-bottom ul li a .icon, #club-search-nav-bottom ul li a .icon, #articles-nav-bottom ul li a .icon{
     position: relative;
     display: block;
     /* line-height: 75px; */
@@ -64,11 +79,11 @@
     transition: .5s;
 }
 
-#home-bottom-nav ul li:hover a .icon, #search-nav-bottom ul li:hover a .icon, #club-search-nav-bottom ul li:hover a .icon{
+#home-bottom-nav ul li:hover a .icon, #search-nav-bottom ul li:hover a .icon, #club-search-nav-bottom ul li:hover a .icon, #articles-nav-bottom ul li:hover a .icon{
     transform: translateY(-50%);
 }
 
-#home-bottom-nav ul li a .text, #search-nav-bottom ul li a .text, #club-search-nav-bottom ul li a .text{
+#home-bottom-nav ul li a .text, #search-nav-bottom ul li a .text, #club-search-nav-bottom ul li a .text, #articles-nav-bottom ul li a .text{
     position: absolute;
     font-weight: 400;
     transition: .5s;
@@ -76,14 +91,14 @@
     transform: translateY(30%);
 }
 
-#home-bottom-nav ul li:hover a .text, #search-nav-bottom ul li:hover a .text, #club-search-nav-bottom ul li:hover a .text{
+#home-bottom-nav ul li:hover a .text, #search-nav-bottom ul li:hover a .text, #club-search-nav-bottom ul li:hover a .text, #articles-nav-bottom ul li:hover a .text{
     opacity: 1;
     transform: translateY(30%);
 }
 
 /*hide bottom nav when in tablet, laptop, desktop and tv screen sizes*/
 @media screen and (min-width: 426px) {
-    #home-bottom-nav, #search-nav-bottom, #club-search-nav-bottom{
+    #home-bottom-nav, #search-nav-bottom, #club-search-nav-bottom, #articles-nav-bottom{
         display: none;
     }
 }

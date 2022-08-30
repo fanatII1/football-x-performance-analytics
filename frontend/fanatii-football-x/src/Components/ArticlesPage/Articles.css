@@ -16,8 +16,14 @@
 /*making everything in section take height of grid*/
 #Articles-Top5-section, #podcasts-section{
     display: grid;
-    background-color: #fff;
+    background: #fff;
     padding: 1% 0;
+}
+
+#Articles-Top5-section{
+    background: #37003c;
+    background: linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
+    color: white;
 }
 
 #articles-heading, #podcasts-heading{
@@ -65,14 +71,14 @@
     display: grid;
     grid-template-rows: 65% 35%;
     grid-template-columns: 100%;
-    border-right: 2px solid gray;
+    border-right: 2px solid #fff;
 }
 
 .first-top-main-podcast{
     display: grid;
     grid-template-rows: 65% 35%;
     grid-template-columns: 100%;
-    border-left: 2px solid gray;
+    border-left: 2px solid #fff;
 }
 
 .top-main-article-image-wrapper, .top-main-podcast-image-wrapper{
@@ -112,7 +118,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 100%;
     align-items: center;
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid #fff;
     padding: 2%;
 }
 

@@ -15,7 +15,7 @@ function Navbar({idNav}) {
             <ul id='nav-list-items'>
               <li className='list-item li-1'><Link to='/'>Homepage</Link></li>
               <li className='list-item li-2'><Link to='/GlobalSearch'>Search</Link></li>
-              <li className='list-item li-3'><Link to='Articles'>Articles</Link></li>
+              <li className='list-item li-3'><Link to='/Articles'>Articles</Link></li>
             </ul>
           </div>
         </div>
