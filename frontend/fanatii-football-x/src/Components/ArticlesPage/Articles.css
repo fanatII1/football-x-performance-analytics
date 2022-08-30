@@ -120,6 +120,11 @@
     align-items: center;
     border-bottom: 2px solid #fff;
     padding: 2%;
+    transition: .4s;
+}
+
+.article-sub-info:hover, .podcast-sub-info:hover{
+    background-color: rgba(185, 180, 180, 0.322);
 }
 
 .article-sub-sec-image, .podcast-sub-sec-image{
