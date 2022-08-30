@@ -15,7 +15,8 @@
 
 /*navbar in global search page*/
 #nav-search{
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
   width: 100%;
   top: 0;
   height: 10%;

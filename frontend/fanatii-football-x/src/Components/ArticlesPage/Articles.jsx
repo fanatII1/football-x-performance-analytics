@@ -10,7 +10,6 @@ import PodCastOne from './ArticlesImages/podcast(1).jpg'
 import PodCastTwo from './ArticlesImages/podcast(2).jpg'
 import PodCastThree from './ArticlesImages/podcast(3).png'
 import PodCastFour from './ArticlesImages/podcast(4).png'
-import MainPodCast from './ArticlesImages/Main-podcast.jpg'
 
 const articlesData = [
     {image: PassNet, heading: "Analysing the passing networks of each Dstv Premiership team", journalist: "Reece Moore"},
@@ -75,7 +74,7 @@ function Articles() {
                 {
                     podcastData.map((articleInfo, key)=>{
                         return(
-                        <div className='podcast-sub-info'> 
+                        <div className='podcast-sub-info' key={key}> 
                         <div className="sub-main-podcast-image-wrapper">
                             <img src={articleInfo.image} alt="sub-article" className="article-sub-sec-image" />
                         </div>
