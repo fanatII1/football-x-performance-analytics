@@ -51,7 +51,7 @@ function Articles() {
 
                     <div className="top-main-article-text-wrapper">
                         <h2 id="top-main-article-heading">Unpacking the secrets of ball progression</h2>
-                        <p className="journalist">Jason MacAllister</p>
+                        <p className="journalist"><i class="fa-solid fa-pen-to-square"></i>Jason MacAllister</p>
                     </div>
                 </div>
 
@@ -66,7 +66,7 @@ function Articles() {
     
                         <div className="sub-main-article-text-wrapper">
                             <h5 className="sub-main-article-heading">{articleInfo.heading}</h5>
-                            <p className='journalist'>{articleInfo.journalist}</p>
+                            <p className='journalist'><i class="fa-solid fa-pen-to-square"></i>{articleInfo.journalist}</p>
                         </div>
                         </div>
                         )
@@ -90,8 +90,8 @@ function Articles() {
                         </div>
     
                         <div className="sub-main-podcast-text-wrapper">
-                            <h5 className="sub-podcast-article-heading">{articleInfo.heading}</h5>
-                            <p className='journalist'>{articleInfo.host}</p>
+                            <h5 className="sub-podcast-article-heading">{articleInfo.heading} <i class="fa-solid fa-podcast"></i></h5>
+                            <p className='journalist'>Hosts:{articleInfo.host}</p>
                         </div>
                         </div>
                         )
