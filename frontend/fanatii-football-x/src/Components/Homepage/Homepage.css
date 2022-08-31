@@ -55,7 +55,6 @@ html{
 }
 
 .cont {
-  background: #000;
   color: #fff;
   padding-top: 2%;
 }
@@ -65,10 +64,10 @@ html{
   max-width: 990px;
   width: 90%;
   margin: 2% auto;
-  background: #37003c;
-  background: -webkit-linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
-  background: linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
-  border-radius: 3px;
+  background: #fb5b00;
+  background: -webkit-linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%); 
+  background: linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%);
+  border-radius: 10px;
   font-size: 0.8rem;
 }
 
@@ -127,10 +126,10 @@ html{
   max-width: 990px;
   width: 90%;
   margin: 2% auto;
-  background: #37003c;
-  background: -webkit-linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
-  background: linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
-  border-radius: 3px;
+  background: #fb5b00;
+  background: -webkit-linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%); 
+  background: linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%);
+  border-radius: 10px;
   font-size: 0.8rem;
 }
 
@@ -167,9 +166,9 @@ html{
 
 /*LiveStream Section Styles*/
 #LiveStream-section {
-  margin: 2% auto;
+  margin: 2% auto 0 auto;
   padding: 2%;
-  background-color: #ffffff21;
+  background-color: rgba(24, 24, 24, 0.904);
   color: #fff;
 }
 

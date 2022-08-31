@@ -3,8 +3,9 @@
 }
 
 .root-elem{
-    background: -webkit-linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
-    background: linear-gradient(0deg, #37003c 0%, #00a2c1 100%);
+    background: #fb5b00;
+    background: -webkit-linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%); 
+    background: linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%);
     animation: fadeIn ease-out 2s;
 }
 

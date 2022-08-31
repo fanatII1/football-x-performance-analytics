@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0e799fba;
+  background: #b3b3b34d;
   color: #fff;
   z-index: 2;
 }
@@ -23,7 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0e799fba;
+  background: #b3b3b34d;
   color: #fff;
   z-index: 2;
 }

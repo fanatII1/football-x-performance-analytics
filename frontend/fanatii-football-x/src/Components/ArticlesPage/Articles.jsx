@@ -12,6 +12,7 @@ import PodCastThree from './ArticlesImages/podcast(3).png'
 import PodCastFour from './ArticlesImages/podcast(4).png'
 import Footer from '../Global_Footer/Footer'
 import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom'
+import ArticleBackgroundImage from './ArticlesImages/article-background.jpg'
 
 const articlesData = [
     {image: PassNet, heading: "Analysing the passing networks of each Dstv Premiership team", journalist: "Reece Moore"},
@@ -31,6 +32,13 @@ function Articles() {
   return (
     <div id='Articles-main-container'>
         <Navbar idNav='nav-search'/>
+
+        <section id="articles-podacasts-image-wrapper">
+            <img src={ArticleBackgroundImage} alt="" id="" className="articles-podcasts-image" />
+            <div id="overlay-articles-podasts">
+                <h1 id="articles-podcasts-main-heading">Aricles {'&'} Podcasts</h1>
+            </div>
+        </section>
 
         <section id="Articles-Top5-section">
             <h2 id='articles-heading'>Articles:</h2>
