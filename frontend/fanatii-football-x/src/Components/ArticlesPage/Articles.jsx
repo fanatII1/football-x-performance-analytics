@@ -4,7 +4,7 @@ import Navbar from '../Global_Navbar/Navbar'
 import PassNet from './ArticlesImages/pass-net.jpg'
 import Shot from './ArticlesImages/shot.png'
 import XA from './ArticlesImages/assists(3).png'
-import ballProgression from './ArticlesImages/brooks.jpg'
+import ballProgression from './ArticlesImages/ball-progression.jpg'
 import scoutTalent from './ArticlesImages/talent-scout.jpg'
 import PodCastOne from './ArticlesImages/podcast(1).jpg'
 import PodCastTwo from './ArticlesImages/podcast(2).jpg'
@@ -30,10 +30,11 @@ const podcastData = [
 
 function Articles() {
   return (
-    <div id='Articles-main-container'>
-        <Navbar idNav='nav-search'/>
+    <>
+    <Navbar idNav='nav-search'/>
 
-        <section id="articles-podacasts-image-wrapper">
+    <div id='Articles-main-container'>
+        <section id="articles-podcasts-image-wrapper">
             <img src={ArticleBackgroundImage} alt="" id="" className="articles-podcasts-image" />
             <div id="overlay-articles-podasts">
                 <h1 id="articles-podcasts-main-heading">Aricles {'&'} Podcasts</h1>
@@ -51,7 +52,7 @@ function Articles() {
 
                     <div className="top-main-article-text-wrapper">
                         <h2 id="top-main-article-heading">Unpacking the secrets of ball progression</h2>
-                        <p className="journalist"><i class="fa-solid fa-pen-to-square"></i>Jason MacAllister</p>
+                        <p className="journalist"><i className="fa-solid fa-pen-to-square"></i>Jason MacAllister</p>
                     </div>
                 </div>
 
@@ -59,14 +60,14 @@ function Articles() {
                 {
                     articlesData.map((articleInfo, key)=>{
                         return(
-                        <div className='article-sub-info'> 
+                        <div className='article-sub-info' key={key}> 
                         <div className="sub-main-article-image-wrapper">
                             <img src={articleInfo.image} alt="sub-article" className="article-sub-sec-image" />
                         </div>
     
                         <div className="sub-main-article-text-wrapper">
                             <h5 className="sub-main-article-heading">{articleInfo.heading}</h5>
-                            <p className='journalist'><i class="fa-solid fa-pen-to-square"></i>{articleInfo.journalist}</p>
+                            <p className='journalist'><i className="fa-solid fa-pen-to-square"></i>{articleInfo.journalist}</p>
                         </div>
                         </div>
                         )
@@ -90,8 +91,12 @@ function Articles() {
                         </div>
     
                         <div className="sub-main-podcast-text-wrapper">
-                            <h5 className="sub-podcast-article-heading">{articleInfo.heading} <i class="fa-solid fa-podcast"></i></h5>
-                            <p className='journalist'>Hosts:{articleInfo.host}</p>
+                            <h5 className="sub-podcast-article-heading">{articleInfo.heading} <i className="fa-solid fa-podcast"></i></h5>
+                            <p className='journalist'>
+                                Hosts: 
+                                <br />
+                                {articleInfo.host}
+                            </p>
                         </div>
                         </div>
                         )
@@ -103,6 +108,7 @@ function Articles() {
         <Footer idFooter='home-footer'/>
         <GlobalNavBottom navBottom='articles-nav-bottom'/>
     </div>
+    </>
   )
 }
 

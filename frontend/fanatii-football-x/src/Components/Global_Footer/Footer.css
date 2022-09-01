@@ -19,7 +19,7 @@
   }
 
   #club-footer{
-    display: none;
+    display: none !important;
   }
 }
 
@@ -43,9 +43,6 @@
   display: flex;
   justify-content: center;
   padding: 1%;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
   font-size: 0.5rem;
 }
 

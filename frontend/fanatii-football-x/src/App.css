@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Fresca&family=Varela+Round&display=swap');
+
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Fresca', sans-serif;
-    font-family: 'Varela Round', sans-serif;
+    font-family: "Roboto",sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }

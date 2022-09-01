@@ -2,9 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000000b5;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
+    background: #000000ab;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -14,9 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000000b5;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;    
+    background: #000000ab;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -26,9 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000000b5;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;    
+    background: #000000ab;   
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -38,9 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000000b5;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;    
+    background: #000000ab;   
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -68,13 +60,12 @@
     width: 100%;
     text-align: center;
     font-weight: 500;
-    color: #fff;
+    color: #000;
 }
 
 #home-bottom-nav ul li a .icon, #search-nav-bottom ul li a .icon, #club-search-nav-bottom ul li a .icon, #articles-nav-bottom ul li a .icon{
     position: relative;
     display: block;
-    /* line-height: 75px; */
     text-align: center;
     transition: .5s;
 }

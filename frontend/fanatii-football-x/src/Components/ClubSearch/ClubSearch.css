@@ -1,10 +1,12 @@
 #ClubSearch-main-container{
-    background: #fff;
-    height: 100%;
-    position: relative;
+    background: #fb5b00e8;
 }
 
 #Club-options-section{
+    background: #fb5b00e8;
+}
+
+.club-options-container{
     min-width: 250px;
     max-width: 80%;
     margin: 0 auto;
@@ -14,26 +16,34 @@
     #club-footer{
         position: static;
     }
+}
 
+@media screen and (max-width: 900px) {
+    #ClubSearch-main-container{
+        height: 100%;
+        position: relative;
+    }
 
+    #club-footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
 }
 
 #Teams-heading{
     text-align: center;
-    color: #000;
+    color: #fff;
 }
 
 #clubs-main-wrapper{
     display: grid;
     grid-template-rows: 6.25% 6.25% 6.25% 6.25%;
     padding: 2%;
-    border-radius: 10px;
     background: #ffffff45;
-    color: #fff;
-    font-size: 0.65rem;
-    background: #fb5b00;
-    background: -webkit-linear-gradient(178deg, #fb5b00e8 0%, #ffbd00d1 100%);
-    background: linear-gradient(178deg, #fb5b00e8 0%, #ffbd00d1 100%);
+    color: #000;
+    font-size: 1.1rem;
+    background: #ffff;
 }
 
 @media screen and (max-width: 425px) {
@@ -78,4 +88,12 @@
     padding: 10%;
     border-left: 2px solid #fff;
     margin-bottom: 2%;
+}
+
+.name-title{
+    transition: .4s;
+}
+
+.name-title:hover{
+    text-decoration: line-through;
 }

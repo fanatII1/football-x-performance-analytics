@@ -43,9 +43,10 @@ const Clubs = [
 function ClubSearch() {
   return (
     <>
-      <div id='ClubSearch-main-container'>
       <Navbar idNav='nav-search' />
+      <div id='ClubSearch-main-container'>
         <section id='Club-options-section'>
+          <div className="club-options-container">
           <h2 id='Teams-heading'>Teams:</h2>
           <div id='clubs-main-wrapper'>
             {Clubs.map((club, key) => {
@@ -73,6 +74,7 @@ function ClubSearch() {
                 </div>
               );
             })}
+          </div>
           </div>
         </section>
 
