@@ -9,6 +9,7 @@ import Articles from './Components/ArticlesPage/Articles';
 
 //club routes
 import KaizerChiefs from './Components/ClubsPages/KaizerChiefs/KaizerChiefs';
+import OrlandoPirates from './Components/ClubsPages/OrlandoPirates/OrlandoPirates';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
             <Route path='/GlobalSearch/ClubSearch' element={<ClubSearch/>}/>
             <Route path='/Articles' element={<Articles/>}/>
             <Route path='/GlobalSearch/ClubSearch/KaizerChiefs' element={<KaizerChiefs/>}/>
+            <Route path='/GlobalSearch/ClubSearch/OrlandoPirates' element={<OrlandoPirates/>}/>
           </Routes>
         </BrowserRouter>
         </>
