@@ -4,12 +4,16 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const register_user = require('./controller/SignUp_controller');
 const login_user = require('./controller/Login_user')
-const mongoose = require('mongoose')
+const kaizerchiefs = require('./controller/KaizerChiefs_controller')
+const orlandopirates = require('./controller/OrlandoPirates_controller')
+const mongoose = require('mongoose');
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+app.use(express.static('public'))
 const PORT = process.env.PORT || 3001;
+
 
 let uri = "mongodb+srv://George:football-x-georginho7@football-x-cluster.yfduv8a.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(uri)
@@ -27,6 +31,24 @@ app.post('/SignUp', async (req, res, next)=>{
 /*Verification of user in db, for login*/
 app.post('/Login', async(req, res, next)=>{
     await login_user.login_user(req, res)
+})
+
+
+/*Request for data on players of a specific club*/
+app.get('/GlobalSearch/ClubSearch/PlayerStats/:club', async (req, res, next)=>{
+    const club = req.params.club;//specific cluc user requests data on
+
+    switch (club) {
+        case "kaizerchiefs":
+            await kaizerchiefs.find_kc_players(req, res);
+            break;
+
+        case "orlandopirates":
+            await orlandopirates.find_orlando_pirates_players(req, res);
+            break;
+        default:
+            break;
+    }
 })
 
 /*server listens on PORT 3001*/
