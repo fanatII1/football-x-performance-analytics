@@ -6,7 +6,9 @@ import Homepage from './Components/Homepage/Homepage';
 import GlobalSearch from './Components/GlobalSearchPage/GlobalSearch';
 import ClubSearch from './Components/ClubSearch/ClubSearch'
 import Articles from './Components/ArticlesPage/Articles';
-import ClubSearchPlayerStats from './Components/ClubSearch_PlayerStats/ClubSearch_PlayerStatsImgs/ClubSearch_PlayerStats';
+
+//club routes
+import KaizerChiefs from './Components/ClubsPages/KaizerChiefs/KaizerChiefs';
 
 function App() {
 
@@ -20,7 +22,7 @@ function App() {
             <Route path='/GlobalSearch' element={<GlobalSearch/>}/>
             <Route path='/GlobalSearch/ClubSearch' element={<ClubSearch/>}/>
             <Route path='/Articles' element={<Articles/>}/>
-            <Route path='/GlobalSearch/ClubSearch/PlayerStats' element={<ClubSearchPlayerStats/>}/>
+            <Route path='/GlobalSearch/ClubSearch/KaizerChiefs' element={<KaizerChiefs/>}/>
           </Routes>
         </BrowserRouter>
         </>

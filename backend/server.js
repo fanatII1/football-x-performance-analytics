@@ -39,11 +39,11 @@ app.get('/GlobalSearch/ClubSearch/PlayerStats/:club', async (req, res, next)=>{
     const club = req.params.club;//specific cluc user requests data on
 
     switch (club) {
-        case "kaizerchiefs":
+        case "Kaizerchiefs":
             await kaizerchiefs.find_kc_players(req, res);
             break;
 
-        case "orlandopirates":
+        case "Orlandopirates":
             await orlandopirates.find_orlando_pirates_players(req, res);
             break;
         default:
