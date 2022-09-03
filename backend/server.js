@@ -37,7 +37,7 @@ app.post('/Login', async(req, res, next)=>{
 /*Request for data on players of a specific club*/
 app.get('/GlobalSearch/ClubSearch/:club', async (req, res, next)=>{
     const club = req.params.club;//specific cluc user requests data on
-
+    
     //select which clubs data to fetch when recieve request
     switch (club) {
         case "KaizerChiefs":
