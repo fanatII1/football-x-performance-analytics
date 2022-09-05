@@ -54,8 +54,8 @@
     justify-content: center;
     align-items: center;
     color: #fff;
-    background: #fb5b00;
-    background: linear-gradient(0deg, #fb5b0000 0%, #ffc1184f 100%);
+    background: #1e1d32;
+    background: linear-gradient(0deg, #000000d1, transparent);
 }
 
 #articles-podcasts-main-heading{

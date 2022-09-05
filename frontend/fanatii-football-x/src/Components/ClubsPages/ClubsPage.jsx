@@ -85,7 +85,7 @@ function ClubsPage({ clubName }) {
               </div>
               
               <div className="aside-stats-wrapper">
-
+                <p></p>
               </div>
             </aside>
             )

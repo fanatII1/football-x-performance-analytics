@@ -7,12 +7,10 @@
 /*Players-club-pages-section styles*/
 #Players-club-pages-section-full{
     display: grid;
+    display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 2%;
     width: 100%;
-    padding: 2%;
-    max-height: 1500px;
     transition: .5s;
 }
 
@@ -38,16 +36,14 @@
     margin: 0 auto;
     height: 100%;
     display: flex;
-    background: #fb5b00;
-    background: -webkit-linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%); 
-    background: linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%);
-    border-radius: 20px;
+    padding: 2%;
 }
 
 .player-wrapper > div{
     width: 50%;
     color: #fff;
     cursor: pointer;
+    background: #b7b7b761;
 }
 
 
@@ -58,6 +54,8 @@
 
 .club-player-img-container{
     height: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .club-player-img-container img{
@@ -70,11 +68,14 @@
 
 .club-player-description{
     padding-top: 5%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 
 #Player-stats-flex-wrapper{
     display: flex;
+    background: #1e1d32;
 }
 
 /*aside styles*/
@@ -103,7 +104,5 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background: #fb5b00;
-    background: -webkit-linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%); 
-    background: linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%);
+    background: #1e1d32;
 }

@@ -62,8 +62,7 @@ html{
 .cont {
   color: #fff;
   padding-top: 2%;
-  background: #fb5b00;
-  background: linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%);
+  background: #1e1d32;
 }
 
 /*Article-Description Styles*/
