@@ -11,6 +11,7 @@
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     width: 100%;
+    overflow: hidden;
     transition: .5s;
 }
 
@@ -20,6 +21,7 @@
     max-height: 1500px;
     width: 75%;
     padding: 2%;
+    overflow: hidden;
     transition: .5s;
 }
 
@@ -99,7 +101,7 @@
     max-height: 750px;
     grid-template-rows: 35% 65%;
     width: 35%;
-    margin-top: 2%;
+    margin-top: 3%;
     background: #fff;
     transition: .5s;
 }
