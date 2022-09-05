@@ -10,7 +10,8 @@ function ClubsPage({ clubName }) {
   const [playerBackendData, setplayerBackendData] = useState( );
   const [playerStats, setPlayerStats] = useState();
   const [playerSection, setPlayerSection] = useState('Players-club-pages-section-full')
-  const [asideWidth, setAside]  = useState('player-stats-none')
+  const [asideWidth, setAside]  = useState('player-stats-none');
+  
 
   //fetch club data after component has loaded
   useEffect(() => {
@@ -85,7 +86,18 @@ function ClubsPage({ clubName }) {
               </div>
               
               <div className="aside-stats-wrapper">
-                <p></p>
+                {
+                  playerBackendData[playerStats].stats.map((stats, key)=>{
+                    return(
+                      <div className='Stats' key={key}>                
+                      <h5 className='stat'>{stats}</h5>
+                      <div className="bar">
+                        <div className="meter"></div>
+                      </div>
+                      </div>
+                    )
+                  })
+                }
               </div>
             </aside>
             )

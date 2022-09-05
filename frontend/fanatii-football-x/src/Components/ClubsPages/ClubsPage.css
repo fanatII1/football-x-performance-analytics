@@ -17,7 +17,6 @@
 #Players-club-pages-section-half{
     display: grid;
     grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
-    grid-gap: 2%;
     max-height: 1500px;
     width: 75%;
     padding: 2%;
@@ -92,6 +91,10 @@
     max-height: 750px;
     grid-template-rows: 35% 65%;
     width: 35%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: #fff;
     transition: .5s;
 }
 
@@ -104,5 +107,32 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background: #1e1d32;
+    background: -webkit-linear-gradient(0deg, #47ff86 0%, #5248ff 100%);
+    background: linear-gradient(0deg, #30bb60 0%, #080448 100%);
 }
+
+.stat{
+    color: #000;
+}
+
+.bar{
+    height: 5px;
+    background: rgb(161, 161, 161);
+}
+
+.meter{
+    height: 100%;
+    background: red;
+    width: 80%;
+    animation: barsSlide 2.5s;
+}
+
+@keyframes barsSlide {
+    from{
+        width: 0
+    }
+    to{
+        width: 80%;
+    }
+}
+
