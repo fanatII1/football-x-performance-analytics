@@ -8,9 +8,9 @@ import Navbar from '../Global_Navbar/Navbar';
 //and make a request via the clubs name, which is passed by state
 function ClubsPage({ clubName }) {
   const [playerBackendData, setplayerBackendData] = useState( );
-  const [playerStats, setPlayerStats] = useState( );
-  const [showHideAside, setAside] = useState('hide-player-stats');
-  const [flexSection, setFlexSection] = useState('Player-stats-none-wrapper')
+  const [playerStats, setPlayerStats] = useState();
+  const [playerSection, setPlayerSection] = useState('Players-club-pages-section-full')
+  const [asideWidth, setAside]  = useState('player-stats-none')
 
   //fetch club data after component has loaded
   useEffect(() => {
@@ -30,8 +30,14 @@ function ClubsPage({ clubName }) {
   const revealStats = (e, key) =>{
     e.preventDefault();
     console.log(key)
-    setFlexSection('Player-stats-flex-wrapper')
-    setAside('show-player-stats')
+    if(playerSection === 'Players-club-pages-section-full'){
+      setAside('player-stats-half')
+      setPlayerSection('Players-club-pages-section-half')
+    }
+    else{
+      setAside('player-stats-none')
+      setPlayerSection('Players-club-pages-section-full')
+    }
     setPlayerStats(key)
   }
 
@@ -45,22 +51,24 @@ function ClubsPage({ clubName }) {
 
           <div id='Players-Club-Pages-Container'>
 
-           <div id={flexSection}>
-           <section id='Players-club-pages-section'>
+           <div id="Player-stats-flex-wrapper">
+           <section id={playerSection}>
                 {playerBackendData.map((player, key) => {
                   return (
-                    <div className='player-wrapper' key={key} onClick={(event)=> revealStats(event, key)}>
+                    <>
+                      <div className='player-wrapper' key={key} onClick={(event)=> revealStats(event, key)}>
                       <div className='club-player-img-container'>
                         <img src={player.player_image} alt="player_image" className="club-player"/>
                       </div>
 
                       <div className='club-player-description'>
-                        <p>Name:{player.name}</p>
-                        <p>DoB: {player.dateOfBirth}</p>
-                        <p>Nationality:{player.nationality}</p>
-                        <p>Position:{player.position}</p>
+                        <p>Name:<span className='player-info'>{player.name}</span></p>
+                        <p>DoB:<span className='player-info'> {player.dateOfBirth}</span></p>
+                        <p>Nationality:<span className='player-info'>{player.nationality}</span></p>
+                        <p>Position:<span className='player-info'>{player.position}</span></p>
                       </div>
                     </div>
+                    </>
                   );
                 })}
             </section>
@@ -71,7 +79,7 @@ function ClubsPage({ clubName }) {
             (typeof playerStats === 'undefined') ? (
               <></>
             ) : (
-              <aside id={showHideAside}>
+              <aside id={asideWidth}>
               <div id="aside-image-wrapper">
                 <img src={playerBackendData[playerStats].player_image} alt="player-aside" className="aside-image" />
               </div>

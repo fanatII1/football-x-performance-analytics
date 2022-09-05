@@ -5,10 +5,32 @@
 }
 
 /*Players-club-pages-section styles*/
-#Players-club-pages-section{
+#Players-club-pages-section-full{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2%;
+    width: 100%;
+    padding: 2%;
+    max-height: 1500px;
+    transition: .5s;
+}
+
+#Players-club-pages-section-half{
     display: grid;
     grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+    grid-gap: 2%;
     max-height: 1500px;
+    width: 75%;
+    padding: 2%;
+    transition: .5s;
+}
+
+@media screen and (max-width: 620px) {
+    #Players-club-pages-section-full, #Players-club-pages-section-half{
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
 }
 
 .player-wrapper{
@@ -16,10 +38,21 @@
     margin: 0 auto;
     height: 100%;
     display: flex;
+    background: #fb5b00;
+    background: -webkit-linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%); 
+    background: linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%);
+    border-radius: 20px;
 }
 
 .player-wrapper > div{
     width: 50%;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.player-info{
+    font-weight: bold;
 }
 
 
@@ -29,9 +62,14 @@
 
 .club-player-img-container img{
     display: block;
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     object-fit: contain;
+    border-radius: 20px;
+}
+
+.club-player-description{
+    padding-top: 5%;
 }
 
 
@@ -39,24 +77,21 @@
     display: flex;
 }
 
-#Player-stats-none-wrapper{
-    display: none;
-}
-
-#Player-stats-flex-wrapper > section aside{
-    width: 50%;
-}
-
 /*aside styles*/
-#show-player-stats{
+#player-stats-none{
     display: grid;
     max-height: 750px;
     grid-template-rows: 35% 65%;
+    width: 0;
+    transition: .5s;
 }
 
-/*initially hides the <aside> element*/
-#hide-player-stats{
-    display: none;
+#player-stats-half{
+    display: grid;
+    max-height: 750px;
+    grid-template-rows: 35% 65%;
+    width: 35%;
+    transition: .5s;
 }
 
 #aside-image-wrapper{
@@ -68,4 +103,7 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    background: #fb5b00;
+    background: -webkit-linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%); 
+    background: linear-gradient(178deg, #fb5b00 0%, #ffbd00 100%);
 }
