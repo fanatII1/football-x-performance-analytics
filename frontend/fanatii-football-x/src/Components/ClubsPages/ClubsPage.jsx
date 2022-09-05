@@ -56,7 +56,7 @@ function ClubsPage({ clubName }) {
            <section id={playerSection}>
                 {playerBackendData.map((player, key) => {
                   return (
-                    <>
+                    <div className='player-main-container'>
                       <div className='player-wrapper' key={key} onClick={(event)=> revealStats(event, key)}>
                       <div className='club-player-img-container'>
                         <img src={player.player_image} alt="player_image" className="club-player"/>
@@ -69,7 +69,7 @@ function ClubsPage({ clubName }) {
                         <p>Position:<span className='player-info'>{player.position}</span></p>
                       </div>
                     </div>
-                    </>
+                    </div>
                   );
                 })}
             </section>
@@ -82,22 +82,30 @@ function ClubsPage({ clubName }) {
             ) : (
               <aside id={asideWidth}>
               <div id="aside-image-wrapper">
+              <button id="view-more">+</button>
                 <img src={playerBackendData[playerStats].player_image} alt="player-aside" className="aside-image" />
               </div>
               
               <div className="aside-stats-wrapper">
+                <h4 className='aside-player-info'>Name: {playerBackendData[playerStats].name}</h4>
+                <h4 className='aside-player-info'>Position: {playerBackendData[playerStats].position}</h4>               
+                <h4 className='aside-player-info'>Nationality: {playerBackendData[playerStats].nationality}</h4> 
+                <h4 className='aside-player-info'>DoB: {playerBackendData[playerStats].dateOfBirth}</h4>
+
+                <h4 id="Stats-heading">Summary: </h4>
                 {
                   playerBackendData[playerStats].stats.map((stats, key)=>{
                     return(
-                      <div className='Stats' key={key}>                
-                      <h5 className='stat'>{stats}</h5>
+                      <div className='Stats' key={key}>                              
+                      <p className='stat'>{stats.split(' ')[0]}</p>
                       <div className="bar">
-                        <div className="meter"></div>
+                        <div className={`meter-${key}`}></div>
                       </div>
                       </div>
                     )
                   })
                 }
+
               </div>
             </aside>
             )

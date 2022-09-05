@@ -23,6 +23,10 @@
     transition: .5s;
 }
 
+.player-main-container{
+    padding: 2%;
+}
+
 @media screen and (max-width: 620px) {
     #Players-club-pages-section-full, #Players-club-pages-section-half{
         grid-template-rows: 1fr 1fr 1fr;
@@ -36,13 +40,14 @@
     height: 100%;
     display: flex;
     padding: 2%;
+    background: linear-gradient(90deg, #ff00e2 0%, #ff008e 100%);
+    border-radius: 20px;
 }
 
 .player-wrapper > div{
     width: 50%;
     color: #fff;
     cursor: pointer;
-    background: #b7b7b761;
 }
 
 
@@ -87,19 +92,21 @@
 }
 
 #player-stats-half{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
     display: grid;
     max-height: 750px;
     grid-template-rows: 35% 65%;
     width: 35%;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+    margin-top: 2%;
     background: #fff;
     transition: .5s;
 }
 
 #aside-image-wrapper{
     height: 100%;
+    position: relative;
 }
 
 #aside-image-wrapper img{
@@ -107,12 +114,23 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background: -webkit-linear-gradient(0deg, #47ff86 0%, #5248ff 100%);
-    background: linear-gradient(0deg, #30bb60 0%, #080448 100%);
+    background: linear-gradient(90deg, #ff00e2 0%, #ff008e 100%);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.Stats, .aside-player-info, #Stats-heading{
+    margin: 5%;
+}
+
+#Stats-heading{
+    text-align: center;
 }
 
 .stat{
     color: #000;
+    font-weight: 390;
+    margin-bottom: 2%;
 }
 
 .bar{
@@ -120,10 +138,8 @@
     background: rgb(161, 161, 161);
 }
 
-.meter{
+.meter-0,.meter-1, .meter-2, .meter-3, .meter-4, .meter-5, .meter-6, .meter-7 {
     height: 100%;
-    background: red;
-    width: 80%;
     animation: barsSlide 2.5s;
 }
 
@@ -134,5 +150,50 @@
     to{
         width: 80%;
     }
+}
+
+.meter-0{
+    background: orange;
+    width: 70%;
+}
+.meter-1{
+    background: blue;
+    width: 20%;
+    width: 50%;
+}
+.meter-2{
+    background: red;
+    width: 90%;
+}
+.meter-3{
+    background: #47ff86;
+    width: 66%;
+}
+.meter-4{
+    background: rgb(255, 136, 0);
+    width: 88%;
+}
+.meter-5{
+    background: orangered;
+    width: 38%;
+}
+.meter-6{
+    background: yellow;
+    width: 55%;
+}
+
+.meter-7{
+    background: rgb(0, 191, 255);
+}
+
+#view-more{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.247);
+    padding: 2%;
+    border: 1px solid white;
+    border-bottom-right-radius: 10px;
+    color: white;
 }
 
