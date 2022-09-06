@@ -4,6 +4,8 @@
     position: sticky;
 }
 
+
+
 /*Players-club-pages-section styles*/
 #Players-club-pages-section-full{
     display: grid;
@@ -86,11 +88,7 @@
 
 /*aside styles*/
 #player-stats-none{
-    display: grid;
-    max-height: 750px;
-    grid-template-rows: 35% 65%;
-    width: 0;
-    transition: .5s;
+    display: none;
 }
 
 #player-stats-half{
@@ -98,7 +96,7 @@
     position: sticky;
     top: 0;
     display: grid;
-    max-height: 750px;
+    height: fit-content;
     grid-template-rows: 35% 65%;
     width: 35%;
     margin-top: 3%;
