@@ -96,7 +96,7 @@
     position: sticky;
     top: 0;
     display: grid;
-    height: fit-content;
+    height: min-content;
     grid-template-rows: 35% 65%;
     width: 35%;
     margin-top: 3%;
