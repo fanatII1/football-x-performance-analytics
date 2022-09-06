@@ -4,18 +4,19 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Navbar from '../Global_Navbar/Navbar';
 import { useRef } from 'react';
+import ModalClubPages from './Modal_ClubPages/ModalClubPages';
 
 //this component will render the specific clubs data
 //and make a request via the clubs name, which is passed by state
 function ClubsPage({ clubName }) {
   const [playerBackendData, setplayerBackendData] = useState();
   const [playerStats, setPlayerStats] = useState();
-  const [playerSection, setPlayerSection] = useState(
-    'Players-club-pages-section-full'
-  );
+  const [playerSection, setPlayerSection] = useState('Players-club-pages-section-full');
   const [asideWidth, setAside] = useState('player-stats-none');
   const [refKey, setRefKey] = useState();
   const prevRefKey = useRef('');
+
+
   //fetch club data after component has loaded
   useEffect(() => {
     fetch(`/GlobalSearch/ClubSearch/${clubName}`)
@@ -151,6 +152,7 @@ function ClubsPage({ clubName }) {
                 </aside>
               )}
             </div>
+            <ModalClubPages/>
           </div>
         </>
       )}
