@@ -16,7 +16,7 @@ import ArticleBackgroundImage from './ArticlesImages/article-background.jpg'
 
 const articlesData = [
     {image: PassNet, heading: "Analysing the passing networks of each Dstv Premiership team", journalist: "Reece Moore"},
-    {image: scoutTalent, heading: "Talent Scout: Why Cape Town City promoted young midfielder, Taahir Goedeman(statistical analysis)?", journalist: "Jason McAllister"},
+    {image: scoutTalent, heading: "Talent Scout: Cape Town City midfielder, Taahir Goedeman(analysis)?", journalist: "Jason McAllister"},
     {image: XA, heading: "The truth behind expected assists(xA)", journalist: "Njabulo Mokoena"},
     {image: Shot, heading: "Should clubs focus on shot quality using expected goals?", journalist: "Carol Hallie"}
 ];
@@ -34,68 +34,49 @@ function Articles() {
     <Navbar idNav='nav-search'/>
 
     <div id='Articles-main-container'>
-        <section id="articles-podcasts-image-wrapper">
-            <img src={ArticleBackgroundImage} alt="" id="" className="articles-podcasts-image" />
-            <div id="overlay-articles-podasts">
-                <h1 id="articles-podcasts-main-heading">Aricles {'&'} Podcasts</h1>
-            </div>
-        </section>
 
-        <section id="Articles-Top5-section">
-            <h2 id='articles-heading'>Articles:</h2>
-            <div id="container-top-5">
-
-                <div className="first-top-main-article">
-                    <div className="top-main-article-image-wrapper">
-                        <img src={ballProgression} alt="main-article" className="article-sec-image" />
-                    </div>
-
-                    <div className="top-main-article-text-wrapper">
-                        <h2 id="top-main-article-heading">Unpacking the secrets of ball progression</h2>
-                        <p className="journalist"><i className="fa-solid fa-pen-to-square"></i>Jason MacAllister</p>
-                    </div>
-                </div>
-
-                <div className="sub-top-main-articles">
+        <section id="Articles-section">
+            <div id="main-articles">
                 {
-                    articlesData.map((articleInfo, key)=>{
+                    articlesData.map((article, key)=>{
                         return(
-                        <div className='article-sub-info' key={key}> 
-                        <div className="sub-main-article-image-wrapper">
-                            <img src={articleInfo.image} alt="sub-article" className="article-sub-sec-image" />
-                        </div>
-    
-                        <div className="sub-main-article-text-wrapper">
-                            <h5 className="sub-main-article-heading">{articleInfo.heading}</h5>
-                            <p className='journalist'><i className="fa-solid fa-pen-to-square"></i>{articleInfo.journalist}</p>
-                        </div>
-                        </div>
+                            <div className="article">
+                                <div className="article-image-wrapper">
+                                    <img src={article.image} alt="" className="article-image" />
+                                </div>
+
+                                <div className="article-short-summary">
+                                    <h4 className="article-heading">{article.heading}</h4>
+                                    <p className="article-intro-paragraph">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat itaque id dolor? Minima consequatur ipsa amet inventore, perspiciatis itaque eaque aspernatur?
+                                    </p>
+                                </div>
+                            </div>
                         )
                     })
                 }
-                </div>
             </div>
         </section>
 
-        <section id="podcasts-section">
+        {/* <section id="podcasts-section">
             <h2 id='podcasts-heading'>Podcasts :</h2>
 
             <div id="container-podcasts-latest">
             <div className="sub-top-main-podcasts">
                 {
-                    podcastData.map((articleInfo, key)=>{
+                    podcastData.map((article, key)=>{
                         return(
-                        <div className='podcast-sub-info' key={key}> 
+                        <div className='podcast-sub-' key={key}> 
                         <div className="sub-main-podcast-image-wrapper">
-                            <img src={articleInfo.image} alt="sub-article" className="article-sub-sec-image" />
+                            <img src={article.image} alt="sub-article" className="article-sub-sec-image" />
                         </div>
     
                         <div className="sub-main-podcast-text-wrapper">
-                            <h5 className="sub-podcast-article-heading">{articleInfo.heading} <i className="fa-solid fa-podcast"></i></h5>
+                            <h5 className="sub-podcast-article-heading">{article.heading} <i className="fa-solid fa-podcast"></i></h5>
                             <p className='journalist'>
                                 Hosts: 
                                 <br />
-                                {articleInfo.host}
+                                {article.host}
                             </p>
                         </div>
                         </div>
@@ -104,7 +85,7 @@ function Articles() {
                 }
             </div>
             </div>
-        </section>
+        </section> */}
         <Footer idFooter='home-footer'/>
         <GlobalNavBottom navBottom='articles-nav-bottom'/>
     </div>
