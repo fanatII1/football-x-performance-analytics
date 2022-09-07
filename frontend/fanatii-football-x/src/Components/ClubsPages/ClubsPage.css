@@ -77,6 +77,13 @@
     width: 50%;
     color: #fff;
     cursor: pointer;
+    padding: 1%;
+    transition: .5s;
+}
+
+.player-wrapper > div:hover{
+    background: #00000038;
+    border-radius: 20px;
 }
 
 
