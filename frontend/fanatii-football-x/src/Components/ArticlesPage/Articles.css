@@ -15,17 +15,17 @@
 #main-articles{
     max-height: 700px;
     display: grid;
-    grid-gap: 2%;
+    grid-gap: 1%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 50% 50%;
-    width: 80%;
+    width: 95%;
     margin: 2% auto;
 }
 
 .article{
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 95%;
     padding: 1.5%;
     margin: 0 auto;
     border-radius: 10px;
