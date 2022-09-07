@@ -1,8 +1,5 @@
-#nav-search{
-    display: none;
-}
-
 #open-modal{
+    display: block;
     position: fixed;
     height: 100vh;
     background: red;
@@ -21,6 +18,7 @@
     height: 90%;
     width: 75%;
     max-width: 830px;
+    max-height: 890px;
     background-color: #fff;
 }
 

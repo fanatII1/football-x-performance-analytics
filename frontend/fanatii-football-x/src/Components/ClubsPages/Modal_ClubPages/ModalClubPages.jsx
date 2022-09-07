@@ -1,19 +1,13 @@
 import React from 'react'
 import './ModalClubPages.css'
 import statsImage from './analytics4.png'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
+// import {useState } from 'react'
 
-function ModalClubPages() {
-    const [openCloseModal, setOpenCloseModal] = useState('open-modal')
-    const modalContainer = useRef();
-    //closeModal onClick
-    const closeModal = (e) =>{
-        e.preventDefault();
-        setOpenCloseModal('close-modal')
-    }
+function ModalClubPages({modalState, closeModal}) {
 
   return (
-    <div id={openCloseModal}>
+    <div id={modalState}>
         <div className="detailed-tabled-stats">
             <div className="detailed-stats-image-container">
                 <img src={statsImage} alt="statistics" />

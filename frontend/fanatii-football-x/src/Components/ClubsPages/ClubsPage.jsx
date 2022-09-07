@@ -14,8 +14,8 @@ function ClubsPage({ clubName }) {
   const [playerSection, setPlayerSection] = useState('Players-club-pages-section-full');
   const [asideWidth, setAside] = useState('player-stats-none');
   const [refKey, setRefKey] = useState();
+  const [modalState, setModalState] = useState('close-modal')
   const prevRefKey = useRef('');
-
 
   //fetch club data after component has loaded
   useEffect(() => {
@@ -38,19 +38,27 @@ function ClubsPage({ clubName }) {
 
     if (prevRefKey.current === key) {
       if (asideWidth === 'player-stats-none') {
-        setAside('player-stats-half')
-        setPlayerSection('Players-club-pages-section-half')
+        setAside('player-stats-half');
+        setPlayerSection('Players-club-pages-section-half');
       } else {
-        setAside('player-stats-none')
-        setPlayerSection('Players-club-pages-section-full')
+        setAside('player-stats-none');
+        setPlayerSection('Players-club-pages-section-full');
       }
     } else {
       setAside('player-stats-half');
       setPlayerSection('Players-club-pages-section-half');
     }
-
     setPlayerStats(key);
+
+    //open modal state
+    setModalState('open-modal')
   };
+
+  //close modal function
+  const closeModal = (e) =>{
+    e.preventDefault();
+    setModalState('close-modal')
+}
 
   return (
     <>
@@ -66,17 +74,11 @@ function ClubsPage({ clubName }) {
                 {playerBackendData.map((player, key) => {
                   return (
                     <div className='player-main-container'>
-                      <div
-                        className='player-wrapper'
-                        key={key}
-                        onClick={(event) => revealStats(event, key)}
-                      >
+                      <div className='player-wrapper' key={key} onClick={(event) => revealStats(event, key)}>
+                        <button className='show-hide-stats-modal'>View More</button>
+                        
                         <div className='club-player-img-container'>
-                          <img
-                            src={player.player_image}
-                            alt='player_image'
-                            className='club-player'
-                          />
+                          <img src={player.player_image} alt='player_image' className='club-player' />
                         </div>
 
                         <div className='club-player-description'>
@@ -86,22 +88,15 @@ function ClubsPage({ clubName }) {
                           </p>
                           <p>
                             DoB:
-                            <span className='player-info'>
-                              {' '}
-                              {player.dateOfBirth}
-                            </span>
+                            <span className='player-info'> {player.dateOfBirth}</span>
                           </p>
                           <p>
                             Nationality:
-                            <span className='player-info'>
-                              {player.nationality}
-                            </span>
+                            <span className='player-info'>{player.nationality}</span>
                           </p>
                           <p>
                             Position:
-                            <span className='player-info'>
-                              {player.position}
-                            </span>
+                            <span className='player-info'>{player.position}</span>
                           </p>
                         </div>
                       </div>
@@ -116,26 +111,14 @@ function ClubsPage({ clubName }) {
                 <aside id={asideWidth}>
                   <div id='aside-image-wrapper'>
                     <button id='view-more'>+</button>
-                    <img
-                      src={playerBackendData[playerStats].player_image}
-                      alt='player-aside'
-                      className='aside-image'
-                    />
+                    <img src={playerBackendData[playerStats].player_image} alt='player-aside' className='aside-image' />
                   </div>
 
                   <div className='aside-stats-wrapper'>
-                    <h4 className='aside-player-info'>
-                      Name: {playerBackendData[playerStats].name}
-                    </h4>
-                    <h4 className='aside-player-info'>
-                      Position: {playerBackendData[playerStats].position}
-                    </h4>
-                    <h4 className='aside-player-info'>
-                      Nationality: {playerBackendData[playerStats].nationality}
-                    </h4>
-                    <h4 className='aside-player-info'>
-                      DoB: {playerBackendData[playerStats].dateOfBirth}
-                    </h4>
+                    <h4 className='aside-player-info'>Name: {playerBackendData[playerStats].name}</h4>
+                    <h4 className='aside-player-info'>Position: {playerBackendData[playerStats].position}</h4>
+                    <h4 className='aside-player-info'>Nationality: {playerBackendData[playerStats].nationality}</h4>
+                    <h4 className='aside-player-info'>DoB: {playerBackendData[playerStats].dateOfBirth}</h4>
 
                     <h4 id='Stats-heading'>Summary: </h4>
                     {playerBackendData[playerStats].stats.map((stats, key) => {
@@ -152,7 +135,7 @@ function ClubsPage({ clubName }) {
                 </aside>
               )}
             </div>
-            <ModalClubPages/>
+            <ModalClubPages modalState={modalState} closeModal={closeModal}/>
           </div>
         </>
       )}
