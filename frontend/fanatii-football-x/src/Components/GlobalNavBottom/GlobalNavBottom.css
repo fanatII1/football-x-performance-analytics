@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000000ab;
+    background: #232232;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000000ab;
+    background: #232232;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -22,7 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000000ab;   
+    background: #232232;   
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -32,7 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000000ab;   
+    background: #232232;  
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -60,7 +60,7 @@
     width: 100%;
     text-align: center;
     font-weight: 500;
-    color: #000;
+    color: #fff;
 }
 
 #home-bottom-nav ul li a .icon, #search-nav-bottom ul li a .icon, #club-search-nav-bottom ul li a .icon, #articles-nav-bottom ul li a .icon{

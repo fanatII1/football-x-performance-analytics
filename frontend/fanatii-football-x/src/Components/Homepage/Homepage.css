@@ -61,13 +61,11 @@ html{
 
 .cont {
   color: #fff;
-  padding-top: 2%;
   background: #1e1d32;
 }
 
 /*Article-Description Styles*/
 #Article-summary-section {
-  margin: 2% auto;
   background: #fff;
   color: #000;
 }
@@ -120,7 +118,6 @@ html{
 
 /*Analytics Summary section styles*/
 #Analytics-service-summary-section {
-  margin: 2% auto;
   background: #fff;
   color: #000;
   font-size: 1.1rem;
@@ -159,7 +156,6 @@ html{
 
 /*LiveStream Section Styles*/
 #LiveStream-section {
-  margin: 2% auto 0 auto;
   padding: 2%;
   background-color: #000000e8;
   color: #fff;
