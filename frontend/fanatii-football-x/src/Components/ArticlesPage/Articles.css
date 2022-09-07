@@ -1,3 +1,9 @@
+#articles-main-heading{
+    text-align: center;
+    color: #fff;
+}
+
+/*Artciles Section styles*/
 #Articles-section{
     background: #1e1d32;
 }
@@ -19,7 +25,7 @@
 .article{
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 90%;
     padding: 1.5%;
     margin: 0 auto;
     border-radius: 10px;
@@ -70,3 +76,99 @@
     line-height: 1.65;
     font-weight: lighter;
 }
+
+
+
+/*Podcast section styles*/
+@keyframes headingAnimate {
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+#articles-podcasts-image-wrapper{
+    height: 55%;
+    position: relative;
+    font-size: 1.8rem;
+}
+
+#overlay-articles-podasts{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: #1e1d32;
+    background: linear-gradient(0deg, #000000d1, transparent);
+}
+
+#podcasts-section{
+    background: #fff;
+    padding: 1% 0;
+}
+
+#podcasts-heading{
+    text-align: center;
+}
+
+.fa-pen-to-square, .fa-house, .fa-magnifying-glass, .fa-newspaper{
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.fa-podcast{
+    color: #1ed15f;;
+}
+
+.first-top-main-podcast{
+    display: grid;
+    grid-template-rows: 65% 35%;
+    grid-template-columns: 100%;
+}
+
+.podcast-sec-image{
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.sub-top-main-podcasts{
+    display: grid;
+    max-height: 450px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50% 50%;
+    padding: 0 2%;
+}
+
+@media screen and (max-width: 500px) {
+    .sub-top-main-podcasts{
+        max-height: none;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .sub-main-podcast-text-wrapper{
+        padding: 2%;
+    }
+}
+
+.sub-main-podcast-image-wrapper{
+    height: 50%;
+}
+
+.sub-main-podcast-image-wrapper img{
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+
