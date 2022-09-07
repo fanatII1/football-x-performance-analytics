@@ -89,6 +89,7 @@
 
 .player-info{
     font-weight: bold;
+    line-height: 2;
 }
 
 
@@ -116,6 +117,7 @@
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+
 
 
 #Player-stats-flex-wrapper{
