@@ -2,12 +2,13 @@
     display: block;
     position: fixed;
     height: 100vh;
-    background: red;
+    background: #0000004a;
     width: 100vw;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
 #close-modal{
@@ -34,6 +35,10 @@
     margin: 0 auto;
 }
 
+#table-container{
+    overflow: scroll;
+}
+
 #close{
     position: absolute;
     top: 0;
@@ -41,7 +46,7 @@
     background: rgba(0, 0, 0, 0.425);
     color: white;
     border: 1px solid white;
-    padding: 0.5%;
+    padding: 1.5%;
 }
 
 .col-main-heading{
@@ -49,7 +54,7 @@
 }
 
 td{
-    border-bottom: 1px solid black;
-    padding: 2% 0;
+    border-bottom: 1px solid gray;
+    padding: 1.85% 0;
     text-align: center;
 }

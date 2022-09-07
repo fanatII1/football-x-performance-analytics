@@ -49,10 +49,13 @@ function ClubsPage({ clubName }) {
       setPlayerSection('Players-club-pages-section-half');
     }
     setPlayerStats(key);
-
-    //open modal state
-    setModalState('open-modal')
   };
+
+
+  //open modal
+  const openModal = (e) =>{
+    setModalState('open-modal')
+  }
 
   //close modal function
   const closeModal = (e) =>{
@@ -73,9 +76,10 @@ function ClubsPage({ clubName }) {
               <section id={playerSection}>
                 {playerBackendData.map((player, key) => {
                   return (
-                    <div className='player-main-container'>
-                      <div className='player-wrapper' key={key} onClick={(event) => revealStats(event, key)}>
-                        <button className='show-hide-stats-modal'>View More</button>
+                    <div className='player-main-container' key={key}>
+                      <div className='player-wrapper' onClick={(event) => revealStats(event, key)}>
+
+                        <button className='show-hide-stats-modal' onClick={openModal}>View More</button>
                         
                         <div className='club-player-img-container'>
                           <img src={player.player_image} alt='player_image' className='club-player' />
@@ -110,7 +114,6 @@ function ClubsPage({ clubName }) {
               ) : (
                 <aside id={asideWidth}>
                   <div id='aside-image-wrapper'>
-                    <button id='view-more'>+</button>
                     <img src={playerBackendData[playerStats].player_image} alt='player-aside' className='aside-image' />
                   </div>
 

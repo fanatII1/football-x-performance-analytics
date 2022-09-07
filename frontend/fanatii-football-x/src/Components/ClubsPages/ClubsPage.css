@@ -70,6 +70,7 @@
     padding: 2%;
     background: #ffffff8c;
     color: #fff;
+    cursor: pointer;
 }
 
 .player-wrapper > div{
@@ -96,6 +97,11 @@
     height: 100%;
     object-fit: contain;
     border-radius: 20px;
+    transition: .5s;
+}
+
+.club-player-img-container img:hover{
+    transform: scale(1.05);
 }
 
 .club-player-description{
@@ -210,14 +216,4 @@
     background: rgb(0, 191, 255);
 }
 
-#view-more{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.247);
-    padding: 2%;
-    border: 1px solid white;
-    border-bottom-right-radius: 10px;
-    color: white;
-}
 
