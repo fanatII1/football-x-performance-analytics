@@ -11,7 +11,11 @@
 /*Search Container Styles*/
 #search-container{
     width: 50%;
+    max-width: 600px;
+    min-width: 350px;
+    margin: 0 auto;
     height: 95%;
+    margin-top: 2.5%;
 }
 
 #search-input-wrapper{
@@ -29,6 +33,7 @@
 .search-field, .submit-search{
     display: inline;
     margin: 0 auto;
+    color: #fff;
 }
 
 .search-field, .search-field:focus{
@@ -38,14 +43,20 @@
     border-left: none;
     border-bottom: 2px solid gray;
     padding: 2%;
+    outline: none;
+    font-size: 1.03rem;
+    font-weight: bold;
 }
 
 .submit-search{
     padding: 2%;
-    color: #fff;
     background: #ff009c;
     border-radius: 7px;
     font-weight: bold;
+}
+
+.submit-search:hover{
+    cursor: pointer;
 }
 
 #searched-player{
@@ -59,10 +70,10 @@
     background: #e4e6e7;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    height: 50%;
 }
 
 #searched-player > div{
-    height: 50%;
     width: 95%;
     margin: 0 auto;
 }
@@ -74,6 +85,7 @@
     padding-left: 2%;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    height: fit-content;
 }
 
 .searched-image{
