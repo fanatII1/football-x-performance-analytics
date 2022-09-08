@@ -6,6 +6,7 @@ const register_user = require('./controller/SignUp_controller');
 const login_user = require('./controller/Login_user')
 const kaizerchiefs = require('./controller/KaizerChiefs_controller')
 const orlandopirates = require('./controller/OrlandoPirates_controller')
+const findPlayer = require('./controller/FindPlayers')
 const mongoose = require('mongoose');
 
 app.use(cors());
@@ -53,9 +54,9 @@ app.get('/GlobalSearch/ClubSearch/:club', async (req, res, next)=>{
 })
 
 /*Route Searches Player frome the database*/
-app.post('/GlobalSearch/NameSearch', (req, res, next)=>{
+app.post('/GlobalSearch/NameSearch', async (req, res, next)=>{
     console.log(req.body)
-    
+    await findPlayer.findPlayer(req,res)
 } )
 
 /*server listens on PORT 3001*/
