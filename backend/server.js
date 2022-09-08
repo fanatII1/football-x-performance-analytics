@@ -52,6 +52,12 @@ app.get('/GlobalSearch/ClubSearch/:club', async (req, res, next)=>{
     }
 })
 
+/*Route Searches Player frome the database*/
+app.post('/GlobalSearch/NameSearch', (req, res, next)=>{
+    console.log(req.body)
+    
+} )
+
 /*server listens on PORT 3001*/
 app.listen(PORT, ()=>{
     console.log(`listening on port ${PORT}`)
