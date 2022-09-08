@@ -53,8 +53,8 @@ function Articles() {
                                 </div>
 
                                 <div className="article-short-summary">
-                                    <h4 className="journalist">Writer : {article.journalist} </h4>
                                     <h4 className="article-heading">{article.heading}</h4>
+                                    <h5 className="journalist">Writer : {article.journalist} </h5>
                                     <p className="article-intro-paragraph">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat itaque id dolor? Minima consequatur ipsa amet inventore, perspiciatis itaque eaque aspernatur?
                                     </p>
