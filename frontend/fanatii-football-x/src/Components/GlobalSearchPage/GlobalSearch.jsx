@@ -24,7 +24,7 @@ function GlobalSearch() {
               <img src={nameImage} alt='svg' className='name' />
             </div>
             <div className="name-btn-wrapper">
-                <button className='by_name-button'>Search By Name</button>
+                <button className='by_name-button'><Link to='/GlobalSearch/NameSearch'>Search By Name:</Link></button>
             </div>
           </div>
 
