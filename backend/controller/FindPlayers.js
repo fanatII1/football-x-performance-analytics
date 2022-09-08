@@ -5,6 +5,7 @@ exports.findPlayer = async function(req, res){
         name: req.body.playerName
     })
     .then((data)=>{
+        //check if there was a player found from the db
         if(typeof data[0] === 'undefined'){
             res.status(500).send('player not found')
         }
