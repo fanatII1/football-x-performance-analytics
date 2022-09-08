@@ -1,57 +1,35 @@
-#articles-main-heading{
-    text-align: center;
-    color: #ff00e2;
+.root-elem{
+    background: #fff;
 }
 
-/*Artciles Section styles*/
-#Articles-section{
-    background: #1e1d32;
+#articles-main-heading{
+    text-align: center;
+    color: #77194d;
 }
 
 #Articles-main-container{
-    background: #1e1d32;
+    background: #fff;
 }
 
 #main-articles{
-    max-height: 700px;
     display: grid;
     grid-gap: 1%;
-    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    max-height: 800px;
+    margin: 0 auto;
+    grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 50% 50%;
-    width: 95%;
-    margin: 2% auto;
+    padding: 2% 0;
 }
 
 .article{
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-    padding: 1.5%;
-    margin: 0 auto;
     border-radius: 10px;
-    background: linear-gradient(90deg, #ff00e2 0%, #ff008e 100%);
+    background: linear-gradient(180deg, #ff00e2 0%, #77194d 100%);
 }
 
-@media screen and (max-width: 500px) {
-    #main-articles{
-        max-height: none;
-        display: block;
-        padding-bottom: 12%;
-    }
-
-    .article{
-        width: 90%;
-        margin: 2% auto;
-    }
-}
-
-.article > div{
+.article div{
     height: 50%;
-}
-
-.article-image-wrapper{
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    padding: 1.5%;
 }
 
 .article-image{
@@ -61,25 +39,28 @@
     object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    transition: .7s;
+}
+
+.article-image:hover{
+    transform: scale(0.97);
+    width: 99%;
+    height: 99%;
+    margin: 0 auto;
 }
 
 .article-short-summary{
-    padding: 2%;
-    background: #fff;
-    color: #000;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    color: #fff;
     overflow: hidden;
 }
 
 .article-intro-paragraph{
-    line-height: 1.65;
     font-weight: lighter;
+    font-size: 0.8rem;
 }
 
 
-
-/*Podcast section styles*/
+/*Podcast Section Styles*/
 @keyframes headingAnimate {
     from{
         transform: translateY(-100%);
@@ -109,7 +90,8 @@
 }
 
 #podcasts-section{
-    background: #fff;
+    background: #1e1d32;
+    color: #fff;
     padding: 1% 0;
 }
 
@@ -147,16 +129,13 @@
     padding: 0 2%;
 }
 
-@media screen and (max-width: 500px) {
-    .sub-top-main-podcasts{
-        max-height: none;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-    }
+.podcast-sub{
+    cursor: pointer;
+    transition: .7s;
+}
 
-    .sub-main-podcast-text-wrapper{
-        padding: 2%;
-    }
+.podcast-sub:hover{
+    background: rgba(255, 255, 255, 0.11);
 }
 
 .sub-main-podcast-image-wrapper{
@@ -171,13 +150,60 @@
     margin: 0 auto;
 }
 
-.sub-podcast-article-heading{
+.sub-podcast-article-heading a, a:visited{
+    color: #d30d7a;
     padding-top: 2%;
     line-height: 1.3;
+    text-decoration: underline;
 }
 
 .journalist{
     line-height: 1.4;
+    color: #000;
+    font-weight: bol;
 }
 
+.host{
+    color: #fff;
+}
 
+/*Responsive activity of BOTH Articles and Podcasts section*/
+@media screen and (max-width: 500px) {
+    #main-articles{
+        max-height: none;
+        display: block;
+        padding-bottom: 12%;
+    }
+    
+    .article{
+        width: 90%;
+        margin: 2% auto;
+    }
+
+    .sub-top-main-podcasts{
+        max-height: none;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .sub-main-podcast-text-wrapper{
+        padding: 2%;
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 1024px)  {
+    #main-articles{
+        display: grid;
+        grid-gap: 1%;
+        width: 90%;
+        max-height: 800px;
+        margin: 0 auto;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        grid-template-rows: 33.33% 33.33% 33.33%;
+        padding: 2% 0;
+    }
+
+    .a-7{
+        grid-column: 2/4;
+    }
+}
