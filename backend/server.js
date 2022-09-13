@@ -7,11 +7,9 @@ const login_user = require('./controller/Login_user')
 const kaizerchiefs = require('./controller/KaizerChiefs_controller')
 const orlandopirates = require('./controller/OrlandoPirates_controller')
 const findPlayer = require('./controller/FindPlayers')
+const saveArticle = require('./controller/allArticles_controller')
 const mongoose = require('mongoose');
 var multer  = require('multer')
-
-
-// var multipart = require('connect-multiparty');
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -20,6 +18,16 @@ app.use(express.static('public'))
 app.use(express.static('images'))
 const PORT = process.env.PORT || 3001;
 
+/*We use multer to save unique article posts to the server*/
+const diskStorage = multer.diskStorage({
+    destination: (req, file, cb)=>{
+        cb(null, './public/BlogImages')
+    },
+    filename: (req, file, cb)=>{
+        cb(null, Date.now() + file.originalname)
+    }
+})
+const uploads = multer({storage: diskStorage});
 
 let uri = "mongodb+srv://George:football-x-georginho7@football-x-cluster.yfduv8a.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(uri)
@@ -28,6 +36,7 @@ mongoose.connect(uri)
 }).catch(()=>{
     console.log('not connected')
 })
+
 
 /*API registers user onto the database*/
 app.post('/SignUp', async (req, res, next)=>{
@@ -64,27 +73,20 @@ app.post('/GlobalSearch/NameSearch', async (req, res, next)=>{
     await findPlayer.findPlayer(req,res)
 } )
 
-
-/*POST req handles incoming image uploads from the server.*/
-/*We save unique images using multer*/
-const diskStorage = multer.diskStorage({
-    destination: (req, file, cb)=>{
-        cb(null, './images')
-    },
-    filename: (req, file, cb)=>{
-        cb(null, Date.now() + file.originalname)
-    }
-})
-const uploads = multer({storage: diskStorage});
-
-app.post('/CreatePost', uploads.single('bannerImage'), (req, res, next)=>{
-    res.send('successfully uploaded')
+/*Route handles posts uploaded to the server*/
+/*upload images using multer*/
+app.post('/CreatePost', uploads.single('bannerImage'), async(req, res, next)=>{
+    console.log(req.body.heading)
+    saveArticle.saveArticle(req, res)
 })
 
 
+
+/*Error handling middleware which displays a rejected fieldname from the multer sinle() argument*/
 app.use((error, req, res, next) => {
     console.log('This is the rejected field ->', error.field, req.field);
-  });
+});
+
 /*server listens on PORT 3001*/
 app.listen(PORT, ()=>{
     console.log(`listening on port ${PORT}`)
