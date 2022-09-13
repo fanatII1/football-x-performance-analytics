@@ -38,7 +38,7 @@ function NameSearch() {
 
             <div id='search-container'>
                 <div id='search-input-wrapper'>
-                    <form id='search-form'>
+                    <form id='search-form' method='GET' action='/GlobalSearch/NameSearch'>
                     <input type='text' className='search-field' onChange={handleChange} value={'' || playerName} placeholder='Search Player...'/>
                     <input type='button' value='Search' className='submit-search' onClick={SearchPlayerEnter}/>
                     </form>

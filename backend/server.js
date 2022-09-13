@@ -8,11 +8,16 @@ const kaizerchiefs = require('./controller/KaizerChiefs_controller')
 const orlandopirates = require('./controller/OrlandoPirates_controller')
 const findPlayer = require('./controller/FindPlayers')
 const mongoose = require('mongoose');
+var multer  = require('multer')
+
+
+// var multipart = require('connect-multiparty');
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(express.static('public'))
+app.use(express.static('images'))
 const PORT = process.env.PORT || 3001;
 
 
@@ -59,6 +64,27 @@ app.post('/GlobalSearch/NameSearch', async (req, res, next)=>{
     await findPlayer.findPlayer(req,res)
 } )
 
+
+/*POST req handles incoming image uploads from the server.*/
+/*We save unique images using multer*/
+const diskStorage = multer.diskStorage({
+    destination: (req, file, cb)=>{
+        cb(null, './images')
+    },
+    filename: (req, file, cb)=>{
+        cb(null, Date.now() + file.originalname)
+    }
+})
+const uploads = multer({storage: diskStorage});
+
+app.post('/CreatePost', uploads.single('bannerImage'), (req, res, next)=>{
+    res.send('successfully uploaded')
+})
+
+
+app.use((error, req, res, next) => {
+    console.log('This is the rejected field ->', error.field, req.field);
+  });
 /*server listens on PORT 3001*/
 app.listen(PORT, ()=>{
     console.log(`listening on port ${PORT}`)
