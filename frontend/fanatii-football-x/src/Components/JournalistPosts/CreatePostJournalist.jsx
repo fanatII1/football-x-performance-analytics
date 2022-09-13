@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import './CreatePostJournalist.css'
-import { useEffect } from 'react';
+import Navbar from '../Global_Navbar/Navbar';
 
 //Component that will allow users to create a post
 //we take form data: heading, title, stats image, and description text
@@ -38,17 +38,28 @@ function CreatePostJournalist() {
 
 
     return(
-        <div id='Post Container'>
+       <>
+       <Navbar idNav='nav-search'/>
+        <div id='Post-Container'>
             <h1 id='Page-Post-heading'>Create A Post</h1>
             <div className='formGroup'>
-                <form id='post-creation-form'>
-                    <input type='text' name='heading' className='post-heading' onChange={(e)=>{ setHeading(e.target.value)}} />
-                    <input type='file' name='bannerImage' className='bannerImage' onChange={(e)=>{ setBannerImage(e.target.files[0])}} multiple/>
-                    <textarea name='mainContent' id='mainContent' placeholder='Content...' onChange={(e)=>{ setMainContent(e.target.value)}}></textarea>
-                    <button type='submit' onClick={createPost}>Create Post</button>
+                <form id='Article-PostForm'>
+                    <div className='writeContent first'>
+                        <label htmlFor='bannerImage'>
+                            <span className='addBannerImage'>+</span>
+                        </label>
+                        <input type='file' name='bannerImage' className='bannerImage writeInput' onChange={(e)=>{ setBannerImage(e.target.files[0])}} multiple/>
+                        <input type='text' name='heading' className='heading writeInput' onChange={(e)=>{ setHeading(e.target.value)}} placeholder='Title'/>                    
+                    </div>
+
+                   <div className='writeContent second'>
+                    <textarea name='mainContent' className='mainContent writeInput' placeholder='Content...' onChange={(e)=>{ setMainContent(e.target.value)}}></textarea>
+                   </div>
+                   <button type='submit' onClick={createPost} className='submitContent'>Create Post</button>
                 </form>
             </div>
         </div>
+       </>
     )
 }
 
