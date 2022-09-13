@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import './CreatePostJournalist.css'
 import Navbar from '../Global_Navbar/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 //Component that will allow users to create a post
 //we take form data: heading, title, stats image, and description text
@@ -14,6 +15,9 @@ function CreatePostJournalist() {
     const [heading, setHeading] = useState('');
     const [bannerImage, setBannerImage] = useState('');
     const [mainContent, setMainContent] = useState('');
+    const [displayImage, setDisplayImage] = useState();
+
+    const navigate = useNavigate();
 
     //when form gets submitted, we store form data into the FormData() object, and send it(post) to backend
     const createPost = async (e)=>{
@@ -27,8 +31,16 @@ function CreatePostJournalist() {
             method: 'POST',
             body: data
         })
-        .then(()=>{
-            alert('post created successfully')
+        .then((res)=> res.json())
+        .then((data)=>{
+            //if data is returned, we navigate to articles page and setImage as
+            if(data){
+                setTimeout(()=>{
+                    navigate('/Articles')
+                }, 2500)
+                setDisplayImage(data)
+                alert('post created successfully')
+            }
         })
         .catch((error)=>{
             console.log(error)
@@ -43,12 +55,18 @@ function CreatePostJournalist() {
         <div id='Post-Container'>
             <h1 id='Page-Post-heading'>Create A Post</h1>
             <div className='formGroup'>
+                {typeof displayImage === 'undefined' ? <></> : 
+
+                <div className="bannerImage_DisplayContainer">
+                  <img src={displayImage.bannerImage} alt=""  className='bannerImageDisplay'/>
+                </div>
+                }
                 <form id='Article-PostForm'>
                     <div className='writeContent first'>
                         <label htmlFor='bannerImage'>
                             <span className='addBannerImage'>+</span>
                         </label>
-                        <input type='file' name='bannerImage' className='bannerImage writeInput' onChange={(e)=>{ setBannerImage(e.target.files[0])}} multiple/>
+                        <input type='file' id='bannerImage' name='bannerImage' className='bannerImage writeInput' onChange={(e)=>{ setBannerImage(e.target.files[0])}} multiple/>
                         <input type='text' name='heading' className='heading writeInput' onChange={(e)=>{ setHeading(e.target.value)}} placeholder='Title'/>                    
                     </div>
 

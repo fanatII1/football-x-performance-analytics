@@ -13,6 +13,17 @@
     height: 92.5%;
 }
 
+.bannerImage_DisplayContainer{
+    height: 40%;
+}
+
+.bannerImage_DisplayContainer img{
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
 #Article-PostForm{
     height: 100%;
     overflow: hidden;
@@ -39,6 +50,8 @@
     overflow-y: scroll;
 }
 
+
+
 .addBannerImage{
     padding: 3%;
     border-radius: 100%;
@@ -53,6 +66,8 @@
 
 .heading{
     margin: 0;
+    font-size: 2rem !important;
+    font-weight: bolder;
 }
 
 .writeInput{

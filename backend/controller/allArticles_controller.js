@@ -4,7 +4,7 @@ const allArticlesPosts = require('../models/allArticlesPosts')
 exports.saveArticle = async function(req, res){
     let heading = req.body.heading;
     let mainContent = req.body.mainContent;
-    let bannerImage = req.file.path;
+    let bannerImage = `/BlogImages/${req.file.filename}`;
 
     let newArticle = new allArticlesPosts({
         heading: heading,
@@ -16,7 +16,7 @@ exports.saveArticle = async function(req, res){
     .then((data)=>{
         if(data){
             console.log(data)
-            res.status(200).send('post successfully saved')
+            res.status(200).send(data)
         }
         else{
             res.status(500).send('failed to save article')
