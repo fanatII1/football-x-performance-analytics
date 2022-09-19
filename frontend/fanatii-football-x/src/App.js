@@ -11,7 +11,7 @@ import Articles from './Components/ArticlesPage/Articles';
 import KaizerChiefs from './Components/ClubsPages/KaizerChiefs/KaizerChiefs';
 import OrlandoPirates from './Components/ClubsPages/OrlandoPirates/OrlandoPirates';
 import NameSearch from './Components/NameSearch/NameSearch';
-import CreatePostJournalist from './Components/JournalistPosts/CreatePostJournalist';
+import Admin from './Components/Admin_Writer/Admin';
 
 function App() {
 
@@ -28,7 +28,7 @@ function App() {
             <Route path='/GlobalSearch/ClubSearch/KaizerChiefs' element={<KaizerChiefs/>}/>
             <Route path='/GlobalSearch/ClubSearch/OrlandoPirates' element={<OrlandoPirates/>}/>
             <Route path='/GlobalSearch/NameSearch/' element={<NameSearch/>}/>
-            <Route path='/JournalistPost' element={<CreatePostJournalist/>}/>
+            <Route path='/Admin' element={<Admin/>}/>
           </Routes>
         </BrowserRouter>
         </>
