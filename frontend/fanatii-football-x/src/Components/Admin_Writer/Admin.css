@@ -1,0 +1,117 @@
+#main-content-admin{
+    padding: 1%;
+    height: 100%;
+}
+
+#videos-articles-wrapper{
+    margin: 0 auto;
+    display: flex;
+    height: 100%;
+    max-width: 1300px;
+}
+
+/*Styles focusing on video wrapper and children only*/
+.videos-wrapper{
+    width: 75%;
+}
+
+.videos-latest, .articles-latest{
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.top-video{
+    height: 65%;
+    position: relative;
+}
+
+.sub-videos{
+    height: 35%;
+    width: 100%;
+}
+
+#bannerVideo{
+    height: 100%;
+    width: 100%;
+}
+
+.bannerVideo-text{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+.hideBanner{
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+.videoImage{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.bannerVideo-heading{
+    transition: .4s;
+}
+
+.bannerVideo-heading:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+/*ensuring that the banner video Image comes first*/
+.videoOverlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #28262670;
+}
+
+.videoOverlayText{
+    width: 70%;
+}
+
+.fa-play{
+    background: red;
+    padding: 3%;
+    font-size: 1.5rem;
+    border-radius: 100%;
+    color: white;
+    margin-top: 2%;
+}
+
+
+/*Styles focusing on article wrapper and children only*/
+.articles-wrapper{
+    width: 25%;
+}
+
+.bannerImage{
+    display: block;
+    max-width: 100%;
+    height: 100%;
+}
+
+.top-article{
+    height: 30%;
+}
+
+
+.sub-articles{
+    height: 70%;
+}

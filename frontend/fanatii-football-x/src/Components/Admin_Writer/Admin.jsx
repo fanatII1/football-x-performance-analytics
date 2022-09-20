@@ -1,10 +1,9 @@
 import React from 'react'
-import './Admin.css'
+import './Admin.css';
 import Navbar from '../Global_Navbar/Navbar'
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 //import client module/package, so we able to fetch data from Contentful CMS
 import  {client} from '../client'
-import { useState } from 'react'
 
 //Component renders the Admin page. filled with content fetched from Contentful CMS api : 
 function Admin() {
@@ -12,6 +11,9 @@ function Admin() {
     const [bannerHeading, setBannerHeading] = useState('');
     const [bannerVideo, setBannerVideo] = useState('');
     const [videoHeading, setVideoHeading] = useState('')
+    const [videoImage, setVideImage] = useState('')
+    const [showHideVideBanner,setShowHideBanner] = useState('bannerVideo-text')
+    const videoElement = useRef()
     
     //after intial render, we fetch the content from Contentful
     useEffect(()=>{
@@ -29,15 +31,26 @@ function Admin() {
             const Video_reponseData = Videoresponse.items;
             const bannerVideo = Video_reponseData[0].fields.bannerVideo.fields.file.url;
             const videoHeading = Video_reponseData[0].fields.bannerVideoHeading;
+            const videoImage = Video_reponseData[0].fields.bannerVideoImage.fields.file.url;
             setBannerVideo(bannerVideo);
-            setVideoHeading(videoHeading)
+            setVideoHeading(videoHeading);
+            setVideImage(videoImage)
             
-            // console.log(Video_reponseData[0].fields.bannerVideoHeading, 'video')
+            console.log(Video_reponseData[0].fields.bannerVideoImage.fields.file.url, 'video')
             // console.log(bannerHeading, bannerImage)
         }
         
         fetchData();
     }, [])
+
+    
+    //onClick, allows the video to play
+    //hides the video's banner image
+    const handlePlay = () =>{
+        let videoEl = videoElement.current;
+        videoEl.play();
+        setShowHideBanner('hideBanner')
+    }
 
 
   return (
@@ -45,18 +58,31 @@ function Admin() {
     <Navbar idNav='nav-search'/>
 
     <main id="main-content-admin">
-        <div id="videos-articles-wrapper">
+
+        {/* <aside id="aside-nav">
+            #profile
+        </aside> */}
+
+        <section id="videos-articles-wrapper">
 
 
             <div className="videos-wrapper">
                 <div className="videos-latest">
 
                     <div className="top-video">
-                        <video src={bannerVideo} controls muted>
+                        <video src={bannerVideo} controls id='bannerVideo' ref={videoElement}>
                             Your browser does not support the video extension type
                         </video>
-                        <div className="bannerVideo-text">
-                            <h2 className="bannerVideo-heading">{videoHeading}</h2>
+                        <div className={showHideVideBanner}>
+                                <img src={videoImage} alt="videoImg" className='videoImage'/>
+                                <div className="videoOverlay">
+                                    <div className="videoOverlayText">
+                                        <h2 className="bannerVideo-heading">
+                                            {videoHeading}
+                                        </h2>
+                                        <i className="fa-solid fa-play" onClick={handlePlay}></i>
+                                    </div>
+                                </div>
                         </div>
                     </div>
 
@@ -66,11 +92,11 @@ function Admin() {
                 </div>
             </div>
 
-            <div className="aricles-wrapper">
+            <div className="articles-wrapper">
                 <div className="articles-latest">
 
-                    <div className="top-aritlce">
-                        <img src={bannerImage} alt="" />
+                    <div className="top-article">
+                        <img src={bannerImage} alt="article-img" className='bannerImage'/>
                         <div className="bannerImage-text">
                             <h2 id="bannerImage-heading">
                                 {bannerHeading}
@@ -84,7 +110,7 @@ function Admin() {
                 </div>
             </div>
 
-        </div>
+        </section>
     </main>
     </>
   )
