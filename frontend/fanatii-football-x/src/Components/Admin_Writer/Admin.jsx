@@ -12,8 +12,9 @@ function Admin() {
     const [bannerVideo, setBannerVideo] = useState('');
     const [videoHeading, setVideoHeading] = useState('')
     const [videoImage, setVideImage] = useState('')
-    const [showHideVideBanner,setShowHideBanner] = useState('bannerVideo-text')
-    const videoElement = useRef()
+    const [showHideVideBanner,setShowHideBanner] = useState('bannerVideo-text');
+    const [allVideos, setAllVideos] = useState([])
+    const videoElement = useRef();
     
     //after intial render, we fetch the content from Contentful
     useEffect(()=>{
@@ -35,9 +36,9 @@ function Admin() {
             setBannerVideo(bannerVideo);
             setVideoHeading(videoHeading);
             setVideImage(videoImage)
+            setAllVideos(Video_reponseData)
             
-            console.log(Video_reponseData[0].fields.bannerVideoImage.fields.file.url, 'video')
-            // console.log(bannerHeading, bannerImage)
+            console.log(Video_reponseData, 'video')
         }
         
         fetchData();
@@ -87,7 +88,16 @@ function Admin() {
                     </div>
 
                     <div className="sub-videos">
-
+                    {allVideos.map((video)=>{
+                            return (
+                                <>
+                                <div className="video">
+                                    <div className="videoBanner">{video.fields.bannerVideoImage}</div>
+                                    <div className="videoInfo"><h5 className="videoInfo_heading"></h5></div>
+                                </div>
+                                </>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
