@@ -36,9 +36,12 @@ function Admin() {
             setBannerVideo(bannerVideo);
             setVideoHeading(videoHeading);
             setVideImage(videoImage)
-            setAllVideos(Video_reponseData)
             
-            console.log(Video_reponseData, 'video')
+            //remove 1st video so it's not be included in 'sub videos'(class) element and we then return first 3 videos
+            let videosAll_rmFirst = Video_reponseData;
+            videosAll_rmFirst.shift();
+            let first_3 = videosAll_rmFirst.filter((video, index)=> index <= 2); //return first 3 videos
+            setAllVideos(first_3)
         }
         
         fetchData();
@@ -57,8 +60,6 @@ function Admin() {
   return (
     <>
     <Navbar idNav='nav-search'/>
-
-    <main id="main-content-admin">
 
         {/* <aside id="aside-nav">
             #profile
@@ -88,14 +89,18 @@ function Admin() {
                     </div>
 
                     <div className="sub-videos">
-                    {allVideos.map((video)=>{
+                    {allVideos.map((video, key)=>{
                             return (
-                                <>
-                                <div className="video">
-                                    <div className="videoBanner">{video.fields.bannerVideoImage}</div>
-                                    <div className="videoInfo"><h5 className="videoInfo_heading"></h5></div>
+                                <div className="video" key={key}>
+                                    <div className="sub-video-bannerImg-wrapper">
+                                        <img src={video.fields.bannerVideoImage.fields.file.url} alt="" className="sub-video-imageBanner" />
+                                    </div>
+                                    <div className="videoInfo">
+                                        <h4 className="videoInfo_heading">
+                                            {video.fields.bannerVideoHeading}
+                                        </h4>
+                                    </div>
                                 </div>
-                                </>
                             )
                         })}
                     </div>
@@ -121,7 +126,6 @@ function Admin() {
             </div>
 
         </section>
-    </main>
     </>
   )
 }
