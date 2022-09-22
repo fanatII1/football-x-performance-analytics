@@ -95,6 +95,12 @@
     text-decoration: underline;
 }
 
+.f-articles{
+    color: #005aff;
+    font-size: 1.1rem;
+    padding-right: 1%;
+}
+
 .sub-video-imageBanner{
     display: block;
     width: 100%;

@@ -119,7 +119,7 @@ function Admin() {
                                     </div>
                                     <div className='videoInfo'>
                                         <h4 className='videoInfoHeading'>
-                                            <i className='fa-regular fa-newspaper f-article'></i>
+                                            <i className='fa-regular fa-newspaper f-articles'></i>
                                             {video.fields.bannerVideoHeading}
                                         </h4>
                                     </div>
