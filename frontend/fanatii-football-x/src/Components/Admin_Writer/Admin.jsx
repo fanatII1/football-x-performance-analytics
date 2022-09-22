@@ -2,6 +2,7 @@ import React from 'react'
 import './Admin.css';
 import Navbar from '../Global_Navbar/Navbar'
 import { useEffect, useRef, useState } from 'react'
+import AsideAdmin from './Aside_admin/AsideAdmin';
 //import client module/package, so we able to fetch data from Contentful CMS
 import  {client} from '../client'
 
@@ -71,9 +72,8 @@ function Admin() {
     <>
     <Navbar idNav='nav-search'/>
 
-        {/* <aside id='aside-nav'>
-            #profile
-        </aside> */}
+    <main id="admin-main-content">
+        <AsideAdmin/>
 
         <section id='videos-articles-wrapper'>
 
@@ -160,6 +160,7 @@ function Admin() {
             </div>
 
         </section>
+    </main>
     </>
   )
 }

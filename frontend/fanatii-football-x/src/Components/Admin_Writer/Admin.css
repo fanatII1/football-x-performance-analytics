@@ -122,10 +122,14 @@
 
 .video-player{
     margin: 0 auto;
-    width: 10%;
+    width: 40px;
+    height: 40px;
     padding: 2%;
     background: red;
     border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*ensuring that the banner video Image comes first*/
@@ -183,6 +187,7 @@
     display: block;
     max-width: 100%;
     height: 100%;
+    object-fit: cover;
     border-radius: 5px;
 }
 
@@ -215,10 +220,31 @@
 
 .imageInfo{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    top: 0;
     width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     color: #fff;
+    background: #282626b8;
 }
+
+
+
+
+
+
+
+
+/*RESPONSIVE ACTIVITY*/
+
+
+
+
+
+
+
+
+/*ASIDE element main Styling*/
