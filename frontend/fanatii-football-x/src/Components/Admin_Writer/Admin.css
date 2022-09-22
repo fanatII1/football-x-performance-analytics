@@ -22,26 +22,44 @@
     margin: 0 auto;
 }
 
+.videos-latest{
+    max-width: 850px;
+}
+
 .top-video{
     height: 65%;
     position: relative;
+    cursor: pointer;
 }
 
 .sub-videos{
     height: 35%;
     width: 100%;
+    cursor: pointer;
 }
 
 .video{
     display: flex;
+    margin-top: 1.5%;
 }
 
-.sub-video-bannerImg-wrapper{
-    width: 30%;
+.sub-video-bannerImage-wrapper{
+    width: 20%;
+    border-radius: 10px;
+    position: relative;
 }
+
+.videoPlayer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 .videoInfo{
-    width: 70%;
+    width: 80%;
+    padding: 1%;
 }
 
 .sub-video-imageBanner{
@@ -49,11 +67,13 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    border-radius: 10px;
 }
 
 #bannerVideo{
     height: 100%;
     width: 100%;
+    border-radius: 10px;
 }
 
 .bannerVideo-text{
@@ -63,6 +83,8 @@
     width: 100%;
     color: #fff;
     text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .hideBanner{
@@ -79,6 +101,15 @@
     display: block;
     width: 100%;
     height: 100%;
+    border-radius: 10px;
+    transition: .4s;
+}
+
+.bannerVideo-text:hover .videoImage{
+    display: block;
+    margin: auto;
+    width: 102%;
+    height: 102%;
 }
 
 .bannerVideo-heading{
@@ -87,7 +118,14 @@
 
 .bannerVideo-heading:hover{
     transform: scale(1.03);
-    cursor: pointer;
+}
+
+.video-player{
+    margin: 0 auto;
+    width: 10%;
+    padding: 2%;
+    background: red;
+    border-radius: 100%;
 }
 
 /*ensuring that the banner video Image comes first*/
@@ -100,20 +138,25 @@
     height: 100%;
     width: 100%;
     background: #28262670;
+    border-radius: 10px;
 }
 
 .videoOverlayText{
     width: 70%;
 }
 
-.fa-play{
-    background: red;
-    padding: 3%;
-    font-size: 1.5rem;
-    border-radius: 100%;
-    color: white;
-    margin-top: 2%;
+.sub-video-player{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+.fa-play{
+    color: #fff;
+}
+
+
 
 
 /*Styles focusing on article wrapper and children only*/
@@ -121,17 +164,61 @@
     width: 25%;
 }
 
-.bannerImage{
-    display: block;
-    max-width: 100%;
-    height: 100%;
+.articles-latest{
+    margin: 0;
 }
 
 .top-article{
-    height: 30%;
+    height: 35%;
+    position: relative;
 }
 
-
 .sub-articles{
-    height: 70%;
+    height: 65%;
+    display: grid;
+    grid-template-rows: 33.33% 33.33% 33.33%;
+}
+
+.articlesBannerImage{
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.articlesBannerImage-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    color: #fff;
+}
+
+.image{
+    margin-top: 2%;
+}
+
+.sub-image-bannerImage-wrapper{
+    height: 100%;
+    position: relative;
+}
+
+.sub-image-imageBanner{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.imageInfo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    color: #fff;
 }

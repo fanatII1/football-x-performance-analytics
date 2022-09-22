@@ -14,18 +14,27 @@ function Admin() {
     const [videoImage, setVideImage] = useState('')
     const [showHideVideBanner,setShowHideBanner] = useState('bannerVideo-text');
     const [allVideos, setAllVideos] = useState([])
+    const [allImages, setAllImages] = useState([])
     const videoElement = useRef();
     
     //after intial render, we fetch the content from Contentful
     useEffect(()=>{
         async function fetchData(){
             //we fetch Images and Data related to the articles
-            const Imageresponse =  await client.getEntries({content_type: 'postBannerImage'});
-            const ImageresponseData = Imageresponse.items;
-            const bannerHeading = ImageresponseData[0].fields.bannerHeading;
-            const bannerImage = ImageresponseData[0].fields.bannerImage.fields.file.url;
+            const imageresponse =  await client.getEntries({content_type: 'postBannerImage'});
+            const imageResponseData = imageresponse.items;
+            const bannerHeading = imageResponseData[0].fields.bannerHeading;
+            const bannerImage = imageResponseData[0].fields.bannerImage.fields.file.url;
             setBannerHeading(bannerHeading)
             setBannerImage(bannerImage)
+
+            //remove 1st image.
+            //thus not included in 'sub videos'(class) div and we return first 3 images data
+            let imagesRmFirst = imageResponseData;
+            imagesRmFirst.shift();
+            let first3Images = imageResponseData.filter((video, index)=> index <= 2); //return first 3 images data
+            console.log(first3Images)
+            setAllImages(first3Images)
 
             //we fetch the  VIdeos and Data related to the video that's going to be on display
             const Videoresponse =  await client.getEntries({content_type: 'videos'});
@@ -37,11 +46,12 @@ function Admin() {
             setVideoHeading(videoHeading);
             setVideImage(videoImage)
             
-            //remove 1st video so it's not be included in 'sub videos'(class) element and we then return first 3 videos
-            let videosAll_rmFirst = Video_reponseData;
-            videosAll_rmFirst.shift();
-            let first_3 = videosAll_rmFirst.filter((video, index)=> index <= 2); //return first 3 videos
-            setAllVideos(first_3)
+            //remove 1st video data.
+            //thus not be included in 'sub videos'(class) div and we return first 3 videos data
+            let videosRmFirst = Video_reponseData;
+            videosRmFirst.shift();
+            let first3Videos = videosRmFirst.filter((video, index)=> index <= 2); //return first 3 videos data.
+            setAllVideos(first3Videos)
         }
         
         fetchData();
@@ -61,44 +71,53 @@ function Admin() {
     <>
     <Navbar idNav='nav-search'/>
 
-        {/* <aside id="aside-nav">
+        {/* <aside id='aside-nav'>
             #profile
         </aside> */}
 
-        <section id="videos-articles-wrapper">
+        <section id='videos-articles-wrapper'>
 
 
-            <div className="videos-wrapper">
-                <div className="videos-latest">
+            <div className='videos-wrapper'>
+                <div className='videos-latest'>
 
-                    <div className="top-video">
+                    <div className='top-video'>
                         <video src={bannerVideo} controls id='bannerVideo' ref={videoElement}>
                             Your browser does not support the video extension type
                         </video>
                         <div className={showHideVideBanner}>
-                                <img src={videoImage} alt="videoImg" className='videoImage'/>
-                                <div className="videoOverlay">
-                                    <div className="videoOverlayText">
-                                        <h2 className="bannerVideo-heading">
+                                <img src={videoImage} alt='videoImg' className='videoImage'/>
+                                <div className='videoOverlay'>
+                                    <div className='videoOverlayText'>
+                                        <h2 className='bannerVideo-heading'>
                                             {videoHeading}
                                         </h2>
-                                        <i className="fa-solid fa-play" onClick={handlePlay}></i>
+
+                                        <div className='video-player' onClick={handlePlay}>
+                                        <i className='fa-solid fa-play'></i>
+                                        </div>
+
                                     </div>
                                 </div>
                         </div>
                     </div>
 
-                    <div className="sub-videos">
+                    <div className='sub-videos'>
                     {allVideos.map((video, key)=>{
                             return (
-                                <div className="video" key={key}>
-                                    <div className="sub-video-bannerImg-wrapper">
-                                        <img src={video.fields.bannerVideoImage.fields.file.url} alt="" className="sub-video-imageBanner" />
+                                <div className='video' key={key}>
+                                    <div className='sub-video-bannerImage-wrapper'>
+                                        <img src={video.fields.bannerVideoImage.fields.file.url} alt='' className='sub-video-imageBanner' />
+                                        
+                                        <div className='video-player sub-video-player'>
+                                            <i className='fa-solid fa-play'></i>
+                                        </div>
+
                                     </div>
-                                    <div className="videoInfo">
-                                        <h4 className="videoInfo_heading">
+                                    <div className='videoInfo'>
+                                        <h3 className='videoInfo_heading'>
                                             {video.fields.bannerVideoHeading}
-                                        </h4>
+                                        </h3>
                                     </div>
                                 </div>
                             )
@@ -107,20 +126,35 @@ function Admin() {
                 </div>
             </div>
 
-            <div className="articles-wrapper">
-                <div className="articles-latest">
+            <div className='articles-wrapper'>
+                <div className='articles-latest'>
 
-                    <div className="top-article">
-                        <img src={bannerImage} alt="article-img" className='bannerImage'/>
-                        <div className="bannerImage-text">
-                            <h2 id="bannerImage-heading">
+                    <div className='top-article'>
+                        <img src={bannerImage} alt='article-img' className='articlesBannerImage'/>
+                        <div className='articlesBannerImage-text'>
+                            <h3 id='bannerImage-heading'>
                                 {bannerHeading}
-                            </h2>
+                            </h3>
                         </div>
                     </div>
 
-                    <div className="sub-articles">
-
+                    <div className='sub-articles'>
+                        {
+                            allImages.map((image, key)=>{
+                                return(
+                                    <div className='image' key={key}>
+                                    <div className='sub-image-bannerImage-wrapper'>
+                                        <img src={image.fields.bannerImage.fields.file.url} alt='' className='sub-image-imageBanner' />
+                                        <div className='imageInfo'>
+                                            <h4 className='imageInfo_heading'>
+                                                {image.fields.bannerHeading}
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>
