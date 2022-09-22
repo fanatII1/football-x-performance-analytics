@@ -3,7 +3,7 @@ import './AdminNav.css'
 import MDC from '../Aside_admin/AdminImage/MDC.jpg'
 import GladAfricaLogo from '../Aside_admin/AdminImage/GladAfricaLeague.png'
 import DSTVLeague from '../Aside_admin/AdminImage/DSTV-League.jpg'
-import { Link } from 'contentful'
+import { Link } from 'react-router-dom'
 
 const leagueImage = [DSTVLeague, MDC, GladAfricaLogo];
 
@@ -13,11 +13,11 @@ function AdminNav() {
 
         <div id='admin-nav-list-wrapper'>
             <ul id='admin-nav-list'>
-                <li className='admin-nav-item'><Link>Home <span className='nav-hr'></span></Link></li>
-                <li className='admin-nav-item'><Link>Search <span className='nav-hr'></span></Link></li>
-                <li className='admin-nav-item'><Link>Articles <span className='nav-hr'></span></Link></li>
-                <li className='admin-nav-item'><Link>Education <span className='nav-hr'></span></Link></li>
-                <li className='admin-nav-item'><Link>About <span className='nav-hr'></span></Link></li>
+                <li className='admin-nav-item'><Link to='/'>Home <span className='nav-hr'></span></Link></li>
+                <li className='admin-nav-item'><Link to='/GlobalSearch'>Search <span className='nav-hr'></span></Link></li>
+                <li className='admin-nav-item'><Link to='/Articles'>Articles <span className='nav-hr'></span></Link></li>
+                {/* <li className='admin-nav-item'><Link to=''>Education <span className='nav-hr'></span></Link></li> */}
+                {/* <li className='admin-nav-item'><Link to=''>About <span className='nav-hr'></span></Link></li> */}
             </ul>
         </div>
 

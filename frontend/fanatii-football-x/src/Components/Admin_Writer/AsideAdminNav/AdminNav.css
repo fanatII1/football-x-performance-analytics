@@ -35,6 +35,11 @@
     list-style-type: none;
 }
 
+.admin-nav-item a{
+    color: #fff;
+    text-decoration: none;
+}
+
 .nav-hr{
     display: block;
     height: 2.3px;
