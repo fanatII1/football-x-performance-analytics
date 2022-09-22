@@ -142,9 +142,9 @@ function Admin() {
                     <div className='top-article'>
                         <img src={bannerImage} alt='article-img' className='articlesBannerImage'/>
                         <div className='articlesBannerImage-text'>
-                            <h4 id='bannerImage-heading'>
+                            <h2 id='bannerImage-heading'>
                                 {bannerHeading}
-                            </h4>
+                            </h2>
                         </div>
                     </div>
 
@@ -156,9 +156,9 @@ function Admin() {
                                     <div className='sub-image-bannerImage-wrapper'>
                                         <img src={image.fields.bannerImage.fields.file.url} alt='subImg' className='sub-image-imageBanner' />
                                         <div className='imageInfo'>
-                                            <h4 className='imageInfoHeading'>
+                                            <h2 className='imageInfoHeading'>
                                                 {image.fields.bannerHeading}
-                                            </h4>
+                                            </h2>
                                         </div>
                                     </div>
                                 </div>
