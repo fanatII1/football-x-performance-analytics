@@ -70,7 +70,7 @@ function Admin() {
 
   return (
     <>
-    
+
     <AsideAdmin/>
     <main id='admin-main-content'>
 
@@ -80,9 +80,9 @@ function Admin() {
            <div className='videos-articles-main-container'>
 
            <div className='videos-wrapper'>
-                <h2 id='videos-main-heading'>Latest Videos</h2>
-
                 <div className='videos-latest'>
+                <h3 id='videos-main-heading'>Latest Videos : </h3>
+
 
                     <div className='top-video'>
                         <video src={bannerVideo} controls id='bannerVideo' ref={videoElement}>
@@ -119,6 +119,7 @@ function Admin() {
                                     </div>
                                     <div className='videoInfo'>
                                         <h4 className='videoInfoHeading'>
+                                            <i className='fa-regular fa-newspaper f-article'></i>
                                             {video.fields.bannerVideoHeading}
                                         </h4>
                                     </div>
@@ -130,16 +131,16 @@ function Admin() {
             </div>
 
             <div className='articles-wrapper'>
-                <h2 id='articles-main-heading'>Latest Articles</h2>
+                <h3 id='articles-main-heading'>Latest Articles :</h3>
 
                 <div className='articles-latest'>
 
                     <div className='top-article'>
                         <img src={bannerImage} alt='article-img' className='articlesBannerImage'/>
                         <div className='articlesBannerImage-text'>
-                            <h3 id='bannerImage-heading'>
+                            <h4 id='bannerImage-heading'>
                                 {bannerHeading}
-                            </h3>
+                            </h4>
                         </div>
                     </div>
 

@@ -3,30 +3,43 @@
     justify-content: end;
     height: 100%;
     position: relative;
-    background: #161616;
+    background: #474bff;
+    background: -webkit-linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
+    background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
 }
 
+/*background attachment here ensures that the divs background gradient stays fixed*/
 #videos-articles-section{
     height: 100%;
     width: 80%;
     max-width: 1300px;
+    background: #474bff;
+    background: -webkit-linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
+    background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
+    background-attachment: fixed;
 }
 
 .videos-articles-main-container{
     display: flex;
-    padding-top: 1.3%;
+    gap: 2%;
+    padding: 1.3%;
+    background: #474bff;
+    background: -webkit-linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
+    background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
 }
 
 /*Styles focusing on video wrapper and children only*/
 .videos-wrapper{
     width: 75%;
-    background: #1e1e1e;
+    padding: 1%;
+    border-radius: 5px;
+    background: #fff;
 }
 
 #articles-main-heading, #videos-main-heading{
+    padding: 0.5% 0;
     text-align: center;
-    padding: 1.5% 0;
-    color: #ff008d;
+    color: #1818a7;
 }
 
 .videos-latest, .articles-latest{
@@ -71,6 +84,11 @@
 .videoInfo{
     width: 80%;
     padding: 1%;
+    color: #fff;
+}
+
+.videoInfoHeading{
+    color: #000;
 }
 
 .videoInfoHeading:hover{
@@ -142,7 +160,7 @@
     width: 30px;
     height: 30px;
     padding: 2%;
-    background: red;
+    background: #ff008d;
     border-radius: 100%;
     display: flex;
     justify-content: center;
@@ -158,7 +176,7 @@
     top: 0;
     height: 100%;
     width: 100%;
-    background: #28262670;
+    background: #00317059;
     border-radius: 10px;
 }
 
@@ -182,12 +200,18 @@
 
 /*Styles focusing on article wrapper and children only*/
 .articles-wrapper{
+    position: relative;
     width: 25%;
-    background: #1e1e1e;
+    border-radius:5px;
+    background: #fff;
 }
 
 .articles-latest{
     margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .top-article{
@@ -219,7 +243,7 @@
     align-items: center;
     text-align: center;
     color: #fff;
-    background: #2826266b;
+    background: #00317059;
     border-radius: 10px;
 }
 
@@ -233,7 +257,7 @@
 }
 
 .image{
-    margin-top: 2%;
+    margin-top: 10%;
 }
 
 .imageInfoHeading:hover{
@@ -263,7 +287,7 @@
     align-items: center;
     text-align: center;
     color: #fff;
-    background: #2826266b;
+    background: #00317059;
     border-radius: 10px;
 }
 

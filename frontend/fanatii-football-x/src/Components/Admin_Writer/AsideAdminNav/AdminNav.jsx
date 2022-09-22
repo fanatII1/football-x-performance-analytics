@@ -1,10 +1,10 @@
 import React from 'react'
 import './AdminNav.css'
-import MdcLogo from '../Aside_admin/AdminImage/MDC.jpg'
+import MDC from '../Aside_admin/AdminImage/MDC.jpg'
 import GladAfricaLogo from '../Aside_admin/AdminImage/GladAfricaLeague.png'
 import DSTVLeague from '../Aside_admin/AdminImage/DSTV-League.jpg'
 
-const leagueImage = [MdcLogo, GladAfricaLogo, DSTVLeague];
+const leagueImage = [DSTVLeague, MDC, GladAfricaLogo];
 
 function AdminNav() {
   return (
