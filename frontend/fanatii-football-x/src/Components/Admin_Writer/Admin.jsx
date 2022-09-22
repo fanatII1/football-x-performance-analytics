@@ -70,9 +70,9 @@ function Admin() {
 
   return (
     <>
-
+    
+    <AsideAdmin/>
     <main id='admin-main-content'>
-        <AsideAdmin/>
 
         <section id='videos-articles-section'>
         <AdminNav/>

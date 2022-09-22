@@ -1,12 +1,18 @@
 import React from 'react'
 import './AsideAdmin.css'
 import AdminImage from './AdminImage/JournalistReporter.jpg'
+import Logo from './AdminImage/Logo.png'
 
 //in this component, we going to display the admins information and based on their role:
 //we allow the admin to create posts(articles) and update stats
 function AsideAdmin() {
   return (
     <aside id='admin-information'>
+
+        <div id='company-logo'>
+            <img src={Logo} alt='Company-logo' />
+        </div>
+
         <div id='admin-summary-info'>
 
             <div className='admin-image-wrapper'>
@@ -23,15 +29,15 @@ function AsideAdmin() {
         <div id='admin-options'>
             <ul id='options-list'>
                 <li className='options-item'>
-                    <i className="fa-regular fa-newspaper f-article"></i>
+                    <i className='fa-regular fa-newspaper f-article'></i>
                     Create Article
                 </li>
                 <li className='options-item'>
-                    <i className="fa-solid fa-futbol"></i>
+                    <i className='fa-solid fa-futbol'></i>
                     Update Stats
                 </li>
                 <li className='options-item'>
-                    <i className="fa-solid fa-gear"></i>
+                    <i className='fa-solid fa-gear'></i>
                     Settings
                 </li>
             </ul>

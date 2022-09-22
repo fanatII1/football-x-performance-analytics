@@ -2,11 +2,22 @@
     width: 20%;
     height: 100%;
     display: grid;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 10% 45% 45%;
     grid-template-columns: 100%;
     z-index: 1;
     background: #0e2868;
     position: fixed;
+}
+
+#company-logo{
+    background: #081e54;
+}
+
+#company-logo img{
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
 }
 
 #admin-summary-info{
