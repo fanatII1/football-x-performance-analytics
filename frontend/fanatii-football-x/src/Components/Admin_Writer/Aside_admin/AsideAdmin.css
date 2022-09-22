@@ -1,10 +1,12 @@
 #admin-information{
     width: 20%;
+    height: 100%;
     display: grid;
     grid-template-rows: 50% 50%;
     grid-template-columns: 100%;
     z-index: 1;
     background: #0e2868;
+    position: fixed;
 }
 
 #admin-summary-info{

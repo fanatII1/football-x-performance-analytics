@@ -1,0 +1,63 @@
+/*admin-nav styling*/
+#admin-nav{
+    height: 11%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#admin-nav-list-wrapper{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#admin-nav-list{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.admin-nav-item{
+    width: 25%;
+    text-align: center;
+    font-weight: 480;
+    list-style-type: none;
+}
+
+.nav-hr{
+    display: block;
+    height: 2.3px;
+    background: red;
+    width: 0;
+    transition: .4s;
+}
+
+.admin-nav-item:hover .nav-hr{
+    width: 100%;
+}
+
+#leagues{
+    height: 50%;
+    display: flex;
+}
+
+.league-image-wrapper{
+    width: 33.33%;
+}
+
+.league-image-align{
+    width: 20%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.league-image-align img{
+   display: block;
+   max-width: 100%;
+   height: 100%;
+   margin: 0 auto; 
+}

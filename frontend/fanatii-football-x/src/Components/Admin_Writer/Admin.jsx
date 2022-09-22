@@ -2,6 +2,7 @@ import React from 'react'
 import './Admin.css';
 import { useEffect, useRef, useState } from 'react'
 import AsideAdmin from './Aside_admin/AsideAdmin';
+import AdminNav from './AsideAdminNav/AdminNav';
 //import client module/package, so we able to fetch data from Contentful CMS
 import  {client} from '../client'
 
@@ -69,26 +70,18 @@ function Admin() {
 
   return (
     <>
-    <nav id='admin-nav'>
-        <div id='admin-nav-list-wrapper'>
-            <ul id='admin-nav-list'>
-                <li className='admin-nav-item'>Home <span className="nav-hr"></span></li>
-                <li className='admin-nav-item'>Search <span className="nav-hr"></span></li>
-                <li className='admin-nav-item'>Articles <span className="nav-hr"></span></li>
-                <li className='admin-nav-item'>Education <span className="nav-hr"></span></li>
-                <li className='admin-nav-item'>About <span className="nav-hr"></span></li>
-            </ul>
-        </div>
-    </nav>
-    
 
     <main id='admin-main-content'>
         <AsideAdmin/>
 
-        <section id='videos-articles-wrapper'>
+        <section id='videos-articles-section'>
+        <AdminNav/>
 
+           <div className='videos-articles-main-container'>
 
-            <div className='videos-wrapper'>
+           <div className='videos-wrapper'>
+                <h2 id='videos-main-heading'>Latest Videos</h2>
+
                 <div className='videos-latest'>
 
                     <div className='top-video'>
@@ -137,6 +130,8 @@ function Admin() {
             </div>
 
             <div className='articles-wrapper'>
+                <h2 id='articles-main-heading'>Latest Articles</h2>
+
                 <div className='articles-latest'>
 
                     <div className='top-article'>
@@ -169,6 +164,7 @@ function Admin() {
                 </div>
             </div>
 
+           </div>
         </section>
     </main>
     </>
