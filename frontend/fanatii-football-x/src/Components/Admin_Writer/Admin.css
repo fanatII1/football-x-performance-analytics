@@ -1,13 +1,55 @@
-#main-content-admin{
-    padding: 1%;
+/*admin-nav styling*/
+#admin-nav{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+#admin-nav-list-wrapper{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#admin-nav-list{
     height: 100%;
-    background: #f3f3f3;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.admin-nav-item{
+    width: 25%;
+    text-align: center;
+    font-weight: 480;
+    list-style-type: none;
+}
+
+.nav-hr{
+    display: block;
+    height: 2.3px;
+    background: red;
+    width: 0;
+    transition: .4s;
+}
+
+.admin-nav-item:hover .nav-hr{
+    width: 100%;
+}
+
+
+#admin-main-content{
+    display: flex;
+    height: 90%;
 }
 
 #videos-articles-wrapper{
     margin: 0 auto;
     display: flex;
     height: 100%;
+    width: 88%;
     max-width: 1300px;
 }
 
@@ -40,7 +82,7 @@
 
 .video{
     display: flex;
-    margin-top: 1.5%;
+    padding-top: 1.5%;
 }
 
 .sub-video-bannerImage-wrapper{
@@ -60,6 +102,10 @@
 .videoInfo{
     width: 80%;
     padding: 1%;
+}
+
+.videoInfoHeading:hover{
+    text-decoration: underline;
 }
 
 .sub-video-imageBanner{
@@ -122,8 +168,8 @@
 
 .video-player{
     margin: 0 auto;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     padding: 2%;
     background: red;
     border-radius: 100%;
@@ -169,18 +215,20 @@
 }
 
 .articles-latest{
-    margin: 0;
+    margin: 0 auto;
 }
 
 .top-article{
     height: 35%;
     position: relative;
+    cursor: pointer;
 }
 
 .sub-articles{
     height: 65%;
     display: grid;
     grid-template-rows: 33.33% 33.33% 33.33%;
+    cursor: pointer;
 }
 
 .articlesBannerImage{
@@ -188,21 +236,40 @@
     max-width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .articlesBannerImage-text{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
     width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     color: #fff;
+    background: #2826266b;
+    border-radius: 10px;
+}
+
+#bannerImage-heading{
+    transition: .4s;
+}
+
+#bannerImage-heading:hover{
+    transform: scale(1.03);
+    text-decoration: underline;
 }
 
 .image{
     margin-top: 2%;
+}
+
+.imageInfoHeading:hover{
+    text-decoration: underline;
 }
 
 .sub-image-bannerImage-wrapper{
@@ -228,7 +295,8 @@
     align-items: center;
     text-align: center;
     color: #fff;
-    background: #282626b8;
+    background: #2826266b;
+    border-radius: 10px;
 }
 
 

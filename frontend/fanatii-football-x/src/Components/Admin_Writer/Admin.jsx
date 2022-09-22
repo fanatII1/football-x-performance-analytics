@@ -1,6 +1,5 @@
 import React from 'react'
 import './Admin.css';
-import Navbar from '../Global_Navbar/Navbar'
 import { useEffect, useRef, useState } from 'react'
 import AsideAdmin from './Aside_admin/AsideAdmin';
 //import client module/package, so we able to fetch data from Contentful CMS
@@ -70,9 +69,20 @@ function Admin() {
 
   return (
     <>
-    <Navbar idNav='nav-search'/>
+    <nav id='admin-nav'>
+        <div id='admin-nav-list-wrapper'>
+            <ul id='admin-nav-list'>
+                <li className='admin-nav-item'>Home <span className="nav-hr"></span></li>
+                <li className='admin-nav-item'>Search <span className="nav-hr"></span></li>
+                <li className='admin-nav-item'>Articles <span className="nav-hr"></span></li>
+                <li className='admin-nav-item'>Education <span className="nav-hr"></span></li>
+                <li className='admin-nav-item'>About <span className="nav-hr"></span></li>
+            </ul>
+        </div>
+    </nav>
+    
 
-    <main id="admin-main-content">
+    <main id='admin-main-content'>
         <AsideAdmin/>
 
         <section id='videos-articles-wrapper'>
@@ -115,9 +125,9 @@ function Admin() {
 
                                     </div>
                                     <div className='videoInfo'>
-                                        <h3 className='videoInfo_heading'>
+                                        <h4 className='videoInfoHeading'>
                                             {video.fields.bannerVideoHeading}
-                                        </h3>
+                                        </h4>
                                     </div>
                                 </div>
                             )
@@ -144,9 +154,9 @@ function Admin() {
                                 return(
                                     <div className='image' key={key}>
                                     <div className='sub-image-bannerImage-wrapper'>
-                                        <img src={image.fields.bannerImage.fields.file.url} alt='' className='sub-image-imageBanner' />
+                                        <img src={image.fields.bannerImage.fields.file.url} alt='subImg' className='sub-image-imageBanner' />
                                         <div className='imageInfo'>
-                                            <h4 className='imageInfo_heading'>
+                                            <h4 className='imageInfoHeading'>
                                                 {image.fields.bannerHeading}
                                             </h4>
                                         </div>

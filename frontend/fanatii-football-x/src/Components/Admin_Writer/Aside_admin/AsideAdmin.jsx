@@ -23,15 +23,15 @@ function AsideAdmin() {
         <div id='admin-options'>
             <ul id='options-list'>
                 <li className='options-item'>
-                    <i className='fa-thin fa-newspaper'></i> 
+                    <i className="fa-regular fa-newspaper f-article"></i>
                     Create Article
                 </li>
                 <li className='options-item'>
-                    <i className='fa-duotone fa-goal-net'></i> 
+                    <i className="fa-solid fa-futbol"></i>
                     Update Stats
                 </li>
                 <li className='options-item'>
-                    <i className='fa-thin fa-gear'></i> 
+                    <i className="fa-solid fa-gear"></i>
                     Settings
                 </li>
             </ul>
