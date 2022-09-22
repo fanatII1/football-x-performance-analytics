@@ -107,6 +107,7 @@ function Admin() {
 
                     <div className='sub-videos'>
                     {allVideos.map((video, key)=>{
+                        console.log(video.fields.videoSummary)
                             return (
                                 <div className='video' key={key}>
                                     <div className='sub-video-bannerImage-wrapper'>
@@ -122,6 +123,9 @@ function Admin() {
                                             <i className='fa-regular fa-newspaper f-articles'></i>
                                             {video.fields.bannerVideoHeading}
                                         </h4>
+                                        <p className='videoSummary' style={{color: 'black'}}>
+                                            {video.fields.videoSummary}
+                                        </p>
                                     </div>
                                 </div>
                             )
@@ -173,3 +177,5 @@ function Admin() {
 }
 
 export default Admin
+
+
