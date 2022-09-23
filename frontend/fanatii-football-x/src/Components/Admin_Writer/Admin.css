@@ -287,6 +287,7 @@
 }
 
 .imageInfoHeading:hover{
+    transform: scale(1.03);
     text-decoration: underline;
 }
 
@@ -324,9 +325,8 @@
 
 
 
-/*RESPONSIVE ACTIVITY*/
-
-@media screen and (max-width: 670px)  {
+/*RESPONSIVE ACTIVITY -- styles apply to tablets down*/
+@media screen and (max-width: 920px)  {
     
     /*focusing on the articles*/
     .sub-articles{
@@ -375,10 +375,11 @@
 }
 
 
-
-
-
-
-
-
-/*ASIDE element main Styling*/
+/*reponsiveness to the video player size*/
+@media screen and (min-width: 426px) and (max-width: 920px) {
+    .video-player{
+        width: 30px;
+        height: 30px;
+        padding: 5%;
+    }
+}

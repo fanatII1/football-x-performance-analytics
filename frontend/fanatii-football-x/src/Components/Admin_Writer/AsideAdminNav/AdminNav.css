@@ -81,7 +81,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 670px){
+@media screen and (max-width: 920px){
     #admin-nav-list{
         width: 100%;
     }
