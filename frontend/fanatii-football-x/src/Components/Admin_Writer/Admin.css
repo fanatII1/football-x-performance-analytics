@@ -286,6 +286,10 @@
     padding: 2%;
 }
 
+.imageInfoHeading{
+    transition: .4s;
+}
+
 .imageInfoHeading:hover{
     transform: scale(1.03);
     text-decoration: underline;
