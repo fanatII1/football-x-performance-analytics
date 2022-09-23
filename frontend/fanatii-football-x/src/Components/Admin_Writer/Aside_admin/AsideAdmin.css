@@ -59,12 +59,23 @@
 }
 
 #options-list{
-    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+    list-style-type: none;
 }
 
 .options-item{
-    margin: 10% 0;
+    margin: 10% auto;
     color: #fff;
+}
+
+.options-item a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.options-item:hover{
+    text-decoration: underline;
 }
 
 .f-article, .fa-futbol, .fa-gear{
