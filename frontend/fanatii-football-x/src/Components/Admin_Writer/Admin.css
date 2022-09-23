@@ -326,6 +326,54 @@
 
 /*RESPONSIVE ACTIVITY*/
 
+@media screen and (max-width: 670px)  {
+    
+    /*focusing on the articles*/
+    .sub-articles{
+        display: block;
+    }
+
+    .image{
+        height: 50%;
+    }
+
+    .bannerVideo-heading, #bannerImage-heading, .imageInfoHeading{
+        font-size: 1.1rem;
+    }
+
+    .videoInfoHeading{
+        font-size: 0.8rem;
+    }
+
+    .videoSummary{
+        font-size: 0.75rem;
+    }
+
+    .video-player{
+        width: 15px;
+        height: 15px;
+        padding: 10%;
+    }
+
+    .fa-play{
+        font-size: 0.5rem;
+    }
+
+    /*focusing on the aside*/
+
+    #admin-information{
+        display: none !important;
+    }
+
+    #admin-main-content{
+        display: block;
+    }
+
+    #videos-articles-section{
+        width: 100%;
+    }
+}
+
 
 
 
