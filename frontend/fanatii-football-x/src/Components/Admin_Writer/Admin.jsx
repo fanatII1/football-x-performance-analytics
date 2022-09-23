@@ -79,6 +79,7 @@ function Admin() {
 
            <div className='videos-articles-main-container'>
 
+           <div id='videos-content'>
            <div className='videos-wrapper'>
                 <div className='videos-latest'>
                 <h3 id='videos-main-heading'>Latest Videos : </h3>
@@ -133,8 +134,12 @@ function Admin() {
                     </div>
                 </div>
             </div>
+           </div>
 
+
+            <div id='articles-content'>
             <div className='articles-wrapper'>
+                
                 <h3 id='articles-main-heading'>Latest Articles :</h3>
 
                 <div className='articles-latest'>
@@ -167,6 +172,8 @@ function Admin() {
                         }
                     </div>
                 </div>
+            </div>
+
             </div>
 
            </div>
