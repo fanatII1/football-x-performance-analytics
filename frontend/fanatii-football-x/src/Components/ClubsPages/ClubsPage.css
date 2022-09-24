@@ -91,6 +91,7 @@
     cursor: pointer;
     padding: 1%;
     transition: .5s;
+    font-size: 0.9rem;
 }
 
 .player-wrapper > div:hover{
