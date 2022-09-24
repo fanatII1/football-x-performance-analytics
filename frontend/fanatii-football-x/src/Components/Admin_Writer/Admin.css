@@ -16,7 +16,7 @@
     height: 20px;
     display: flex;
     justify-content: center;
-    padding-bottom: 5.3%;
+    padding-bottom: 3%;
     border: 1px solid #fff;
     background: none;
     color: #fff;
@@ -259,6 +259,7 @@
 .sub-articles{
     display: grid;
     grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
     height: 60%;
     cursor: pointer;
 }
@@ -375,20 +376,6 @@
 
     .fa-play{
         font-size: 0.5rem;
-    }
-
-    /*focusing on the aside*/
-
-    .admin-information{
-        display: none !important;
-    }
-
-    #admin-main-content{
-        display: block;
-    }
-
-    #videos-articles-section{
-        width: 100%;
     }
 }
 

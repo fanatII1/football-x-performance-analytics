@@ -9,9 +9,17 @@ import Logo from './AdminImage/Logo.png'
 //below link will be used to go to contentful site where we are going to create article posts
 let createArticleLink = 'https://app.contentful.com/spaces/ox8fxrfb2nbi/entries?id=wbkEQq5FIO2z46qM&contentTypeId=videos&order.fieldId=updatedAt&order.direction=descending&displayedFieldIds=contentType&displayedFieldIds=updatedAt&displayedFieldIds=author&page=0';
 
-function AsideAdmin({adminInfo}) {
+function AsideAdmin({adminInfo, setAdminInfo}) {
+
+    //onClick hides the admins aside information by applying the responsive styles('admi-information) on mobile phones that hides the aside elements(admin information)
+    const hideAdminInfo = (e) =>{
+        e.preventDefault();
+        setAdminInfo('admin-information')
+    }
+
   return (
     <aside className={adminInfo}>
+        <button id='hideAdmin-info' onClick={hideAdminInfo}>X</button>
 
         <div id='company-logo'>
             <img src={Logo} alt='Company-logo' />

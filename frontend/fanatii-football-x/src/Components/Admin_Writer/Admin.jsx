@@ -34,10 +34,10 @@ function Admin() {
             setBannerImage(bannerImage)
 
             //remove 1st image.
-            //thus not included in 'sub videos'(class) div and we return first 3 images data
+            //thus not included in 'sub videos'(class) div and we return first 2 images data
             let imagesRmFirst = imageResponseData;
             imagesRmFirst.shift();
-            let first3Images = imageResponseData.filter((video, index)=> index <= 2); //return first 3 images data
+            let first3Images = imagesRmFirst.filter((video, index)=> index <= 1); //return first 2 images data
             console.log(first3Images)
             setAllImages(first3Images)
 
@@ -82,7 +82,7 @@ function Admin() {
   return (
     <>
 
-    <AsideAdmin adminInfo={showAside}/>
+    <AsideAdmin adminInfo={showAside} setAdminInfo={setShowAside}/>
     <main id='admin-main-content'>
         <button id='showAdmin-info' onClick={showAdminInfo}>+</button>
 
