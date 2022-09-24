@@ -215,7 +215,7 @@
     .sub-top-main-podcasts{
         max-height: none;
         grid-template-columns: none;
-        grid-template-rows: 25% 25% 25% 25%;
+        grid-template-rows: 30% 25% 25% 25%;
     }
 
     #host-line-break{
