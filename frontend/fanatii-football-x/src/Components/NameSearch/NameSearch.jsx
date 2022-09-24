@@ -2,6 +2,8 @@ import React from 'react'
 import './NameSearch.css'
 import Navbar from '../Global_Navbar/Navbar'
 import Avatar from './NameSearchImages/avatar.webp'
+import Footer from '../Global_Footer/Footer'
+import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom'
 import { useState } from 'react'
 
 function NameSearch() {
@@ -58,6 +60,8 @@ function NameSearch() {
             </div>
 
         </div>
+        <Footer idFooter='home-footer'/>
+        <GlobalNavBottom navBottom='articles-nav-bottom'/>
     </>
   )
 }
