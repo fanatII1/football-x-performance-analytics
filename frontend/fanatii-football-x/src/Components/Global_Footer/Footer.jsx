@@ -2,7 +2,6 @@ import React from 'react';
 import './Footer.css'
 
 function Footer({idFooter}) {
-  console.log(idFooter)
   return (
     <>
       <footer id={idFooter}>
