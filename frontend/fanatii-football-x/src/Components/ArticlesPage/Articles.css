@@ -2,28 +2,33 @@
     background: #fff;
 }
 
-#articles-main-heading{
+#article-main-heading{
     text-align: center;
-    color: #77194d;
+    color: #fff;
+    padding: 1% 0;
 }
 
 #Articles-main-container{
-    background: #fff;
+    background: #474bff;
+    background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
     height: 100%;
 }
 
 #Articles-section{
     height: 75%;
+    background: #474bff;
+    background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
 }
 
 #all-articles{
     width: 40%;
     height: 100%;
     margin: 0 auto;
+    min-width: 250px;
 }
 
 .article-bannerImg-wrapper{
-    height: 50%;
+    height: 100%;
     position: relative;
 }
 
@@ -32,20 +37,44 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .article-summary-wrapper{
-    height: 50%;
-    line-height: 1.7;
+    position:absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    background: #06065082;
+    border-radius: 10px;
 }
 
-.article{
-    height: 100%;
+.article-summary-heading, .article-main-summary-text{
+    padding: 2% 10%;
+}
+
+.Article{
+    height: 90%;
+    background: #ffffff5c;
+    border-radius: 10px;
+    position: relative;
 }
 
 #next, #prev{
     position: absolute;
-    padding: 1%;
+    padding: 2%;
+    color: #fff;
+    border-radius: 2px;
+    border: none;
+    background: #474bff;
+    background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
+    cursor: pointer;
+    z-index: 1;
 }
 
 #prev{
@@ -93,10 +122,16 @@
     background: #1e1d32;
     color: #fff;
     padding: 1% 0;
+    height: 85%;
 }
 
 #podcasts-heading{
     text-align: center;
+    height: 10%;
+}
+
+#container-podcasts-latest{
+    height: 90%;
 }
 
 .fa-pen-to-square, .fa-house, .fa-magnifying-glass, .fa-newspaper{
@@ -123,7 +158,7 @@
 
 .sub-top-main-podcasts{
     display: grid;
-    max-height: 450px;
+    height: 100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 50% 50%;
     padding: 0 2%;
@@ -176,20 +211,15 @@
         display: block;
         padding-bottom: 12%;
     }
-    
-    .article{
-        width: 90%;
-        margin: 2% auto;
-    }
 
     .sub-top-main-podcasts{
         max-height: none;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: none;
+        grid-template-rows: 25% 25% 25% 25%;
     }
 
-    .sub-main-podcast-text-wrapper{
-        padding: 2%;
+    #host-line-break{
+        display: none;
     }
 }
 

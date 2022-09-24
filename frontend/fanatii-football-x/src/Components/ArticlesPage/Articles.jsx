@@ -13,9 +13,9 @@ import  {client} from '../client'
 
 const podcastData = [
     {image: PodCastOne, heading: 'The Back 3', host: 'Mpumelelo Lobelo | Ryan Mason | Melissa Partick'},
-    {image: PodCastTwo, heading: 'Talent Scout: Why Cape Town City promoted young midfielder, Taahir Goedeman(statistical analysis)?', host: 'Ray Zondi | Lebogang Mofokeng'},
-    {image: PodCastThree, heading: 'The truth behind expected assists(xA)', host: 'Gabrielle Noorodien | Ian Gonzalez'},
-    {image: PodCastFour, heading: 'Should clubs focus on shot quality using expected goals?', host: 'Katie Parris'}
+    {image: PodCastTwo, heading: 'Fox Football Podcast', host: 'Ray Zondi | Lebogang Mofokeng'},
+    {image: PodCastThree, heading: 'The truth Football show', host: 'Gabrielle Noorodien | Ian Gonzalez'},
+    {image: PodCastFour, heading: 'Total Soccer show', host: 'Katie Parris'}
 ];
 
 //number that will be used to go to next and previous articles that will be inside array 
@@ -64,7 +64,7 @@ function Articles() {
     }
     
 
-    //navigate to previous article
+    //pnclick navigates to previous article
     const prevArticle = (e) =>{
         e.preventDefault();
         num--;
@@ -87,21 +87,17 @@ function Articles() {
         }
     }
 
-
-
-
-    //onclick navigagte to prev article
-
   return (
     <>
     <Navbar idNav='nav-search'/>
 
-    <h1 id='articles-main-heading'>Articles {'&'} Analysis</h1>
     <div id='Articles-main-container'>
 
         <section id='Articles-section'>
             <div id='all-articles'>
-            <div className='article'>
+            <h1 id='article-main-heading'>Articles {'&'} Analysis</h1>
+
+            <div className='Article'>
 
                 <div className='article-bannerImg-wrapper'>
                     <img src={bannerImage} className='article-bannerImg' alt={bannerImage} />
@@ -111,7 +107,8 @@ function Articles() {
                                 
                 <div className='article-summary-wrapper'>
                     <h3 className='article-summary-heading'>{bannerHeading}</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    <p className='article-main-summary-text'>
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                        Consequatur sunt sit accusantium quos molestias optio?
                     </p>
                 </div>
@@ -141,7 +138,7 @@ function Articles() {
                             </h5>
                             <p className='host'>
                                 Hosts: 
-                                <br />
+                                <br id='host-line-break'/>
                                 {article.host}
                             </p>
                         </div>

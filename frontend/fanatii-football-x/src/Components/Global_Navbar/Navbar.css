@@ -8,7 +8,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #b3b3b34d;
+  background: #474bff;
+  background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
   color: #fff;
   z-index: 2;
 }
@@ -23,7 +24,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #b3b3b34d;
+  background: #474bff;
+  background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
   color: #fff;
   z-index: 2;
 }
@@ -32,7 +34,10 @@
   height: 80%;
   width: 90%;
   display: flex;
-  gap: 50%;
+}
+
+.logo{
+  width: 6%;
 }
 
 .nav-logo {
@@ -44,28 +49,39 @@
 .nav-list {
   display: flex;
   align-items: center;
+  width: 94%;
 }
 
 #nav-list-items {
   display: flex;
+  justify-content: center;
+  width: 100%;
   list-style-type: none;
 }
 
 #nav-list-items .list-item a, #nav-list-items .list-item a:visited{
-  color: black;
+  color: #fff;
   text-decoration: none;
 }
 
 .list-item {
   margin: 0 3%;
-  background: #fff;
+  background: transparent;
   padding: 1.5%;
   transition: .5s;
   border-radius: 2px;
 }
 
-.li-1:hover, .li-2:hover, .li-3:hover{
-  opacity: 0.7;
+.nav-hr{
+  display: block;
+  height: 2.3px;
+  background: #ff008d;
+  width: 0;
+  transition: .4s;
+}
+
+.li-1:hover .nav-hr, .li-2:hover .nav-hr, .li-3:hover .nav-hr{
+  width: 100%;
 }
 
 @media screen and (max-width: 520px) {
