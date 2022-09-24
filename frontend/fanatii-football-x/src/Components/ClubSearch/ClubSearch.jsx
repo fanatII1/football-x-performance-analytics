@@ -23,6 +23,8 @@ import Footer from '../Global_Footer/Footer';
 import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom';
 
 
+
+
 //array storing all clubs and their names
 //linkClubname property will be used as the link 'href'/'to' value, since we don't want any whitespace
 const Clubs = [

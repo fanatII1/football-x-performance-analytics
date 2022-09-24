@@ -4,12 +4,18 @@
 
 #Club-options-section{
     background: #1e1d32e8;
+    height: 100%;
 }
 
 .club-options-container{
     min-width: 250px;
     max-width: 80%;
     margin: 0 auto;
+    height: 100%;
+}
+
+#clubs-main-wrapper{
+    height: 65%;
 }
 
 @media screen and (min-width: 1024px) {
@@ -48,7 +54,7 @@
 
 @media screen and (max-width: 425px) {
     #clubs-main-wrapper{
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
 }
 
@@ -94,6 +100,10 @@
     transition: .4s;
 }
 
-.name-title:hover{
-    text-decoration: line-through;
+.name-title a{
+    color: rgb(116, 113, 113);
+}
+
+.name-title a:visited{
+    color: rgb(116, 113, 113);
 }
