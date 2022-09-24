@@ -9,9 +9,9 @@ import Logo from './AdminImage/Logo.png'
 //below link will be used to go to contentful site where we are going to create article posts
 let createArticleLink = 'https://app.contentful.com/spaces/ox8fxrfb2nbi/entries?id=wbkEQq5FIO2z46qM&contentTypeId=videos&order.fieldId=updatedAt&order.direction=descending&displayedFieldIds=contentType&displayedFieldIds=updatedAt&displayedFieldIds=author&page=0';
 
-function AsideAdmin() {
+function AsideAdmin({adminInfo}) {
   return (
-    <aside id='admin-information'>
+    <aside className={adminInfo}>
 
         <div id='company-logo'>
             <img src={Logo} alt='Company-logo' />

@@ -3,6 +3,7 @@ import './Admin.css';
 import { useEffect, useRef, useState } from 'react'
 import AsideAdmin from './Aside_admin/AsideAdmin';
 import AdminNav from './AsideAdminNav/AdminNav';
+import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom';
 //import client module/package, so we able to fetch data from Contentful CMS
 import  {client} from '../client'
 
@@ -17,6 +18,9 @@ function Admin() {
     const [allVideos, setAllVideos] = useState([])
     const [allImages, setAllImages] = useState([])
     const videoElement = useRef();
+
+    //state for responsive styling
+    const [showAside, setShowAside] = useState('admin-information')
     
     //after intial render, we fetch the content from Contentful
     useEffect(()=>{
@@ -67,12 +71,20 @@ function Admin() {
         setShowHideBanner('hideBanner')
     }
 
+    //onClick, we reveal the aside element(adminInfo)
+    const showAdminInfo = (e) =>{
+        e.preventDefault()
+        console.log(showAside)
+        setShowAside('admin-information-show')
+    }
+
 
   return (
     <>
 
-    <AsideAdmin/>
+    <AsideAdmin adminInfo={showAside}/>
     <main id='admin-main-content'>
+        <button id='showAdmin-info' onClick={showAdminInfo}>+</button>
 
         <section id='videos-articles-section'>
         <AdminNav/>
@@ -179,6 +191,7 @@ function Admin() {
            </div>
         </section>
     </main>
+    <GlobalNavBottom navBottom='home-bottom-nav'/>
     </>
   )
 }
