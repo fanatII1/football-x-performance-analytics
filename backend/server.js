@@ -81,6 +81,11 @@ app.post('/CreatePost', uploads.single('bannerImage'), async(req, res, next)=>{
 })
 
 
+/*Route handles stats of player that will be updated*/
+app.put('/Admin', (req, res, next)=>{
+    console.log(req.body)
+})
+
 
 /*Error handling middleware which displays a rejected fieldname from the multer sinle() argument*/
 app.use((error, req, res, next) => {

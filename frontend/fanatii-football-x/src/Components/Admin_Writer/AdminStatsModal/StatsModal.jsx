@@ -22,10 +22,10 @@ function StatsModal({adminModal, setAdminModal}) {
 
   return (
     <>
-    <aside id={adminModal} onChange={handlePositionChange}>
+    <aside id={adminModal}>
         <button  id='closeAdminModal' onClick={hideAdminModal}>X</button>
 
-        <select name='' id='position-select'>
+        <select name='' id='position-select'  onChange={handlePositionChange}>
             <option className='position-option'>GK</option>
             <option className='position-option'>DEF</option>
             <option className='position-option'>MID</option>
@@ -53,15 +53,23 @@ function FormPosition({position}){
         })
     }
 
-    //we submit player Stats
-    const submitStats = (e) =>{
+    //we submit player Stats that we update
+    const submitStats = async (e) =>{
         e.preventDefault();
+        await fetch('/Admin', {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(userData)
+        })
         console.log(userData)
     }
 
     if(position === 'GK'){
         return(
             <form id='GKForm' onSubmit={submitStats}>
+                <input type='text' className='name' name='name' placeholder='Name'/>
+                <input type='text' className='position' placeholder='Position'/>
+                <input type='text' className='club' placeholder='Club'/>
                 <input type='text' name='DefActionsOutsidePen' className='DefActionsOutsidePen' placeholder='DefActionsOutsidePen' onChange={handleChange}/>
                 <input type='text' name='GoalAgainst' className='GoalAgainst' placeholder='GoalAgainst' onChange={handleChange}/>
                 <input type='text' name='PSxGGA' className='PSxGGA' placeholder='PSxGGA' onChange={handleChange}/>
@@ -73,6 +81,9 @@ function FormPosition({position}){
     else if(position === 'DEF'){
         return(
             <form id='DEFForm' onSubmit={submitStats}>
+                <input type='text' className='name' name='name' placeholder='Name'/>
+                <input type='text' className='position' name='Position' placeholder='Position'/>
+                <input type='text' className='club' name='Club' placeholder='Club'/>
                 <input type='text' name='xG' className='xG' placeholder='xG' onChange={handleChange}/>
                 <input type='text' name='xA' className='xA' placeholder='xA' onChange={handleChange}/>
                 <input type='text' name='DefensiveActionsPer90' className='DefensiveActionsPer90' placeholder='DefActionsOutsidePen' onChange={handleChange}/>
@@ -85,6 +96,9 @@ function FormPosition({position}){
     else if(position === 'MID'){
         return(
             <form id='MIDForm' onSubmit={submitStats}>
+                <input type='text' className='name' name='name' placeholder='Name'/>
+                <input type='text' className='position' name='Position' placeholder='Position'/>
+                <input type='text' className='club' name='Club'placeholder='Club'/>
                 <input type='text' name='xG' className='xG' placeholder='xG' onChange={handleChange}/>
                 <input type='text' name='xA' className='xA' placeholder='xA' onChange={handleChange}/>
                 <input type='text' name='DefensiveActionsPer90' className='DefensiveActionsPer90' placeholder='DefActionsPer90' onChange={handleChange}/>
@@ -98,6 +112,9 @@ function FormPosition({position}){
     else if(position === 'WING'){
         return(
             <form id='WINGForm' onSubmit={submitStats}>
+                <input type='text' className='name' name='name' placeholder='Name'/>
+                <input type='text' className='position' name='Position' placeholder='Position'/>
+                <input type='text' className='club'name='Club' placeholder='Club'/>
                 <input type='text' name='xG' className='xG' placeholder='xG' onChange={handleChange}/>
                 <input type='text' name='xA' className='xA' placeholder='xA' onChange={handleChange}/>
                 <input type='text' name='Dribble' className='Dribble' placeholder='Dribble' onChange={handleChange}/>
@@ -113,6 +130,9 @@ function FormPosition({position}){
     else{
         return(
             <form id='STForm' onSubmit={submitStats}>
+                <input type='text' className='name' name='name' placeholder='Name'/>
+                <input type='text' className='position' name='Position' placeholder='Position'/>
+                <input type='text' className='club' name='Club' placeholder='Club'/>
                 <input type='text' name='xG' className='xG' placeholder='xG' onChange={handleChange}/>
                 <input type='text' name='xA' className='xA' placeholder='xA' onChange={handleChange}/>
                 <input type='text' name='RecieveInBox' className='RecieveInBox' placeholder='RecieveInBox' onChange={handleChange}/>
