@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import AsideAdmin from './Aside_admin/AsideAdmin';
 import AdminNav from './AsideAdminNav/AdminNav';
 import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom';
+import StatsModal from './AdminStatsModal/StatsModal';
 //import client module/package, so we able to fetch data from Contentful CMS
 import  {client} from '../client'
 
@@ -81,6 +82,7 @@ function Admin() {
 
   return (
     <>
+    <StatsModal/>
 
     <AsideAdmin adminInfo={showAside} setAdminInfo={setShowAside}/>
     <main id='admin-main-content'>
