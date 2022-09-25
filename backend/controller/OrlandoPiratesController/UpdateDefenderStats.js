@@ -1,6 +1,6 @@
 const orlando_model = require('../../models/OrlandoPiratesPlayers_model')
 
-exports.updatePiratesMidfielderStats = async function (req, res) {
+exports.updatePiratesDefenderStats = async function (req, res) {
     const {
         name,
         position,

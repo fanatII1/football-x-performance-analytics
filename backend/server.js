@@ -10,11 +10,11 @@ const findPlayer = require('./controller/FindPlayers')
 
 //update stats modules
 const updatePiratesGoalkeeper = require('./controller/OrlandoPiratesController/UpdateGoalkeeper');
+const updatePiratesDefender = require('./controller/OrlandoPiratesController/UpdateDefenderStats')
 const updatePiratesMidfielder = require('./controller/OrlandoPiratesController/UpdateMidfielderStats');
 const updatePiratesWinger = require('./controller/OrlandoPiratesController/UpdateWingerStats');
 const updatePiratesStriker = require('./controller/OrlandoPiratesController/UpdateStrikerStats');
 const mongoose = require('mongoose');
-var multer  = require('multer')
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -22,17 +22,6 @@ app.use(bodyParser.json());
 app.use(express.static('public'))
 app.use(express.static('images'))
 const PORT = process.env.PORT || 3001;
-
-/*We use multer to save unique article posts to the server*/
-const diskStorage = multer.diskStorage({
-    destination: (req, file, cb)=>{
-        cb(null, './public/BlogImages')
-    },
-    filename: (req, file, cb)=>{
-        cb(null, Date.now() + file.originalname)
-    }
-})
-const uploads = multer({storage: diskStorage});
 
 let uri = "mongodb+srv://George:football-x-georginho7@football-x-cluster.yfduv8a.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(uri)
@@ -76,14 +65,7 @@ app.get('/GlobalSearch/ClubSearch/:club', async (req, res, next)=>{
 app.post('/GlobalSearch/NameSearch', async (req, res, next)=>{
     console.log(req.body)
     await findPlayer.findPlayer(req,res)
-} )
-
-// /*Route handles posts uploaded to the server*/
-// /*upload images using multer*/
-// app.post('/CreatePost', uploads.single('bannerImage'), async(req, res, next)=>{
-//     console.log(req.body.heading)
-//     saveArticle.saveArticle(req, res)
-// })
+})
 
 
 /*Route handles stats of player that will be updated*/
@@ -100,7 +82,7 @@ app.put('/Admin', async (req, res, next)=>{
             break;
 
         case "Defender":
-            // await orlandopirates.find_orlando_pirates_players(req, res);
+            await updatePiratesDefender.updatePiratesDefenderStats(req, res)
             break;
 
         case "Midfielder":
@@ -114,7 +96,7 @@ app.put('/Admin', async (req, res, next)=>{
         case "Striker":
             updatePiratesStriker.updatePiratesStrikerStats(req, res)
             break;
-            
+
         default:
             break;
     }
