@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const register_user = require('./controller/SignUp_controller');
 const login_user = require('./controller/Login_user')
-const kaizerchiefs = require('./controller/KaizerChiefs_controller')
+const kaizerchiefs = require('./controller/KaizerChiefsController/KaizerChiefs_controller')
 const orlandopirates = require('./controller/OrlandoPiratesController/OrlandoPirates_controller')
 const findPlayer = require('./controller/FindPlayers')
 
@@ -69,7 +69,7 @@ app.post('/GlobalSearch/NameSearch', async (req, res, next)=>{
 
 
 /*Route handles stats of player that will be updated*/
-//we chek the position of the player that the admin wants to update, thus directing them to correct controller
+/*we chek the position of the player that the admin wants to update, thus directing them to correct controller*/
 app.put('/Admin', async (req, res, next)=>{
     const {position} = req.body;
     console.log(req.body)
@@ -77,7 +77,6 @@ app.put('/Admin', async (req, res, next)=>{
     //select which players stats to update when recieve request, based on player position
     switch (position) {
         case "Goalkeeper":
-            // await kaizerchiefs.find_kc_players(req, res);
             await updatePiratesGoalkeeper.updatePiratesGoalkeeprStats(req, res);
             break;
 

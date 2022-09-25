@@ -106,6 +106,7 @@
 .options-item{
     margin: 10% auto;
     color: #fff;
+    cursor: pointer;
 }
 
 .options-item a{

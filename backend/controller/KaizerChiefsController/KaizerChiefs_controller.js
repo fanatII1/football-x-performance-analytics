@@ -1,4 +1,4 @@
-const kc_players_model = require('../models/KaizerChiefsPlayers_model')
+const kc_players_model = require('../../models/KaizerChiefsPlayers_model')
 
 //module finds all players in Kaizer Chiefs collection
 exports.find_kc_players = async function(req, res){
