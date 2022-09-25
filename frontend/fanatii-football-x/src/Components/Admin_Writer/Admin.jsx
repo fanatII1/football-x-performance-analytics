@@ -19,9 +19,10 @@ function Admin() {
     const [allVideos, setAllVideos] = useState([])
     const [allImages, setAllImages] = useState([])
     const videoElement = useRef();
-
     //state for responsive styling
     const [showAside, setShowAside] = useState('admin-information')
+    //state of admin modal
+    const [adminModal, setAdminModal] = useState('hideModal')
     
     //after intial render, we fetch the content from Contentful
     useEffect(()=>{
@@ -82,9 +83,9 @@ function Admin() {
 
   return (
     <>
-    <StatsModal/>
+    <StatsModal adminModal={adminModal} setAdminModal={setAdminModal}/>
 
-    <AsideAdmin adminInfo={showAside} setAdminInfo={setShowAside}/>
+    <AsideAdmin adminInfo={showAside} setAdminInfo={setShowAside} setAdminModal={setAdminModal}/>
     <main id='admin-main-content'>
         <button id='showAdmin-info' onClick={showAdminInfo}>+</button>
 

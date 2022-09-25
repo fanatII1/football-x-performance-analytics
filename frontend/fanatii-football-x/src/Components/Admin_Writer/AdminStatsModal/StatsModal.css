@@ -1,9 +1,25 @@
-
 /*Admin modal*/
-#admin-modal{
+#hideModal{
+    display: none;
+}
+
+#showAdminModal{
+    display: block;
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-color: black;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#position-select{
+    background: #fff;
+    color: #000;
+}
+
+.position-option{
+    color: #000;
 }

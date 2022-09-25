@@ -9,12 +9,17 @@ import Logo from './AdminImage/Logo.png'
 //below link will be used to go to contentful site where we are going to create article posts
 let createArticleLink = 'https://app.contentful.com/spaces/ox8fxrfb2nbi/entries?id=wbkEQq5FIO2z46qM&contentTypeId=videos&order.fieldId=updatedAt&order.direction=descending&displayedFieldIds=contentType&displayedFieldIds=updatedAt&displayedFieldIds=author&page=0';
 
-function AsideAdmin({adminInfo, setAdminInfo}) {
+function AsideAdmin({adminInfo, setAdminInfo, setAdminModal}) {
 
     //onClick hides the admins aside information by applying the responsive styles('admi-information) on mobile phones that hides the aside elements(admin information)
     const hideAdminInfo = (e) =>{
         e.preventDefault();
         setAdminInfo('admin-information')
+    }
+
+    //onClick reveals admin modal
+    const showAdminModal = () =>{
+        setAdminModal('showAdminModal')
     }
 
   return (
@@ -44,7 +49,7 @@ function AsideAdmin({adminInfo, setAdminInfo}) {
                     <i className='fa-regular fa-newspaper f-article'></i>
                    <a href={createArticleLink}>Create Article</a>
                 </li>
-                <li className='options-item'>
+                <li className='options-item' onClick={showAdminModal}>
                     <i className='fa-solid fa-futbol'></i>
                     Update Stats
                 </li>
