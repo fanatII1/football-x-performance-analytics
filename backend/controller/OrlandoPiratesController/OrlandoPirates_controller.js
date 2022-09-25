@@ -1,4 +1,4 @@
-const orlando_model = require('../models/OrlandoPiratesPlayers_model')
+const orlando_model = require('../../models/OrlandoPiratesPlayers_model')
 
 //module finds all players in Kaizer Chiefs collection
 exports.find_orlando_pirates_players = async function(req, res){

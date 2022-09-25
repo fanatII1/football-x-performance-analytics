@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 
 let orlando_schema = mongoose.Schema({
-    playersData : Array
+    name: String,
+    position: String,
+    stats: Array,
+    playersData : Array,
 }, 
 {collection: "OrlandoPirates"});
 

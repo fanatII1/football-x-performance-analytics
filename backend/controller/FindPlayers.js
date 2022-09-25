@@ -13,7 +13,7 @@ exports.findPlayer = async function(req, res){
             res.status(200).send(data)
         }
     })
-    .catch((error)=>[
+    .catch((error)=>{
         res.status(500).send(error)
-    ])
+    })
 }

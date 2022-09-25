@@ -5,9 +5,13 @@ const cors = require('cors');
 const register_user = require('./controller/SignUp_controller');
 const login_user = require('./controller/Login_user')
 const kaizerchiefs = require('./controller/KaizerChiefs_controller')
-const orlandopirates = require('./controller/OrlandoPirates_controller')
+const orlandopirates = require('./controller/OrlandoPiratesController/OrlandoPirates_controller')
 const findPlayer = require('./controller/FindPlayers')
-const saveArticle = require('./controller/allArticles_controller')
+const saveArticle = require('./controller/allArticles_controller');
+
+//update stats modules
+const updatePiratesGoalkeepr = require('./controller/OrlandoPiratesController/UpdateGoalkeeper')
+const updatePiratesMidfielder = require('./controller/OrlandoPiratesController/UpdateMidfielderStats')
 const mongoose = require('mongoose');
 var multer  = require('multer')
 
@@ -73,17 +77,44 @@ app.post('/GlobalSearch/NameSearch', async (req, res, next)=>{
     await findPlayer.findPlayer(req,res)
 } )
 
-/*Route handles posts uploaded to the server*/
-/*upload images using multer*/
-app.post('/CreatePost', uploads.single('bannerImage'), async(req, res, next)=>{
-    console.log(req.body.heading)
-    saveArticle.saveArticle(req, res)
-})
+// /*Route handles posts uploaded to the server*/
+// /*upload images using multer*/
+// app.post('/CreatePost', uploads.single('bannerImage'), async(req, res, next)=>{
+//     console.log(req.body.heading)
+//     saveArticle.saveArticle(req, res)
+// })
 
 
 /*Route handles stats of player that will be updated*/
-app.put('/Admin', (req, res, next)=>{
+//we chek the position of the player that the admin wants to update, thus directing them to correct controller
+app.put('/Admin', async (req, res, next)=>{
+    const {position} = req.body;
     console.log(req.body)
+        
+    //select which clubs data to fetch when recieve request
+    switch (position) {
+        case "Goalkeeper":
+            // await kaizerchiefs.find_kc_players(req, res);
+            await updatePiratesGoalkeepr.updatePiratesGoalkeeprStats(req, res);
+            break;
+
+        case "Defender":
+            // await orlandopirates.find_orlando_pirates_players(req, res);
+            break;
+
+        case "Midfielder":
+            await updatePiratesMidfielder.updatePiratesMidfielderStats(req, res)
+            break;
+
+        case "Winger":
+            // await orlandopirates.find_orlando_pirates_players(req, res);
+            break;
+        case "Striker":
+            // await orlandopirates.find_orlando_pirates_players(req, res);
+            break;
+        default:
+            break;
+    }
 })
 
 

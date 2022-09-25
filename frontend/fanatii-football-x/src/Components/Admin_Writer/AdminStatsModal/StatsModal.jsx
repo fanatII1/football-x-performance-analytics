@@ -47,7 +47,7 @@ function FormPosition({position}){
     const handleChange = (e) =>{
         const name = e.target.name;
         const userValue = e.target.value;
-        // console.log(name, userValue)
+        console.log(name, userValue)
         setUserData((prevData)=>{
           return {...prevData, [name]: userValue} 
         })
@@ -67,9 +67,9 @@ function FormPosition({position}){
     if(position === 'GK'){
         return(
             <form id='GKForm' onSubmit={submitStats}>
-                <input type='text' className='name' name='name' placeholder='Name'/>
-                <input type='text' className='position' placeholder='Position'/>
-                <input type='text' className='club' placeholder='Club'/>
+                <input type='text' name='name' className='name' placeholder='Name' onChange={handleChange}/>
+                <input type='text' name='position'className='position' placeholder='Position' onChange={handleChange}/>
+                <input type='text' name='club' className='club'  placeholder='club' onChange={handleChange}/>
                 <input type='text' name='DefActionsOutsidePen' className='DefActionsOutsidePen' placeholder='DefActionsOutsidePen' onChange={handleChange}/>
                 <input type='text' name='GoalAgainst' className='GoalAgainst' placeholder='GoalAgainst' onChange={handleChange}/>
                 <input type='text' name='PSxGGA' className='PSxGGA' placeholder='PSxGGA' onChange={handleChange}/>
@@ -81,14 +81,14 @@ function FormPosition({position}){
     else if(position === 'DEF'){
         return(
             <form id='DEFForm' onSubmit={submitStats}>
-                <input type='text' className='name' name='name' placeholder='Name'/>
-                <input type='text' className='position' name='Position' placeholder='Position'/>
-                <input type='text' className='club' name='Club' placeholder='Club'/>
+                <input type='text' className='name' name='name' placeholder='Name' onChange={handleChange}/>
+                <input type='text' className='position' name='position' placeholder='Position' onChange={handleChange}/>
+                <input type='text' className='club' name='club' placeholder='Club' onChange={handleChange}/>
                 <input type='text' name='xG' className='xG' placeholder='xG' onChange={handleChange}/>
                 <input type='text' name='xA' className='xA' placeholder='xA' onChange={handleChange}/>
                 <input type='text' name='DefensiveActionsPer90' className='DefensiveActionsPer90' placeholder='DefActionsOutsidePen' onChange={handleChange}/>
                 <input type='text' name='AerialDeadBalls' className='AerialDeadBalls' placeholder='AerialDeadBalls' onChange={handleChange}/>
-                <input type='text' name='AttackingOuptut' className='AttackingOuptut' placeholder='AttackingOuptut' onChange={handleChange}/>
+                <input type='text' name='AttackingOutput' className='AttackingOutput' placeholder='AttackingOutput' onChange={handleChange}/>
                 <input type='submit' id='playerSubmit' value='Submit' />
             </form>
         )
@@ -96,15 +96,21 @@ function FormPosition({position}){
     else if(position === 'MID'){
         return(
             <form id='MIDForm' onSubmit={submitStats}>
-                <input type='text' className='name' name='name' placeholder='Name'/>
-                <input type='text' className='position' name='Position' placeholder='Position'/>
-                <input type='text' className='club' name='Club'placeholder='Club'/>
+                <input type='text' className='name' name='name' placeholder='Name' onChange={handleChange}/>
+                <input type='text' className='position' name='position' placeholder='Position' onChange={handleChange}/>
+                <input type='text' className='club' name='club'placeholder='Club' onChange={handleChange}/>
                 <input type='text' name='xG' className='xG' placeholder='xG' onChange={handleChange}/>
                 <input type='text' name='xA' className='xA' placeholder='xA' onChange={handleChange}/>
+                <input type='text' name='shoot' className='shoot' placeholder='Shoot' onChange={handleChange}/>
                 <input type='text' name='DefensiveActionsPer90' className='DefensiveActionsPer90' placeholder='DefActionsPer90' onChange={handleChange}/>
                 <input type='text' name='Linkup' className='Linkup' placeholder='Linkup' onChange={handleChange}/>
-                <input type='text' name='AttackingOuptut' className='AttackingOuptut' placeholder='AttackingOutput' onChange={handleChange}/>
+                <input type='text' name='AttackingOutput' className='AttackingOutput' placeholder='AttackingOutput' onChange={handleChange}/>
                 <input type='text' name='BallRetention' className='BallRetention' placeholder='BallRetention' onChange={handleChange}/>
+                <input type='text' name='Dribble' className='Dribble' placeholder='Dribble' onChange={handleChange}/>
+                <input type='text' name='Aerial' className='Aerial' placeholder='Aerial' onChange={handleChange}/>
+                <input type='text' name='Recover' className='Recover' placeholder='Recover' onChange={handleChange}/>
+                <input type='text' name='PassTowardsGoal' className='PassTowardsGoal' placeholder='PassTowardsGoal' onChange={handleChange}/>
+                <input type='text' name='RecieveInBox' className='RecieveInBox' placeholder='RecieveInBox' onChange={handleChange}/>
                 <input type='submit' id='playerSubmit' value='Submit' />
             </form>
         )
@@ -112,15 +118,16 @@ function FormPosition({position}){
     else if(position === 'WING'){
         return(
             <form id='WINGForm' onSubmit={submitStats}>
-                <input type='text' className='name' name='name' placeholder='Name'/>
-                <input type='text' className='position' name='Position' placeholder='Position'/>
-                <input type='text' className='club'name='Club' placeholder='Club'/>
+                <input type='text' className='name' name='name' placeholder='Name' onChange={handleChange}/>
+                <input type='text' className='position' name='position' placeholder='Position' onChange={handleChange}/>
+                <input type='text' className='club'name='club' placeholder='Club' onChange={handleChange}/>
                 <input type='text' name='xG' className='xG' placeholder='xG' onChange={handleChange}/>
                 <input type='text' name='xA' className='xA' placeholder='xA' onChange={handleChange}/>
+                <input type='text' name='shoot' className='shoot' placeholder='Shoot' onChange={handleChange}/>
                 <input type='text' name='Dribble' className='Dribble' placeholder='Dribble' onChange={handleChange}/>
                 <input type='text' name='DefensiveActionsPer90' className='DefensiveActionsPer90' placeholder='DefActionsPer90' onChange={handleChange}/>
                 <input type='text' name='Linkup' className='Linkup' placeholder='Linkup' onChange={handleChange}/>
-                <input type='text' name='AttackingOuptut' className='AttackingOuptut' placeholder='AttackingOutput' onChange={handleChange}/>
+                <input type='text' name='AttackingOutput' className='AttackingOutput' placeholder='AttackingOutput' onChange={handleChange}/>
                 <input type='text' name='PassTowardsGoal' className='PassTowardsGoal' placeholder='PassTowardsGoal' onChange={handleChange}/>
                 <input type='text' name='Aerial' className='Aerial' placeholder='Aerial' onChange={handleChange}/>
                 <input type='submit' id='playerSubmit' value='Submit' />
@@ -130,11 +137,12 @@ function FormPosition({position}){
     else{
         return(
             <form id='STForm' onSubmit={submitStats}>
-                <input type='text' className='name' name='name' placeholder='Name'/>
-                <input type='text' className='position' name='Position' placeholder='Position'/>
-                <input type='text' className='club' name='Club' placeholder='Club'/>
+                <input type='text' className='name' name='name' placeholder='Name' onChange={handleChange}/>
+                <input type='text' className='position' name='position' placeholder='Position' onChange={handleChange}/>
+                <input type='text' className='club' name='club' placeholder='Club' onChange={handleChange}/>
                 <input type='text' name='xG' className='xG' placeholder='xG' onChange={handleChange}/>
                 <input type='text' name='xA' className='xA' placeholder='xA' onChange={handleChange}/>
+                <input type='text' name='shoot' className='shoot' placeholder='Shoot' onChange={handleChange}/>
                 <input type='text' name='RecieveInBox' className='RecieveInBox' placeholder='RecieveInBox' onChange={handleChange}/>
                 <input type='text' name='Aerial' className='Aerial' placeholder='Aerial' onChange={handleChange}/>
                 <input type='text' name='Dribble' className='Dribble' placeholder='Dribble' onChange={handleChange}/>
