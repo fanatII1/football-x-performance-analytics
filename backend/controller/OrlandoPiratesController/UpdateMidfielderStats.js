@@ -32,7 +32,7 @@ exports.updatePiratesMidfielderStats = async function (req, res) {
             `Pass Towards Goal: ${PassTowardsGoal}`,
             `Recieve In Box: ${RecieveInBox}`,
             `Aerial: ${Aerial}`,
-            `Dribble ${Dribble}`,
+            `Dribble: ${Dribble}`,
             `Recover: ${Recover}`,
             `Ball Retention: ${BallRetention}`
         ]
@@ -40,6 +40,7 @@ exports.updatePiratesMidfielderStats = async function (req, res) {
     .then((data)=>{
         if(data){
             console.log(data, 'updated')
+            res.status(200).send('Succeefully Updated')
         }
     })
     .catch((error)=>{

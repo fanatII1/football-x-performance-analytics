@@ -84,11 +84,11 @@ function FormPosition({position}){
                 <input type='text' className='name' name='name' placeholder='Name' onChange={handleChange}/>
                 <input type='text' className='position' name='position' placeholder='Position' onChange={handleChange}/>
                 <input type='text' className='club' name='club' placeholder='Club' onChange={handleChange}/>
-                <input type='text' name='xG' className='xG' placeholder='xG' onChange={handleChange}/>
-                <input type='text' name='xA' className='xA' placeholder='xA' onChange={handleChange}/>
-                <input type='text' name='DefensiveActionsPer90' className='DefensiveActionsPer90' placeholder='DefActionsOutsidePen' onChange={handleChange}/>
+                <input type='text' name='TacklesActionsPer90' className='TacklesPer90' placeholder='TacklesPer90' onChange={handleChange}/>
+                <input type='text' name='DefensiveActionsPer90' className='DefensiveActionsPer90' placeholder='DefActionsPer90' onChange={handleChange}/>
                 <input type='text' name='AerialDeadBalls' className='AerialDeadBalls' placeholder='AerialDeadBalls' onChange={handleChange}/>
                 <input type='text' name='AttackingOutput' className='AttackingOutput' placeholder='AttackingOutput' onChange={handleChange}/>
+                <input type='text' name='BallRetention' className='BallRetention' placeholder='BallRetention' onChange={handleChange}/>
                 <input type='submit' id='playerSubmit' value='Submit' />
             </form>
         )
@@ -120,16 +120,19 @@ function FormPosition({position}){
             <form id='WINGForm' onSubmit={submitStats}>
                 <input type='text' className='name' name='name' placeholder='Name' onChange={handleChange}/>
                 <input type='text' className='position' name='position' placeholder='Position' onChange={handleChange}/>
-                <input type='text' className='club'name='club' placeholder='Club' onChange={handleChange}/>
+                <input type='text' className='club' name='club'placeholder='Club' onChange={handleChange}/>
                 <input type='text' name='xG' className='xG' placeholder='xG' onChange={handleChange}/>
                 <input type='text' name='xA' className='xA' placeholder='xA' onChange={handleChange}/>
                 <input type='text' name='shoot' className='shoot' placeholder='Shoot' onChange={handleChange}/>
-                <input type='text' name='Dribble' className='Dribble' placeholder='Dribble' onChange={handleChange}/>
                 <input type='text' name='DefensiveActionsPer90' className='DefensiveActionsPer90' placeholder='DefActionsPer90' onChange={handleChange}/>
                 <input type='text' name='Linkup' className='Linkup' placeholder='Linkup' onChange={handleChange}/>
                 <input type='text' name='AttackingOutput' className='AttackingOutput' placeholder='AttackingOutput' onChange={handleChange}/>
-                <input type='text' name='PassTowardsGoal' className='PassTowardsGoal' placeholder='PassTowardsGoal' onChange={handleChange}/>
+                <input type='text' name='BallRetention' className='BallRetention' placeholder='BallRetention' onChange={handleChange}/>
+                <input type='text' name='Dribble' className='Dribble' placeholder='Dribble' onChange={handleChange}/>
                 <input type='text' name='Aerial' className='Aerial' placeholder='Aerial' onChange={handleChange}/>
+                <input type='text' name='Recover' className='Recover' placeholder='Recover' onChange={handleChange}/>
+                <input type='text' name='PassTowardsGoal' className='PassTowardsGoal' placeholder='PassTowardsGoal' onChange={handleChange}/>
+                <input type='text' name='RecieveInBox' className='RecieveInBox' placeholder='RecieveInBox' onChange={handleChange}/>
                 <input type='submit' id='playerSubmit' value='Submit' />
             </form>
         )
@@ -139,14 +142,19 @@ function FormPosition({position}){
             <form id='STForm' onSubmit={submitStats}>
                 <input type='text' className='name' name='name' placeholder='Name' onChange={handleChange}/>
                 <input type='text' className='position' name='position' placeholder='Position' onChange={handleChange}/>
-                <input type='text' className='club' name='club' placeholder='Club' onChange={handleChange}/>
+                <input type='text' className='club' name='club'placeholder='Club' onChange={handleChange}/>
                 <input type='text' name='xG' className='xG' placeholder='xG' onChange={handleChange}/>
                 <input type='text' name='xA' className='xA' placeholder='xA' onChange={handleChange}/>
                 <input type='text' name='shoot' className='shoot' placeholder='Shoot' onChange={handleChange}/>
-                <input type='text' name='RecieveInBox' className='RecieveInBox' placeholder='RecieveInBox' onChange={handleChange}/>
-                <input type='text' name='Aerial' className='Aerial' placeholder='Aerial' onChange={handleChange}/>
+                <input type='text' name='DefensiveActionsPer90' className='DefensiveActionsPer90' placeholder='DefActionsPer90' onChange={handleChange}/>
+                <input type='text' name='Linkup' className='Linkup' placeholder='Linkup' onChange={handleChange}/>
+                <input type='text' name='AttackingOutput' className='AttackingOutput' placeholder='AttackingOutput' onChange={handleChange}/>
+                <input type='text' name='BallRetention' className='BallRetention' placeholder='BallRetention' onChange={handleChange}/>
                 <input type='text' name='Dribble' className='Dribble' placeholder='Dribble' onChange={handleChange}/>
+                <input type='text' name='Aerial' className='Aerial' placeholder='Aerial' onChange={handleChange}/>
                 <input type='text' name='Recover' className='Recover' placeholder='Recover' onChange={handleChange}/>
+                <input type='text' name='PassTowardsGoal' className='PassTowardsGoal' placeholder='PassTowardsGoal' onChange={handleChange}/>
+                <input type='text' name='RecieveInBox' className='RecieveInBox' placeholder='RecieveInBox' onChange={handleChange}/>
                 <input type='submit' id='playerSubmit' value='Submit' />
             </form>
         )

@@ -7,11 +7,12 @@ const login_user = require('./controller/Login_user')
 const kaizerchiefs = require('./controller/KaizerChiefs_controller')
 const orlandopirates = require('./controller/OrlandoPiratesController/OrlandoPirates_controller')
 const findPlayer = require('./controller/FindPlayers')
-const saveArticle = require('./controller/allArticles_controller');
 
 //update stats modules
-const updatePiratesGoalkeepr = require('./controller/OrlandoPiratesController/UpdateGoalkeeper')
-const updatePiratesMidfielder = require('./controller/OrlandoPiratesController/UpdateMidfielderStats')
+const updatePiratesGoalkeeper = require('./controller/OrlandoPiratesController/UpdateGoalkeeper');
+const updatePiratesMidfielder = require('./controller/OrlandoPiratesController/UpdateMidfielderStats');
+const updatePiratesWinger = require('./controller/OrlandoPiratesController/UpdateWingerStats');
+const updatePiratesStriker = require('./controller/OrlandoPiratesController/UpdateStrikerStats');
 const mongoose = require('mongoose');
 var multer  = require('multer')
 
@@ -91,11 +92,11 @@ app.put('/Admin', async (req, res, next)=>{
     const {position} = req.body;
     console.log(req.body)
         
-    //select which clubs data to fetch when recieve request
+    //select which players stats to update when recieve request, based on player position
     switch (position) {
         case "Goalkeeper":
             // await kaizerchiefs.find_kc_players(req, res);
-            await updatePiratesGoalkeepr.updatePiratesGoalkeeprStats(req, res);
+            await updatePiratesGoalkeeper.updatePiratesGoalkeeprStats(req, res);
             break;
 
         case "Defender":
@@ -107,11 +108,13 @@ app.put('/Admin', async (req, res, next)=>{
             break;
 
         case "Winger":
-            // await orlandopirates.find_orlando_pirates_players(req, res);
+            await updatePiratesWinger.updatePiratesWingerStats(req, res)
             break;
+
         case "Striker":
-            // await orlandopirates.find_orlando_pirates_players(req, res);
+            updatePiratesStriker.updatePiratesStrikerStats(req, res)
             break;
+            
         default:
             break;
     }
