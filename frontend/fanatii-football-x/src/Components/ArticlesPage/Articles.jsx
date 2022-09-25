@@ -25,6 +25,8 @@ function Articles() {
     const [articlesData, setArticlesData] = useState([]);
     const [bannerImage, setBannerImage] = useState('');
     const [bannerHeading, setBannerHeading] = useState('');
+    //state for animation change when article is clicked
+    const [summaryAnimation, setSummaryAnimation] = useState('article-summary-heading')
 
     //on intial render, we fetch the data of articles(summary display) that we going to show
     useEffect(()=>{
@@ -41,6 +43,16 @@ function Articles() {
         fetchData()
     },[])
 
+    //function that checks state of animation and applies correct styling/animation to article heading
+    function animationTest(){
+        if(summaryAnimation === 'article-summary-heading'){
+            setSummaryAnimation('summary-animation')
+        }
+        else{
+            setSummaryAnimation('article-summary-heading')
+        }
+    }
+
     //onclick navigate to next article
     const nextArticle = (e) =>{
         e.preventDefault();
@@ -52,19 +64,21 @@ function Articles() {
            let bannerImage = article.fields.bannerImage.fields.file.url;
            let bannerHeading = article.fields.bannerHeading;
            setBannerImage(bannerImage);
-           setBannerHeading(bannerHeading)
+           setBannerHeading(bannerHeading);
+           animationTest();
         }
         else{
             let article = articlesData[num];
             let bannerImage = article.fields.bannerImage.fields.file.url;
             let bannerHeading = article.fields.bannerHeading;
             setBannerImage(bannerImage);
-            setBannerHeading(bannerHeading)
+            setBannerHeading(bannerHeading);
+            animationTest();
         }
     }
-    
 
-    //pnclick navigates to previous article
+
+    //onclick navigates to previous article
     const prevArticle = (e) =>{
         e.preventDefault();
         num--;
@@ -76,14 +90,16 @@ function Articles() {
             let bannerImage = article.fields.bannerImage.fields.file.url;
             let bannerHeading = article.fields.bannerHeading;
             setBannerImage(bannerImage);
-            setBannerHeading(bannerHeading)
+            setBannerHeading(bannerHeading);
+            animationTest();
         }
         else{
             let article = articlesData[num];
             let bannerImage = article.fields.bannerImage.fields.file.url;
             let bannerHeading = article.fields.bannerHeading;
             setBannerImage(bannerImage);
-            setBannerHeading(bannerHeading)
+            setBannerHeading(bannerHeading);
+            animationTest();
         }
     }
 
@@ -106,8 +122,10 @@ function Articles() {
                 </div>
                                 
                 <div className='article-summary-wrapper'>
-                    <h3 className='article-summary-heading'>{bannerHeading}</h3>
-                    <p className='article-main-summary-text'>
+                    <h3 className={summaryAnimation}>
+                        {bannerHeading}
+                    </h3>
+                    <p className={summaryAnimation}>
                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                        Consequatur sunt sit accusantium quos molestias optio?
                     </p>
