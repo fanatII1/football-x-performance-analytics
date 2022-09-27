@@ -29,15 +29,19 @@ function FormPosition({position}){
         return(
             <form id='GKForm' onSubmit={submitStats}>
                 <h2 id="position-heading">{position}:</h2>
-
+                <div id="form-main-content">
+                <div className="form1">
                 <label htmlFor="name">Name:</label>
                 <input type='text' name='name' id='name' placeholder='Name' onChange={handleChange}/>
                 <label htmlFor="position">Position:</label>
                 <input type='text' name='position'id='position' placeholder='Position' onChange={handleChange}/>
                 <label htmlFor="club">Club:</label>
-                <input type='text' name='club' id='club'  placeholder='club' onChange={handleChange}/>
+                <input type='text' name='club' id='club'  placeholder='Club' onChange={handleChange}/>
                 <label htmlFor="DefActionsOutsidePen">Defensive Actions Outside Pen. :</label>
                 <input type='text' name='DefActionsOutsidePen' id='DefActionsOutsidePen' placeholder='DefActionsOutsidePen' onChange={handleChange}/>
+                </div>
+
+                <div className="form2">
                 <label htmlFor="GoalAgainst">Goals Against:</label>
                 <input type='text' name='GoalAgainst' id='GoalAgainst' placeholder='GoalAgainst' onChange={handleChange}/>
                 <label htmlFor="PSxGGA">PSxGGA:</label>
@@ -45,6 +49,8 @@ function FormPosition({position}){
                 <label htmlFor="PSxGSoT">PSxGSoT</label>
                 <input type='text' name='PSxGSoT' id='PSxGSoT' placeholder='PSxGSoT' onChange={handleChange}/>
                 <input type='submit' id='playerSubmit' value='Submit' />
+                </div>
+                </div>
             </form>
         )
     }
@@ -52,6 +58,8 @@ function FormPosition({position}){
         return(
             <form id='DEFForm' onSubmit={submitStats}>
                 <h2 id="position-heading">{position}:</h2>
+                <div id="form-main-content">
+                <div className="form1">
                 <label htmlFor="name">Name: </label>
                 <input type='text' id='name' name='name' placeholder='Name' onChange={handleChange}/>
                 <label htmlFor="position">Position:</label>
@@ -60,6 +68,9 @@ function FormPosition({position}){
                 <input type='text' id='club' name='club' placeholder='Club' onChange={handleChange}/>
                 <label htmlFor="TacklesPer90">Tackels Per 90:</label>
                 <input type='text' name='TacklesActionsPer90' id='TacklesPer90' placeholder='TacklesPer90' onChange={handleChange}/>
+                </div>
+
+                <div className="form2">
                 <label htmlFor="DEfensiveActionsPer90">Defensive Actions Per 90:</label>
                 <input type='text' name='DefensiveActionsPer90' id='DefensiveActionsPer90' placeholder='DefActionsPer90' onChange={handleChange}/>
                 <label htmlFor="AerialDeadBalls">Aerial Deadballs won: </label>
@@ -69,6 +80,8 @@ function FormPosition({position}){
                 <label htmlFor="BallRetention">Ball Retention:</label>
                 <input type='text' name='BallRetention' id='BallRetention' placeholder='BallRetention' onChange={handleChange}/>
                 <input type='submit' id='playerSubmit' value='Submit' />
+                </div>
+                </div>
             </form>
         )
     }
@@ -76,6 +89,8 @@ function FormPosition({position}){
         return(
             <form id='MIDForm' onSubmit={submitStats}>
                 <h2 id="position-heading">{position}:</h2>
+                <div id="form-main-content">                
+                <div className="form1">
                 <label htmlFor="name">Name:</label>
                 <input type='text' id='name' name='name' placeholder='Name' onChange={handleChange}/>
                 <label htmlFor="position">Position</label>
@@ -92,6 +107,9 @@ function FormPosition({position}){
                 <input type='text' name='DefensiveActionsPer90' id='DefensiveActionsPer90' placeholder='DefActionsPer90' onChange={handleChange}/>
                 <label htmlFor="Linkup">Linkup:</label>
                 <input type='text' name='Linkup' id='Linkup' placeholder='Linkup' onChange={handleChange}/>
+                </div>
+
+                <div className="form2"> 
                 <label htmlFor="AttackingOutput">Attacking Output:</label>
                 <input type='text' name='AttackingOutput' id='AttackingOutput' placeholder='AttackingOutput' onChange={handleChange}/>
                 <label htmlFor="BallRetention">Ball Retention:</label>
@@ -107,6 +125,8 @@ function FormPosition({position}){
                 <label htmlFor="ReceiveInBox">Recieve In Box:</label>
                 <input type='text' name='RecieveInBox' id='RecieveInBox' placeholder='RecieveInBox' onChange={handleChange}/>
                 <input type='submit' id='playerSubmit' value='Submit' />
+                </div>
+                </div>
             </form>
         )
     }
@@ -114,7 +134,8 @@ function FormPosition({position}){
         return(
             <form id='WINGForm' onSubmit={submitStats}>
                 <h2 id="position-heading">{position}:</h2>
-                <h2 id="position-heading">{position}:</h2>
+                <div id="form-main-content">                
+                <div className="form1">
                 <label htmlFor="name">Name:</label>
                 <input type='text' id='name' name='name' placeholder='Name' onChange={handleChange}/>
                 <label htmlFor="position">Position</label>
@@ -131,6 +152,9 @@ function FormPosition({position}){
                 <input type='text' name='DefensiveActionsPer90' id='DefensiveActionsPer90' placeholder='DefActionsPer90' onChange={handleChange}/>
                 <label htmlFor="Linkup">Linkup:</label>
                 <input type='text' name='Linkup' id='Linkup' placeholder='Linkup' onChange={handleChange}/>
+                </div>
+
+                <div className="form2"> 
                 <label htmlFor="AttackingOutput">Attacking Output:</label>
                 <input type='text' name='AttackingOutput' id='AttackingOutput' placeholder='AttackingOutput' onChange={handleChange}/>
                 <label htmlFor="BallRetention">Ball Retention:</label>
@@ -146,6 +170,8 @@ function FormPosition({position}){
                 <label htmlFor="ReceiveInBox">Recieve In Box:</label>
                 <input type='text' name='RecieveInBox' id='RecieveInBox' placeholder='RecieveInBox' onChange={handleChange}/>
                 <input type='submit' id='playerSubmit' value='Submit' />
+                </div>
+                </div>
             </form>
         )
     }
@@ -153,7 +179,8 @@ function FormPosition({position}){
         return(
             <form id='STForm' onSubmit={submitStats}>
                 <h2 id="position-heading">{position}:</h2>
-                <h2 id="position-heading">{position}:</h2>
+                <div id="form-main-content">                
+                <div className="form1">
                 <label htmlFor="name">Name:</label>
                 <input type='text' id='name' name='name' placeholder='Name' onChange={handleChange}/>
                 <label htmlFor="position">Position</label>
@@ -170,6 +197,9 @@ function FormPosition({position}){
                 <input type='text' name='DefensiveActionsPer90' id='DefensiveActionsPer90' placeholder='DefActionsPer90' onChange={handleChange}/>
                 <label htmlFor="Linkup">Linkup:</label>
                 <input type='text' name='Linkup' id='Linkup' placeholder='Linkup' onChange={handleChange}/>
+                </div>
+
+                <div className="form2"> 
                 <label htmlFor="AttackingOutput">Attacking Output:</label>
                 <input type='text' name='AttackingOutput' id='AttackingOutput' placeholder='AttackingOutput' onChange={handleChange}/>
                 <label htmlFor="BallRetention">Ball Retention:</label>
@@ -185,6 +215,8 @@ function FormPosition({position}){
                 <label htmlFor="ReceiveInBox">Recieve In Box:</label>
                 <input type='text' name='RecieveInBox' id='RecieveInBox' placeholder='RecieveInBox' onChange={handleChange}/>
                 <input type='submit' id='playerSubmit' value='Submit' />
+                </div>
+                </div>
             </form>
         )
     }

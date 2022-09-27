@@ -9,10 +9,55 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-color: red;
+}
+
+.admin-form-container{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #00000094;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+#GKForm, #DEFForm, #MIDForm, #WINGForm, #STForm{
+    max-width: 260px;
+}
+
+#GKForm input, #DEFForm input, #MIDForm input, #WINGForm input, #STForm input{
+    display: block;
+    margin: 2% auto;
+    padding: 1%;
+    background: none;
+    width: 100%;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding-left: 2.5%;
+}
+
+#GKForm input:focus, #DEFForm input:focus, #MIDForm input:focus, #WINGForm input:focus, #STForm input:focus{
+    border-left: 10px solid #fff;
+}
+
+#GKForm input::placeholder, #DEFForm input::placeholder, #MIDForm input::placeholder, #WINGForm input::placeholder, #STForm input::placeholder{
+    color: #fff;
+}
+
+/*styling the colse modal button*/
+#closeAdminModal{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    width: 3%;
+    height: 4%;
+    background: none;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    cursor: pointer;
 }
 
 #position-select{
