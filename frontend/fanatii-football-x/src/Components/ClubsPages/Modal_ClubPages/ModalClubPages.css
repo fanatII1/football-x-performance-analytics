@@ -44,6 +44,11 @@
     text-align: center;
 }
 
+#player-name, #player-position{
+    width: 85%;
+    margin: 0 auto;
+}
+
 .stat-view{
     height: 7.5%;
     margin: 2% auto;
