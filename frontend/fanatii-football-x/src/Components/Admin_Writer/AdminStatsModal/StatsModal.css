@@ -66,6 +66,7 @@
     color: #000;
     background: #fff;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 /*styling the colse modal button*/
