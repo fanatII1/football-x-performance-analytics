@@ -115,24 +115,46 @@ function ClubsPage({ clubName }) {
                     <img src={playerBackendData[playerStats].player_image} alt='player-aside' className='aside-image' />
                   </div>
 
-                  <div className='aside-stats-wrapper'>
+                  <div id='aside-stats-wrapper'>
                   <button className='show-hide-stats-modal' onClick={openModal}>View More</button>
-                    <h4 className='aside-player-info'>Name: {playerBackendData[playerStats].name}</h4>
-                    <h4 className='aside-player-info'>Position: {playerBackendData[playerStats].position}</h4>
-                    <h4 className='aside-player-info'>Nationality: {playerBackendData[playerStats].nationality}</h4>
-                    <h4 className='aside-player-info'>DoB: {playerBackendData[playerStats].dateOfBirth}</h4>
+                    <div id="aside-player-overview-wrapper">
+                    <div className="aside-player-overview">
+                      <h4 className="aside-player-overview-heading">AGE</h4>
+                      <span className="aside-overview-small-detail-text"></span>
+                    </div>
 
-                    <h4 id='Stats-heading'>Summary: </h4>
-                    {playerBackendData[playerStats].stats.map((stats, key) => {
-                      return (
-                        <div className='Stats' key={key}>
-                          <p className='stat'>{stats.split(' ')[0]}</p>
-                          <div className='bar'>
-                            <div className={`meter-${key}`}></div>
-                          </div>
-                        </div>
-                      );
-                    })}
+                    <div className="aside-player-overview">
+                      <h4 className="aside-player-overview-heading">LEAGUE</h4>
+                      <span className="aside-overview-small-detail-text"></span>
+                    </div>
+
+                    <div className="aside-player-overview">
+                      <h4 className="aside-player-overview-heading">POS</h4>
+                      <span className="aside-overview-small-detail-text"></span>
+                    </div>
+
+                    <div className="aside-player-overview">
+                      <h4 className="aside-player-overview-heading">FOOT</h4>
+                      <span className="aside-overview-small-detail-text"></span>
+                    </div>
+                    </div>
+
+                    <div className='Play-Style'>
+                      <ul id="play-style-list-strong">
+                        <h4 id="best-attributes-headin">Best Attributes:</h4>
+                        <li className="play-style-list-item">Finisher</li>
+                        <li className="play-style-list-item">Linkup</li>
+                        <li className="play-style-list-item">Heading</li>
+                      </ul>
+
+                      <ul id="play-style-list-weak">
+                        <h4 id="weakness-heading">Weaknesses:</h4>
+                        <li className="play-style-list-item">Crossing</li>
+                        <li className="play-style-list-item">Defending</li>
+                        <li className="play-style-list-item">Low Assists</li>
+                      </ul>
+                      </div>
+
                   </div>
                 </aside>
               )}
