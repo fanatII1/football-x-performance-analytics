@@ -28,6 +28,7 @@ function FormPosition({position}){
     if(position === 'GK'){
         return(
             <form id='GKForm' onSubmit={submitStats}>
+                <h2 id="position-heading">{position}:</h2>
                 <input type='text' name='name' className='name' placeholder='Name' onChange={handleChange}/>
                 <input type='text' name='position'className='position' placeholder='Position' onChange={handleChange}/>
                 <input type='text' name='club' className='club'  placeholder='club' onChange={handleChange}/>
@@ -42,6 +43,7 @@ function FormPosition({position}){
     else if(position === 'DEF'){
         return(
             <form id='DEFForm' onSubmit={submitStats}>
+                <h2 id="position-heading">{position}:</h2>
                 <input type='text' className='name' name='name' placeholder='Name' onChange={handleChange}/>
                 <input type='text' className='position' name='position' placeholder='Position' onChange={handleChange}/>
                 <input type='text' className='club' name='club' placeholder='Club' onChange={handleChange}/>
@@ -57,6 +59,7 @@ function FormPosition({position}){
     else if(position === 'MID'){
         return(
             <form id='MIDForm' onSubmit={submitStats}>
+                <h2 id="position-heading">{position}:</h2>
                 <input type='text' className='name' name='name' placeholder='Name' onChange={handleChange}/>
                 <input type='text' className='position' name='position' placeholder='Position' onChange={handleChange}/>
                 <input type='text' className='club' name='club'placeholder='Club' onChange={handleChange}/>
@@ -79,6 +82,7 @@ function FormPosition({position}){
     else if(position === 'WING'){
         return(
             <form id='WINGForm' onSubmit={submitStats}>
+                <h2 id="position-heading">{position}:</h2>
                 <input type='text' className='name' name='name' placeholder='Name' onChange={handleChange}/>
                 <input type='text' className='position' name='position' placeholder='Position' onChange={handleChange}/>
                 <input type='text' className='club' name='club'placeholder='Club' onChange={handleChange}/>
@@ -101,6 +105,7 @@ function FormPosition({position}){
     else{
         return(
             <form id='STForm' onSubmit={submitStats}>
+                <h2 id="position-heading">{position}:</h2>
                 <input type='text' className='name' name='name' placeholder='Name' onChange={handleChange}/>
                 <input type='text' className='position' name='position' placeholder='Position' onChange={handleChange}/>
                 <input type='text' className='club' name='club'placeholder='Club' onChange={handleChange}/>
