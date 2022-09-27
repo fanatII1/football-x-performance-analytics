@@ -53,6 +53,10 @@
     font-size: 0.9rem;
 }
 
+#GKForm label, #DEFForm label, #MIDForm label, #WINGForm label, #STForm label{
+    font-weight: 450;
+}
+
 #GKForm input:focus, #DEFForm input:focus, #MIDForm input:focus, #WINGForm input:focus, #STForm input:focus{
     border-left: 10px solid rgba(0, 0, 255, 0.514);
 }
