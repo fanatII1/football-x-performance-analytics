@@ -12,7 +12,6 @@
 }
 
 .admin-form-container{
-    display: block;
     width: 100%;
     height: 100%;
     background-color: #00000094;
@@ -24,26 +23,49 @@
 }
 
 #GKForm, #DEFForm, #MIDForm, #WINGForm, #STForm{
-    max-width: 260px;
+    max-width: 500px;
+    width: 50%;
+}
+
+#form-main-content{
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 5%;
+}
+
+#position-heading{
+    text-align: center;
+}
+
+.form1, .form2{
+    width: 100%;
 }
 
 #GKForm input, #DEFForm input, #MIDForm input, #WINGForm input, #STForm input{
     display: block;
     margin: 2% auto;
     padding: 1%;
-    background: none;
+    background: #fff;
     width: 100%;
     border: 2px solid #fff;
     border-radius: 10px;
     padding-left: 2.5%;
+    outline: none;
 }
 
 #GKForm input:focus, #DEFForm input:focus, #MIDForm input:focus, #WINGForm input:focus, #STForm input:focus{
-    border-left: 10px solid #fff;
+    border-left: 10px solid rgba(0, 0, 255, 0.514);
 }
 
 #GKForm input::placeholder, #DEFForm input::placeholder, #MIDForm input::placeholder, #WINGForm input::placeholder, #STForm input::placeholder{
-    color: #fff;
+    color: #000;
+    font-weight: 500;
+}
+
+#player-submit{
+    color: #000;
+    background: #fff;
+    font-weight: bolder;
 }
 
 /*styling the colse modal button*/
