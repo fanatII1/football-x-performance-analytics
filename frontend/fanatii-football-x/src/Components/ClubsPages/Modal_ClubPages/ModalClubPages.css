@@ -40,22 +40,28 @@
     background: #fff;
 }
 
+#DetailedStatsHeading{
+    text-align: center;
+}
+
 .stat-view{
-    background: rebeccapurple;
-    height: 10%;
+    height: 7.5%;
     margin: 2% auto;
     width: 85%;
+    background: #dfdada87;
+    border-radius: 10px;
 }
 
 .stat-description{
     display: flex;
     justify-content: space-between;
     height: 50%;
+    padding: 0 1%;
 }
 
 .stat-bar{
     height: 50%;
-    background: red;
+    border-radius: 10px;
 }
 
 
