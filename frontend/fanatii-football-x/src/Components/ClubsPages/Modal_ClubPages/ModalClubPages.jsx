@@ -3,57 +3,45 @@ import './ModalClubPages.css';
 import statsImage from './analytics4.png';
 
 //modal Component(child) for the ClubPages Component
-function ModalClubPages({ modalState, closeModal }) {
+function ModalClubPages({ modalState, closeModal, playerBackendData, playerStats }) {
+  //when click specific player, we wanto modal to view that players data, thus from theplayer backend, we pass the players key
+  //key will be used to reference players data from backend data
+  let playerImage = (typeof playerStats === 'undefined' ? '' : playerBackendData[playerStats].player_image);
+  let playerAllStats = playerBackendData[playerStats];
+  console.log(playerAllStats)
+  
   return (
     <div id={modalState}>
-      <div className='detailed-tabled-stats'>
-        <div className='detailed-stats-image-container'>
-          <img src={statsImage} alt='statistics' />
-          <button id='close' onClick={closeModal}>
-            X
-          </button>
+      <div id='modal-content'>
+
+        <div className='player-view'>
+          <img src={playerImage} alt='statistics' />
+          <button id='close' onClick={closeModal}> X </button>
         </div>
 
-        <div id='table-container'>
-          <table>
-            <tbody>
-              <tr>
-                <td className='col-main-heading'>Season:</td>
-                <td className='col-main-heading'>Minutes:</td>
-                <td className='col-main-heading'>Disrupting opposition moves</td>
-                <td className='col-main-heading'>Recovering a moving ball</td>
-                <td className='col-main-heading'>% involvement in moves ending in a goal</td>
-                <td className='col-main-heading'>% involvement in moves ending in a shot</td>
-              </tr>
+        <div id='detailed-stats-container'>
+          {(typeof playerAllStats === 'undefined') ? (<></>) :
+           (
+            playerAllStats.stats.map((stat)=>{
+              let statName = stat.split(':')[0];
+              let actualStat = stat.split(':')[1];
 
-              <tr>
-                <td>2021/2022</td>
-                <td>455</td>
-                <td>45</td>
-                <td>56</td>
-                <td>77</td>
-                <td>80</td>
-              </tr>
-              <tr>
-                <td>2020/2021</td>
-                <td>1344</td>
-                <td>54</td>
-                <td>34</td>
-                <td>66</td>
-                <td>71</td>
-              </tr>
-
-              <tr>
-                <td>2019/2021</td>
-                <td>1232</td>
-                <td>51</td>
-                <td>51</td>
-                <td>69</td>
-                <td>74</td>
-              </tr>
-            </tbody>
-          </table>
+              return(
+              <div className="stat-view">
+    
+                <div className="stat-description">
+                  <h5 className="stat-name">{statName}</h5>
+                  <h5 className="actual-stat">{actualStat}</h5>
+                </div>
+                
+                <div className="stat-bar">...</div>
+              </div>
+              )
+            })
+          )
+          }
         </div>
+
       </div>
     </div>
   );

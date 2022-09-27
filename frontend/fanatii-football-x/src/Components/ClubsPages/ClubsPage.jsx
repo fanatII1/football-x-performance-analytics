@@ -48,6 +48,8 @@ function ClubsPage({ clubName }) {
       setAside('player-stats-half');
       setPlayerSection('Players-club-pages-section-half');
     }
+
+    //onclick, we pass the key of the player, so we can reference their image
     setPlayerStats(key);
   };
 
@@ -159,7 +161,7 @@ function ClubsPage({ clubName }) {
                 </aside>
               )}
             </div>
-            <ModalClubPages modalState={modalState} closeModal={closeModal}/>
+            <ModalClubPages modalState={modalState} closeModal={closeModal} playerBackendData={playerBackendData} playerStats={playerStats}/>
           </div>
         </>
       )}
