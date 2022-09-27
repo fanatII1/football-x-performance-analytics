@@ -43,10 +43,12 @@
     position: absolute;
     top: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.425);
+    background: rgb(0 0 0 / 29%);
+    border-radius: 100%;
     color: white;
     border: 1px solid white;
     padding: 1.5%;
+    font-weight: 600;
 }
 
 .col-main-heading{
