@@ -78,8 +78,6 @@ function ClubsPage({ clubName }) {
                   return (
                     <div className='player-main-container' key={key}>
                       <div className='player-wrapper' onClick={(event) => revealStats(event, key)}>
-
-                        <button className='show-hide-stats-modal' onClick={openModal}>View More</button>
                         
                         <div className='club-player-img-container'>
                           <img src={player.player_image} alt='player_image' className='club-player' />
@@ -118,6 +116,7 @@ function ClubsPage({ clubName }) {
                   </div>
 
                   <div className='aside-stats-wrapper'>
+                  <button className='show-hide-stats-modal' onClick={openModal}>View More</button>
                     <h4 className='aside-player-info'>Name: {playerBackendData[playerStats].name}</h4>
                     <h4 className='aside-player-info'>Position: {playerBackendData[playerStats].position}</h4>
                     <h4 className='aside-player-info'>Nationality: {playerBackendData[playerStats].nationality}</h4>
