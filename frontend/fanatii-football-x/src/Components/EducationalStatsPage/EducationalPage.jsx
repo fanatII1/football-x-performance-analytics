@@ -1,12 +1,17 @@
 import React from 'react'
 import './EducationalPage.css'
+import Navbar from '../Global_Navbar/Navbar';
+import Footer from '../Global_Footer/Footer'
+import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom';
 
 function EducationalPage() {
   return (
     <>
+    <Navbar idNav='nav-search' />
     <main id="eduactional-content-main-container">
-        <div id="data-converage">
-            <h3 className="data-coverage-heading">Where des the data for fanatii-football-x come from?</h3>
+        <h1 id="statistics-heading">Statistics Education</h1>
+        <div id="data-coverage">
+            <h3 className="data-coverage-heading">Where does the data for fanatii-football-x come from?</h3>
             <p className="data-coverage-text">
             The data come from a third-party provider that processes video from hundreds of football games every week. 
             The provider records various aspects of each event on video what happened, which players were involved, 
@@ -15,7 +20,7 @@ function EducationalPage() {
             </p>
         </div>
 
-        <div id="data-converage">
+        <div id="data-coverage">
             <h3 className="data-coverage-heading">What is a ball progression expected goals model?</h3>
             <p className="data-coverage-text">
             Players in possession of the ball pass through the same location on the pitch thousands of times in a given season. 
@@ -30,7 +35,7 @@ function EducationalPage() {
             </p>
         </div>
 
-        <div id="data-converage">
+        <div id="data-coverage">
             <h3 className="data-coverage-heading">What is a shot creation expected goals model?</h3>
             <p className="data-coverage-text">
             Every shot taken in football is unique, but shots often have characteristics in common: the location of the shot, the situation
@@ -42,7 +47,7 @@ function EducationalPage() {
             </p>
         </div>
 
-        <div id="data-converage">
+        <div id="data-coverage">
             <h3 className="data-coverage-heading">Overall performance</h3>
             <p className="data-coverage-text">
             NYA uses two mathematical models to evaluate players' attacking and defending: 
@@ -157,26 +162,8 @@ function EducationalPage() {
                 </li>
             </ul>
         </div>
-
-        <div id="data-converage">
-            <h3 className="data-coverage-heading"></h3>
-            <p className="data-coverage-text"></p>
-        </div>
-
-        <div id="data-converage">
-            <h3 className="data-coverage-heading"></h3>
-            <p className="data-coverage-text"></p>
-        </div>
-
-        <div id="data-converage">
-            <h3 className="data-coverage-heading"></h3>
-            <p className="data-coverage-text"></p>
-        </div>
-
-        <div id="data-converage">
-            <h3 className="data-coverage-heading"></h3>
-            <p className="data-coverage-text"></p>
-        </div>
+        <Footer idFooter='home-footer'/>
+        <GlobalNavBottom navBottom='home-bottom-nav'/>
     </main>
     </>
   )
