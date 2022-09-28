@@ -89,6 +89,7 @@
     display: none;
 }
 
+/*query ensure that the view more button in the player container is visible in smaller screens --tablets down*/
 @media screen and (max-width: 700px) {
     .responsiveView{
         display: block;
@@ -151,7 +152,7 @@
     background: #1e1d32;
 }
 
-/*aside styles*/
+/*Aside Styles*/
 #player-stats-none{
     display: none;
 }
@@ -175,13 +176,8 @@
     height: 100%;
     object-fit: contain;
     background: linear-gradient(90deg, #ff00e2 0%, #ff008e 100%);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 
-/* .Stats, .aside-player-info, #Stats-heading{
-    margin: 5%;
-} */
 #aside-stats-wrapper{
     height: 65%;
     background: #fff;
