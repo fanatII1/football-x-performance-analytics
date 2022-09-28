@@ -1,5 +1,6 @@
 import React from 'react';
 import './ModalClubPages.css';
+import statsImage from './analytics4.png'
 
 //modal Component(child) for the ClubPages Component
 function ModalClubPages({ modalState, closeModal, playerBackendData, playerStats }) {
@@ -9,6 +10,9 @@ function ModalClubPages({ modalState, closeModal, playerBackendData, playerStats
   let playerAllStats = playerBackendData[playerStats];
   let playerName =(typeof playerStats === 'undefined' ? '' : playerBackendData[playerStats].name);
   let playerPosition = (typeof playerStats === 'undefined' ? '' : playerBackendData[playerStats].position);
+  let playerAge = (typeof playerStats === 'undefined' ? '' : playerBackendData[playerStats].age);
+  let playerNationality = (typeof playerStats === 'undefined' ? '' : playerBackendData[playerStats].nationality);
+  let playerLeague =(typeof playerStats === 'undefined' ? '' : playerBackendData[playerStats].league)
   let playerImage = (typeof playerStats === 'undefined' ? '' : playerBackendData[playerStats].player_image);
 
   //function that will set stats bar width based on stats of player
@@ -44,9 +48,12 @@ function ModalClubPages({ modalState, closeModal, playerBackendData, playerStats
         </div>
 
         <div id='detailed-stats-container'>
-          <h2 id="DetailedStatsHeading">Statistics:</h2>
-          <h3 id="player-name">Name: {playerName}</h3>
-          <h4 id="player-position">Position: {playerPosition}</h4>
+          <h2 id='DetailedStatsHeading'>Statistics:</h2>
+          <h3 id='player-name'>Name: {playerName}</h3>
+          <h4 id='player-position'>Position: {playerPosition}</h4>
+          <h4 id="player-age">Age: {playerAge}</h4>
+          <h4 id="player-league">League: {playerLeague}</h4>
+          <h4 id="player-nationality">Nationality: {playerNationality}</h4>
           {(typeof playerAllStats === 'undefined') ? (<></>) :
            (
             playerAllStats.stats.map((stat, key)=>{
@@ -56,19 +63,22 @@ function ModalClubPages({ modalState, closeModal, playerBackendData, playerStats
               let bar_widthStyles = barWidth(actualStat);
 
               return(
-              <div className="stat-view" key={key}>
+              <div className='stat-view' key={key}>
     
-                <div className="stat-description">
-                  <h5 className="stat-name">{statName}</h5>
-                  <h5 className="actual-stat">{actualStat}</h5>
+                <div className='stat-description'>
+                  <h5 className='stat-name'>{statName}</h5>
+                  <h5 className='actual-stat'>{actualStat}</h5>
                 </div>
                 
-                <div className="stat-bar" style={bar_widthStyles}> </div>
+                <div className='stat-bar' style={bar_widthStyles}> </div>
               </div>
               )
             })
           )
           }
+          <div id='detailed-stats-chart'>
+            <img src={statsImage} id='statsChart' alt='statsChart' />
+          </div>
         </div>
 
       </div>

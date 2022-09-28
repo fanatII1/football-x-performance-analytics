@@ -22,7 +22,6 @@ function ClubsPage({ clubName }) {
     fetch(`/GlobalSearch/ClubSearch/${clubName}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setplayerBackendData(data);
       })
       .catch((error) => {
@@ -102,6 +101,7 @@ function ClubsPage({ clubName }) {
                             Position:
                             <span className='player-info'>{player.position}</span>
                           </p>
+                          <button className='show-hide-stats-modal responsiveView' onClick={openModal}>+</button>
                         </div>
                       </div>
                     </div>

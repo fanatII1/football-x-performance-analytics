@@ -45,7 +45,7 @@
     text-align: center;
 }
 
-#player-name, #player-position{
+#player-name, #player-position, #player-age, #player-league, #player-nationality{
     width: 85%;
     margin: 0 auto;
 }
@@ -78,7 +78,38 @@
     border-radius: 100%;
     color: white;
     border: 1px solid white;
-    padding: 1.5%;
+    padding: 0.5%;
     font-weight: 600;
     cursor: pointer;
+}
+
+#statsChart{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*RESPONSIVE ACTIVITY*/
+@media screen and (max-width: 500px) {
+    #modal-content{
+        flex-direction: column;
+        justify-content: center;
+        height: 90%;
+    }
+
+    .player-view, #detailed-stats-container{
+        width: 100%;
+        height: 50%;
+        font-size: 0.6rem;
+    }
+
+    .player-view img{
+        object-fit: contain;
+    }
+
+    .stat-view{
+        height: 10.5%;
+        font-size: 0.7rem;
+    }
 }
