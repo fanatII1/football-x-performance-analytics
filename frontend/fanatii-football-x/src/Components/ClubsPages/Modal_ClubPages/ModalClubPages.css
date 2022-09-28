@@ -113,3 +113,10 @@
         font-size: 0.7rem;
     }
 }
+
+/*ensuring that the text for tablets is suitable to read*/
+@media screen and (min-width: 501px) and (max-width: 920px) {
+    #detailed-stats-container{
+        font-size: 0.65rem;
+    }
+}
