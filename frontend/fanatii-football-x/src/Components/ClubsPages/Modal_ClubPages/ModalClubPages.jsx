@@ -17,7 +17,7 @@ function ModalClubPages({ modalState, closeModal, playerBackendData, playerStats
     let actualStat_num = parseFloat(actualStat);
 
     if(actualStat < 0.39){
-      return {width: '25%', background: 'linear-gradient(90deg, #ff00e2 0%, #ff008e 100%)'}
+      return {width: '25%', background: 'linear-gradient(79deg, #474bff 0%, #bc48ff 100%)'}
     }
     else if(actualStat_num > 0.39 && actualStat_num < 0.59){
       return {width: '50%', background: 'linear-gradient(79deg, #474bff 0%, #bc48ff 100%)'}
