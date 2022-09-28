@@ -122,22 +122,22 @@ function ClubsPage({ clubName }) {
                     <div id="aside-player-overview-wrapper">
                     <div className="aside-player-overview">
                       <h4 className="aside-player-overview-heading">AGE</h4>
-                      <span className="aside-overview-small-detail-text"></span>
+                      <span className="aside-overview-small-detail-text">{playerBackendData[playerStats].age}</span>
                     </div>
 
                     <div className="aside-player-overview">
                       <h4 className="aside-player-overview-heading">LEAGUE</h4>
-                      <span className="aside-overview-small-detail-text"></span>
+                      <span className="aside-overview-small-detail-text">{playerBackendData[playerStats].league}</span>
                     </div>
 
                     <div className="aside-player-overview">
                       <h4 className="aside-player-overview-heading">POS</h4>
-                      <span className="aside-overview-small-detail-text"></span>
+                      <span className="aside-overview-small-detail-text">{playerBackendData[playerStats].position}</span>
                     </div>
 
                     <div className="aside-player-overview">
                       <h4 className="aside-player-overview-heading">FOOT</h4>
-                      <span className="aside-overview-small-detail-text"></span>
+                      <span className="aside-overview-small-detail-text">{playerBackendData[playerStats].foot}</span>
                     </div>
                     </div>
 

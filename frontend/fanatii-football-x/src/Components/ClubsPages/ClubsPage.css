@@ -98,8 +98,10 @@
     font-size: 0.9rem;
 }
 
-.player-wrapper > div:hover{
-    background: #00000038;
+.player-wrapper:hover{
+    background: #474bff;
+    background: -webkit-linear-gradient(79deg, #292b9e 0%, #bc48ff 100%);
+    background: linear-gradient(79deg, #292b9e 0%, #bc48ff 100%);
     border-radius: 20px;
 }
 
@@ -186,6 +188,7 @@
     grid-template-rows: 50% 50%;
     row-gap: 5%;
     margin: 5%;
+    overflow-wrap: break-word;
 }
 
 .aside-player-overview{
@@ -202,6 +205,10 @@
 
 #Stats-heading{
     text-align: center;
+}
+
+.aside-overview-small-detail-text{
+    font-weight: 450;
 }
 
 .Play-Style{
