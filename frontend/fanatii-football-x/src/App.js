@@ -6,6 +6,7 @@ import Homepage from './Components/Homepage/Homepage';
 import GlobalSearch from './Components/GlobalSearchPage/GlobalSearch';
 import ClubSearch from './Components/ClubSearch/ClubSearch'
 import Articles from './Components/ArticlesPage/Articles';
+import EducationalPage from './Components/EducationalStatsPage/EducationalPage';
 
 //club routes
 import KaizerChiefs from './Components/ClubsPages/KaizerChiefs/KaizerChiefs';
@@ -29,6 +30,7 @@ function App() {
             <Route path='/GlobalSearch/ClubSearch/OrlandoPirates' element={<OrlandoPirates/>}/>
             <Route path='/GlobalSearch/NameSearch/' element={<NameSearch/>}/>
             <Route path='/Admin' element={<Admin/>}/>
+            <Route path='/Education' element={<EducationalPage/>}/>
           </Routes>
         </BrowserRouter>
         </>
