@@ -25,10 +25,14 @@ function Articles() {
     const [articlesData, setArticlesData] = useState([]);
     const [bannerImage, setBannerImage] = useState('');
     const [bannerHeading, setBannerHeading] = useState('');
+    const [bannerVideo, setBannerVideo] = useState([]);
+    const [videosBannerImage, setVideosBannerImage] = useState('');
+    const [videosBannerHeading, setVideosBannerHeading] = useState('');
+    const [allVideos, setAllVideos] = useState([])
     //state for animation change when article is clicked
     const [summaryAnimation, setSummaryAnimation] = useState('article-summary-heading')
 
-    //on intial render, we fetch the data of articles(summary display) that we going to show
+    //on intial render, we fetch the data of articles(summary display) and videos that we going to show
     useEffect(()=>{
         async function fetchData(){
             //we fetch Images and Data related to the articles
@@ -38,7 +42,22 @@ function Articles() {
             const bannerImage = imageResponseData[0].fields.bannerImage.fields.file.url;
             setArticlesData(imageResponseData)
             setBannerHeading(bannerHeading)
-            setBannerImage(bannerImage)
+            setBannerImage(bannerImage)            
+            
+            //we fetch the  VIdeos and Data related to the video that's going to be on display
+            const Videoresponse =  await client.getEntries({content_type: 'videos'});
+            const Video_reponseData = Videoresponse.items;
+            const bannerVideo = Video_reponseData[0].fields.bannerVideo.fields.file.url;
+            const videoHeading = Video_reponseData[0].fields.bannerVideoHeading;
+            const videoImage = Video_reponseData[0].fields.bannerVideoImage.fields.file.url;
+            setBannerVideo(bannerVideo);
+            setVideosBannerHeading(videoHeading);
+            setVideosBannerImage(videoImage)
+            
+            //we return first 3 videos that will be displayed on  the site
+            let videos = Video_reponseData;
+            let first3Videos = videos.filter((video, index)=> index <= 3); //return first 3 videos data.
+            setAllVideos(first3Videos)
         }
         fetchData()
     },[])
@@ -134,6 +153,30 @@ function Articles() {
             </div> 
             </div>
         </section>
+
+
+
+        <section id='videos-section'>
+            <div id='all-videos'>
+            <h1 className='videos-main-heading'>Video {'&'} Analysis</h1>
+
+            <div className='video'>
+                <div className='video-wrapper'>
+                       <video src={bannerVideo} autoPlay id='bannerVideo'>
+                            Your browser does not support the video extension type
+                        </video>
+                    <button id='nextVid' onClick={nextArticle}>{'>'}</button>
+                    <button id='prevVid' onClick={prevArticle}>{'<'}</button>
+                </div>
+            </div> 
+
+            </div>
+        </section>
+
+
+
+
+
 
         <section id='podcasts-section'>
             <h2 id='podcasts-heading'>Podcasts :</h2>

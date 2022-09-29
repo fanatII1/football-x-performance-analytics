@@ -16,8 +16,9 @@ function AdminNav() {
                 <li className='admin-nav-item'><Link to='/'>Home <span className='nav-hr'></span></Link></li>
                 <li className='admin-nav-item'><Link to='/GlobalSearch'>Search <span className='nav-hr'></span></Link></li>
                 <li className='admin-nav-item'><Link to='/Articles'>Articles <span className='nav-hr'></span></Link></li>
-                {/* <li className='admin-nav-item'><Link to=''>Education <span className='nav-hr'></span></Link></li> */}
-                {/* <li className='admin-nav-item'><Link to=''>About <span className='nav-hr'></span></Link></li> */}
+                <li className='admin-nav-item'><Link to='/Education'>Stats Education <span className='nav-hr'></span></Link></li>
+                <li className='admin-nav-item'><Link to='/Admin'>Admin<span className='nav-hr'></span></Link></li>
+                {/* <li className='admin-nav-item'><Link to=''>About <span className='nav-hr'></span></Link></li>*/}
             </ul>
         </div>
 

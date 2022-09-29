@@ -266,3 +266,51 @@
         grid-column: 2/4;
     }
 }
+
+
+#videos-section{
+    height: 50%;
+    color: #fff;    
+    background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
+}
+
+#all-videos{
+    height: 100%;
+}
+
+.videos-main-heading{
+    height: 10%;
+    text-align: center;
+}
+
+.video{
+    height: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.video-wrapper{
+    position: relative;
+}
+
+#nextVid, #prevVid{
+    position: absolute;
+    padding: 2%;
+    color: #fff;
+    border-radius: 2px;
+    border: none;
+    background: #474bff;
+    background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
+    cursor: pointer;
+    z-index: 1;
+}
+
+#prevVid{
+    top: 50%;
+    left: 0;
+}
+
+#nextVid{
+    top: 50%;
+    right: 0;
+}
