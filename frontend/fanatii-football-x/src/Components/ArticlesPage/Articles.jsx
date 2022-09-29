@@ -96,7 +96,6 @@ function Articles() {
         }
     }
 
-
     //onclick navigates to previous article
     const prevArticle = (e) =>{
         e.preventDefault();
@@ -121,6 +120,8 @@ function Articles() {
             animationTest();
         }
     }
+
+
 
   return (
     <>
@@ -154,22 +155,23 @@ function Articles() {
             </div>
         </section>
 
-
-
         <section id='videos-section'>
             <div id='all-videos'>
             <h1 className='videos-main-heading'>Video {'&'} Analysis</h1>
 
-            <div className='video'>
-                <div className='video-wrapper'>
-                       <video src={bannerVideo} autoPlay id='bannerVideo'>
-                            Your browser does not support the video extension type
-                        </video>
-                    <button id='nextVid' onClick={nextArticle}>{'>'}</button>
-                    <button id='prevVid' onClick={prevArticle}>{'<'}</button>
-                </div>
-            </div> 
-
+                {
+                    allVideos.map((video, key)=>{
+                        return (
+                        <div className='video' key={key}>
+                        <div className='video-wrapper'>
+                            <video src={bannerVideo} autoPlay id='bannerVideo'>
+                                Your browser does not support the video extension type
+                             </video>
+                        </div>
+                        </div> 
+                        )
+                    })
+                }
             </div>
         </section>
 
