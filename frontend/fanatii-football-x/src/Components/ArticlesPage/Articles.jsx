@@ -13,14 +13,9 @@ import  {client} from '../client'
 
 const podcastData = [{image: PodCastOne, heading: 'The Back 3', host: 'Mpumelelo Lobelo | Ryan Mason | Melissa Partick'}, {image: PodCastTwo, heading: 'Fox Football Podcast', host: 'Ray Zondi | Lebogang Mofokeng'}, {image: PodCastThree, heading: 'The truth Football show', host: 'Gabrielle Noorodien | Ian Gonzalez'}, {image: PodCastFour, heading: 'Total Soccer show', host: 'Katie Parris'}];
 
-//number that will be used to go to next and previous articles that will be inside array 
-let num = 0;
 function Articles() {
     const [articlesData, setArticlesData] = useState([]);
-    const [bannerImage, setBannerImage] = useState('');
-    const [bannerHeading, setBannerHeading] = useState('');
     const [allVideos, setAllVideos] = useState([])
-    const [summaryAnimationClass, setSummaryAnimationClass] = useState('article-summary-heading')
 
     //on intial render, we fetch the data of articles(summary display) and videos that we going to show
     useEffect(()=>{
@@ -42,66 +37,6 @@ function Articles() {
         fetchData()
     },[])
 
-    //function that checks state of animation and applies correct styling/animation to article heading
-    function animationTest(){
-        if(summaryAnimationClass === 'article-summary-heading'){
-            setSummaryAnimationClass('summary-animation')
-        }
-        else{
-            setSummaryAnimationClass('article-summary-heading')
-        }
-    }
-
-    //onclick navigate to next article
-    const nextArticle = (e) =>{
-        e.preventDefault();
-        num++;
-        //if number is greater then the last item in array(index), we set  it back to start at first item
-        if(num > articlesData.length - 1){
-           num = 0
-           let article = articlesData[num];
-           let bannerImage = article.fields.bannerImage.fields.file.url;
-           let bannerHeading = article.fields.bannerHeading;
-           setBannerImage(bannerImage);
-           setBannerHeading(bannerHeading);
-           animationTest();
-        }
-        else{
-            let article = articlesData[num];
-            let bannerImage = article.fields.bannerImage.fields.file.url;
-            let bannerHeading = article.fields.bannerHeading;
-            setBannerImage(bannerImage);
-            setBannerHeading(bannerHeading);
-            animationTest();
-        }
-    }
-
-    //onclick navigates to previous article
-    const prevArticle = (e) =>{
-        e.preventDefault();
-        num--;
-        //if number is less than 0, we set it back to start at last item in array
-        if(num < 0){
-            num = articlesData.length;
-            num--;
-            let article = articlesData[num];
-            let bannerImage = article.fields.bannerImage.fields.file.url;
-            let bannerHeading = article.fields.bannerHeading;
-            setBannerImage(bannerImage);
-            setBannerHeading(bannerHeading);
-            animationTest();
-        }
-        else{
-            let article = articlesData[num];
-            let bannerImage = article.fields.bannerImage.fields.file.url;
-            let bannerHeading = article.fields.bannerHeading;
-            setBannerImage(bannerImage);
-            setBannerHeading(bannerHeading);
-            animationTest();
-        }
-    }
-
-
 
   return (
     <>
@@ -116,14 +51,14 @@ function Articles() {
                         <div className='Article'>
             
                             <div className='article-bannerImg-wrapper'>
-                                <img src={article.fields.bannerImage.fields.file.url} className='article-bannerImg' alt={bannerImage} />
+                                <img src={article.fields.bannerImage.fields.file.url} className='article-bannerImg' alt='bannerImage' />
                             </div>
                                             
                             <div className='article-summary-wrapper'>
-                                <h3 className={summaryAnimationClass}>
+                                <h3 className='article-summary-heading'>
                                     {article.fields.bannerHeading}
                                 </h3>
-                                <p className={summaryAnimationClass}>
+                                <p className='article-summary-text'>
                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                    Consequatur sunt sit accusantium quos molestias optio?
                                 </p>
