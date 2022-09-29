@@ -20,11 +20,11 @@ function Articles() {
     //on intial render, we fetch the data of articles(summary display) and videos that we going to show
     useEffect(()=>{
         async function fetchData(){
-            //we fetch Images and Data related to the article and return only first 3 images
+            //we fetch Images and Data related to the article and return only first 4 images
             const imageresponse =  await client.getEntries({content_type: 'postBannerImage'});
             const imageResponseData = imageresponse.items;
             let images = imageResponseData;
-            let first3Images = images.filter((video, index)=> index <= 2); //return first 3 images data
+            let first3Images = images.filter((video, index)=> index <= 3); //return first 4 images data
             setArticlesData(first3Images)
             
             //we fetch videos we need and return only the first 4
@@ -81,7 +81,7 @@ function Articles() {
                         return (
                         <div className='video-display' key={key}>
                         <div className='video-wrapper'>
-                            <video src={display_vid} autoPlay id='bannerVideo'>
+                            <video src={display_vid} controls id='bannerVideo'>
                                 Your browser does not support the video extension type
                              </video>
                         </div>
