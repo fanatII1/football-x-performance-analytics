@@ -22,10 +22,9 @@
 }
 
 #Articles-section{
-    height: 55%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5%;
+    height: 50%;
+    display: flex;
+    column-gap: 2%;
     justify-content: center;
     background: #474bff;
     background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
@@ -33,20 +32,48 @@
 
 .Article{
     height: 100%;
+    width: 30%;
     background: #ffffff5c;
-    border-radius: 10px;
     position: relative;
     overflow: hidden;
 }
 
-@media screen and (max-width: 750px) {
+#articles-section-main-heading{
+    color: #fff;
+    text-align: center;
+}
+
+@media screen and (max-width: 820px) {
     #Articles-section{
-        height: 80%;
+        height: 100%;
+        row-gap: 2%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.75rem;
     }
 
     .Article{
-        min-height: 280px;
-        max-height: 300px;
+        width: 84%;
+    }
+    
+    #all-videos{
+        flex-direction: column;
+    }
+
+    #videos-section{
+        height: auto !important;
+        
+    }
+
+    .video-display{
+        width: 90%;
+        margin: 0 auto;
+        font-size: 0.75rem;
+    }
+
+    .player{
+        font-size: 1.5rem !important;
     }
 }
 
@@ -61,7 +88,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
     overflow: hidden;
 }
 
@@ -75,7 +101,6 @@
     justify-content: center;
     color: white;
     background: #06065082;
-    border-radius: 10px;
     padding-left: 5%;
 }
 
@@ -191,13 +216,17 @@
 
 /*Videos section styles*/
 #videos-section{
+    padding-top: 2%;
+    height: 50%;
     color: #fff;    
     background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
 }
 
 #all-videos{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    height: 90%;
+    margin: 0 auto;
+    width: 96%;
+    display: flex;
     justify-content: center;
 }
 
@@ -208,10 +237,16 @@
 
 .video-display{
     padding: 1.5%;
+    height: 100%;
 }
 
 .video-wrapper{
     position: relative;
+    height: 100%;
+}
+
+.bannerVideo{
+    object-fit: cover;
 }
 
 .video-user-overlay{

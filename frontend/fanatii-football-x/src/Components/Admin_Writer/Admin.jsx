@@ -123,7 +123,7 @@ function Admin() {
 
                     <div className='sub-videos'>
                     {allVideos.map((video, key)=>{
-                        console.log(video.fields.videoSummary)
+                        
                             return (
                                 <div className='video' key={key}>
                                     <div className='sub-video-bannerImage-wrapper'>

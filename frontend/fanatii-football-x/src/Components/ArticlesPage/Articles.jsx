@@ -4,7 +4,7 @@ import Navbar from '../Global_Navbar/Navbar'
 import PodCastOne from './ArticlesImages/podcast(1).jpg'
 import PodCastTwo from './ArticlesImages/podcast(2).jpg'
 import PodCastThree from './ArticlesImages/podcast(3).png'
-import PodCastFour from './ArticlesImages/podcast(4).png'
+import PodCastFour from './ArticlesImages/podcast(3).png'
 import Footer from '../Global_Footer/Footer'
 import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom'
 import { useState, useEffect, useRef } from 'react'
@@ -22,19 +22,19 @@ function Articles() {
     //on intial render, we fetch the data of articles(summary display) and videos that we going to show
     useEffect(()=>{
         async function fetchData(){
-            //we fetch Images and Data related to the article and return only first 4 images
+            //we fetch Images and Data related to the article and return only first 3 images
             const imageresponse =  await client.getEntries({content_type: 'postBannerImage'});
             const imageResponseData = imageresponse.items;
             let images = imageResponseData;
-            let first3Images = images.filter((video, index)=> index <= 3); //return first 4 images data
+            let first3Images = images.filter((video, index)=> index <= 2); //return first 3 images data
             setArticlesData(first3Images)
             
-            //we fetch videos we need and return only the first 4
+            //we fetch videos we need and return only the first 3
             const Videoresponse =  await client.getEntries({content_type: 'videos'});
             const Video_reponseData = Videoresponse.items;
             let videos = Video_reponseData;
-            let first4Videos = videos.filter((video, index)=> index <= 4); //return first 4 videos data.
-            setAllVideos(first4Videos)
+            let first3Videos = videos.filter((video, index)=> index <= 3); //return first 3 videos data.
+            setAllVideos(first3Videos)
         }
         fetchData()
     },[])
@@ -52,7 +52,7 @@ function Articles() {
     <Navbar idNav='nav-search'/>
 
     <div id='Articles-main-container'>
-
+        <h1 id="articles-section-main-heading">Articles {'&'} Analysis</h1>
         <section id='Articles-section'>
             {
                 articlesData.map((article)=>{
@@ -90,14 +90,14 @@ function Articles() {
                         return (
                         <div className='video-display' key={key}>
                         <div className='video-wrapper'>
-                            <video src={display_vid} controls id='bannerVideo' ref={videoElement}>
+                            <video src={display_vid} controls id='bannerVideo' className='bannerVideo' ref={videoElement}>
                                 Your browser does not support the video extension type
                              </video>
                              <div className={showHideVideoOverlay}>
                                 <img src={video.fields.bannerVideoImage.fields.file.url} alt="" className="video-user-overlay-image" />
                                 <div className="banner-video-image-overlay"  onClick={handlePlay}>
                                     <i className='fa-solid fa-play player'></i>
-                                    <h4 className="video-overlay-heading">{video.fields.bannerVideoHeading}</h4>
+                                    <h3 className="video-overlay-heading">{video.fields.bannerVideoHeading}</h3>
                                 </div>
                              </div>
                         </div>
@@ -128,7 +128,7 @@ function Articles() {
     
                         <div className='sub-main-podcast-text-wrapper'>
                             <h5 className='sub-podcast-article-heading'>
-                                <a href='https://podcasts.apple.com/us/podcast/the-back-three/id1582621804'>
+                                <a href='https://podcasts.apple.com/us/podcast/the-back-three/id1582621803'>
                                 {article.heading} <i className='fa-solid fa-podcast'></i>
                                 </a>
                             </h5>
