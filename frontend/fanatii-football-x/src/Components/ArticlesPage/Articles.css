@@ -15,7 +15,11 @@
 }
 
 #Articles-section{
-    height: 75%;
+    height: 40%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5%;
+    justify-content: center;
     background: #474bff;
     background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
 }
@@ -57,18 +61,6 @@
 
 .article-summary-heading{
     padding: 2% 10%;
-    animation: slide 1s;
-}
-
-@keyframes slide {
-    from{
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    to{
-        opacity: 1;
-        transform: translateX(0deg);
-    }
 }
 
 .summary-animation{
@@ -89,47 +81,24 @@
 
 
 .Article{
-    height: 90%;
+    height: 100%;
     background: #ffffff5c;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
 }
 
-#next, #prev{
-    position: absolute;
-    padding: 2%;
-    color: #fff;
-    border-radius: 2px;
-    border: none;
-    background: #474bff;
-    background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
-    cursor: pointer;
-    z-index: 1;
+@media screen and (max-width: 750px) {
+    #Articles-section{
+        height: 70%;
+    }
+
+    .Article{
+        max-height: 300px;
+    }
 }
-
-#prev{
-    top: 50%;
-    left: 0;
-}
-
-#next{
-    top: 50%;
-    right: 0;
-}
-
-
 
 /*Podcast Section Styles*/
-@keyframes headingAnimate {
-    from{
-        transform: translateY(-100%);
-    }
-    to{
-        transform: translateY(0);
-    }
-}
-
 #articles-podcasts-image-wrapper{
     height: 55%;
     position: relative;
@@ -221,24 +190,12 @@
     text-decoration: underline;
 }
 
-.journalist{
-    line-height: 1.4;
-    color: #000;
-    font-weight: bol;
-}
-
 .host{
     color: #fff;
 }
 
 /*Responsive activity of BOTH Articles and Podcasts section*/
 @media screen and (max-width: 500px) {
-    #main-articles{
-        max-height: none;
-        display: block;
-        padding-bottom: 12%;
-    }
-
     .sub-top-main-podcasts{
         max-height: none;
         grid-template-columns: none;
@@ -249,24 +206,6 @@
         display: none;
     }
 }
-
-@media screen and (min-width: 501px) and (max-width: 1024px)  {
-    #main-articles{
-        display: grid;
-        grid-gap: 1%;
-        width: 90%;
-        max-height: 800px;
-        margin: 0 auto;
-        grid-template-columns: 33.33% 33.33% 33.33%;
-        grid-template-rows: 33.33% 33.33% 33.33%;
-        padding: 2% 0;
-    }
-
-    .a-7{
-        grid-column: 2/4;
-    }
-}
-
 
 /*Videos section styles*/
 #videos-section{

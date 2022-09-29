@@ -25,21 +25,19 @@ function Articles() {
     //on intial render, we fetch the data of articles(summary display) and videos that we going to show
     useEffect(()=>{
         async function fetchData(){
-            //we fetch Images and Data related to the articles
+            //we fetch Images and Data related to the article and return only first 3 images
             const imageresponse =  await client.getEntries({content_type: 'postBannerImage'});
             const imageResponseData = imageresponse.items;
-            const bannerHeading = imageResponseData[0].fields.bannerHeading;
-            const bannerImage = imageResponseData[0].fields.bannerImage.fields.file.url;
-            setArticlesData(imageResponseData)
-            setBannerHeading(bannerHeading)
-            setBannerImage(bannerImage)            
+            let images = imageResponseData;
+            let first3Images = images.filter((video, index)=> index <= 2); //return first 3 images data
+            setArticlesData(first3Images)
             
             //we fetch videos we need and return only the first 4
             const Videoresponse =  await client.getEntries({content_type: 'videos'});
             const Video_reponseData = Videoresponse.items;
             let videos = Video_reponseData;
-            let first3Videos = videos.filter((video, index)=> index <= 4); //return first 4 videos data.
-            setAllVideos(first3Videos)
+            let first4Videos = videos.filter((video, index)=> index <= 4); //return first 4 videos data.
+            setAllVideos(first4Videos)
         }
         fetchData()
     },[])
@@ -112,29 +110,29 @@ function Articles() {
     <div id='Articles-main-container'>
 
         <section id='Articles-section'>
-            <div id='all-articles'>
-            <h1 id='article-main-heading'>Articles {'&'} Analysis</h1>
+            {
+                articlesData.map((article)=>{
+                    return(
+                        <div className='Article'>
+            
+                            <div className='article-bannerImg-wrapper'>
+                                <img src={article.fields.bannerImage.fields.file.url} className='article-bannerImg' alt={bannerImage} />
+                            </div>
+                                            
+                            <div className='article-summary-wrapper'>
+                                <h3 className={summaryAnimationClass}>
+                                    {article.fields.bannerHeading}
+                                </h3>
+                                <p className={summaryAnimationClass}>
+                                   Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                   Consequatur sunt sit accusantium quos molestias optio?
+                                </p>
+                            </div>
 
-            <div className='Article'>
-
-                <div className='article-bannerImg-wrapper'>
-                    <img src={bannerImage} className='article-bannerImg' alt={bannerImage} />
-                    <button id='next' onClick={nextArticle}>{'>'}</button>
-                    <button id='prev' onClick={prevArticle}>{'<'}</button>
-                </div>
-                                
-                <div className='article-summary-wrapper'>
-                    <h3 className={summaryAnimationClass}>
-                        {bannerHeading}
-                    </h3>
-                    <p className={summaryAnimationClass}>
-                       Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                       Consequatur sunt sit accusantium quos molestias optio?
-                    </p>
-                </div>
-
-            </div> 
-            </div>
+                        </div>
+                    )
+                })
+            }
         </section>
 
         <section id='videos-section'>
