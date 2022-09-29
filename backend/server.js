@@ -46,6 +46,16 @@ app.post('/Login', async(req, res, next)=>{
 /*Request for data on players of a specific club*/
 app.get('/GlobalSearch/ClubSearch/:club', async (req, res, next)=>{
     const club = req.params.club;//specific cluc user requests data on
+
+    let adminToken = req.headers['authorization'].split(' ')[1];
+    try {
+        const decodedToken = jwt.verify(adminToken, 'jwt-secret');
+        if(decodedToken){
+            await storeHouse.addHouse(req, res, imageDestination)
+        }
+    } catch (error) {
+        res.status(401).send('user unknown: not authorised to access resources')
+    }
     
     //select which clubs data to fetch when recieve request
     switch (club) {

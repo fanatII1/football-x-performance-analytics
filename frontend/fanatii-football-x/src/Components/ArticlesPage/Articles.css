@@ -211,6 +211,7 @@
         max-height: none;
         grid-template-columns: none;
         grid-template-rows: 30% 25% 25% 25%;
+        font-size: 0.8rem;
     }
 }
 
