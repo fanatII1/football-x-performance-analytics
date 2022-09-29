@@ -11,26 +11,16 @@ import { useState, useEffect } from 'react'
 //import client module/package, so we able to fetch data from Contentful CMS
 import  {client} from '../client'
 
-const podcastData = [
-    {image: PodCastOne, heading: 'The Back 3', host: 'Mpumelelo Lobelo | Ryan Mason | Melissa Partick'},
-    {image: PodCastTwo, heading: 'Fox Football Podcast', host: 'Ray Zondi | Lebogang Mofokeng'},
-    {image: PodCastThree, heading: 'The truth Football show', host: 'Gabrielle Noorodien | Ian Gonzalez'},
-    {image: PodCastFour, heading: 'Total Soccer show', host: 'Katie Parris'}
-];
+const podcastData = [{image: PodCastOne, heading: 'The Back 3', host: 'Mpumelelo Lobelo | Ryan Mason | Melissa Partick'}, {image: PodCastTwo, heading: 'Fox Football Podcast', host: 'Ray Zondi | Lebogang Mofokeng'}, {image: PodCastThree, heading: 'The truth Football show', host: 'Gabrielle Noorodien | Ian Gonzalez'}, {image: PodCastFour, heading: 'Total Soccer show', host: 'Katie Parris'}];
 
 //number that will be used to go to next and previous articles that will be inside array 
 let num = 0;
-
 function Articles() {
     const [articlesData, setArticlesData] = useState([]);
     const [bannerImage, setBannerImage] = useState('');
     const [bannerHeading, setBannerHeading] = useState('');
-    const [bannerVideo, setBannerVideo] = useState([]);
-    const [videosBannerImage, setVideosBannerImage] = useState('');
-    const [videosBannerHeading, setVideosBannerHeading] = useState('');
     const [allVideos, setAllVideos] = useState([])
-    //state for animation change when article is clicked
-    const [summaryAnimation, setSummaryAnimation] = useState('article-summary-heading')
+    const [summaryAnimationClass, setSummaryAnimationClass] = useState('article-summary-heading')
 
     //on intial render, we fetch the data of articles(summary display) and videos that we going to show
     useEffect(()=>{
@@ -44,19 +34,11 @@ function Articles() {
             setBannerHeading(bannerHeading)
             setBannerImage(bannerImage)            
             
-            //we fetch the  VIdeos and Data related to the video that's going to be on display
+            //we fetch videos we need and return only the first 4
             const Videoresponse =  await client.getEntries({content_type: 'videos'});
             const Video_reponseData = Videoresponse.items;
-            const bannerVideo = Video_reponseData[0].fields.bannerVideo.fields.file.url;
-            const videoHeading = Video_reponseData[0].fields.bannerVideoHeading;
-            const videoImage = Video_reponseData[0].fields.bannerVideoImage.fields.file.url;
-            setBannerVideo(bannerVideo);
-            setVideosBannerHeading(videoHeading);
-            setVideosBannerImage(videoImage)
-            
-            //we return first 3 videos that will be displayed on  the site
             let videos = Video_reponseData;
-            let first3Videos = videos.filter((video, index)=> index <= 3); //return first 3 videos data.
+            let first3Videos = videos.filter((video, index)=> index <= 4); //return first 4 videos data.
             setAllVideos(first3Videos)
         }
         fetchData()
@@ -64,11 +46,11 @@ function Articles() {
 
     //function that checks state of animation and applies correct styling/animation to article heading
     function animationTest(){
-        if(summaryAnimation === 'article-summary-heading'){
-            setSummaryAnimation('summary-animation')
+        if(summaryAnimationClass === 'article-summary-heading'){
+            setSummaryAnimationClass('summary-animation')
         }
         else{
-            setSummaryAnimation('article-summary-heading')
+            setSummaryAnimationClass('article-summary-heading')
         }
     }
 
@@ -142,10 +124,10 @@ function Articles() {
                 </div>
                                 
                 <div className='article-summary-wrapper'>
-                    <h3 className={summaryAnimation}>
+                    <h3 className={summaryAnimationClass}>
                         {bannerHeading}
                     </h3>
-                    <p className={summaryAnimation}>
+                    <p className={summaryAnimationClass}>
                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                        Consequatur sunt sit accusantium quos molestias optio?
                     </p>
@@ -156,15 +138,17 @@ function Articles() {
         </section>
 
         <section id='videos-section'>
+            <h1 className='videos-main-heading'>
+                Videos {'&'} Analysis
+            </h1>
             <div id='all-videos'>
-            <h1 className='videos-main-heading'>Video {'&'} Analysis</h1>
-
                 {
                     allVideos.map((video, key)=>{
+                        let display_vid = video.fields.bannerVideo.fields.file.url
                         return (
-                        <div className='video' key={key}>
+                        <div className='video-display' key={key}>
                         <div className='video-wrapper'>
-                            <video src={bannerVideo} autoPlay id='bannerVideo'>
+                            <video src={display_vid} autoPlay id='bannerVideo'>
                                 Your browser does not support the video extension type
                              </video>
                         </div>
