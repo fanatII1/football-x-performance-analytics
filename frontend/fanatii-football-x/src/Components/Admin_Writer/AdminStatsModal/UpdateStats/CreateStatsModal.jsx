@@ -1,29 +1,25 @@
-import React from 'react';
+import React from 'react'
 import { useState } from 'react';
-import './UpdateStatsModal.css';
-import UpdateStatsForm from './UpdateStatsForm';
+import CreateStatsForm from './CreateStatsForm';
 
-//modal component for admin to update stats
-//based on the position of the player, a different form will appear
-//thus we pass the value of the state(position) to the Form Position function(2ndfunc/component)
-function UpdateStatsModal({ adminModal, setAdminModal}) {
-  const [positionFormState, setPositionFormState] = useState('GK');
+function CreateStatsModal({adminCreateStatsModal, setAdminCreateStatsModal}) {
+    const [playerPosition, setPlayerPosition] = useState('GK');
 
   //onChange, we will display specific form for specific position
   const handlePositionChange = (e) => {
     console.log(e.target.value);
-    setPositionFormState(e.target.value);
+    setPlayerPosition(e.target.value);
   };
 
   //onClick hides admin modal
   const hideAdminModal = (e) => {
     e.preventDefault();
-    setAdminModal('hideModal');
+    setAdminCreateStatsModal('hideModal')
   };
 
   return (
     <>
-      <aside id={adminModal}>
+      <aside id={adminCreateStatsModal}>
         <div className='admin-form-container'>
           <button id='closeAdminModal' onClick={hideAdminModal}>
             X
@@ -36,11 +32,11 @@ function UpdateStatsModal({ adminModal, setAdminModal}) {
             <option className='position-option'>WING</option>
             <option className='position-option'>ST/CF</option>
           </select>
-          <UpdateStatsForm position={positionFormState}/>
+          <CreateStatsForm playerPosition={playerPosition}/>
         </div>
       </aside>
     </>
   );
 }
 
-export default UpdateStatsModal;
+export default CreateStatsModal

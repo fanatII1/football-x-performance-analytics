@@ -6,6 +6,7 @@ import AsideAdmin from './Aside_admin/AsideAdmin';
 import AdminNav from './AsideAdminNav/AdminNav';
 import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom';
 import UpdateStatsModal from './AdminStatsModal/UpdateStats/UpdateStatsModal';
+import CreateStatsModal from './AdminStatsModal/UpdateStats/CreateStatsModal';
 //import client module/package, so we able to fetch data from Contentful CMS
 import  {client} from '../client'
 
@@ -24,7 +25,7 @@ function Admin() {
     const [showAside, setShowAside] = useState('admin-information')
     //state of admin modal
     const [adminModal, setAdminModal] = useState('hideModal')
-    const [targetElem, setTargetElem] = useState('');
+    const [adminCreateStatsModal, setAdminCreateStatsModal] = useState('hideModal')
     
     //after intial render, we fetch the content from Contentful
     useEffect(()=>{
@@ -86,9 +87,10 @@ function Admin() {
     if(localStorage.getItem('adminToken')){
         return (
             <>
-            <AsideAdmin adminInfo={showAside} setAdminInfo={setShowAside} setAdminModal={setAdminModal} setTargetElem={setTargetElem}/>
-            <UpdateStatsModal adminModal={adminModal} setAdminModal={setAdminModal} targetElem={targetElem}/>
+            <UpdateStatsModal adminModal={adminModal} setAdminModal={setAdminModal}/>
+            <CreateStatsModal adminCreateStatsModal={adminCreateStatsModal} setAdminCreateStatsModal={setAdminCreateStatsModal}/>
         
+            <AsideAdmin adminInfo={showAside} setAdminInfo={setShowAside} setAdminModal={setAdminModal} setAdminCreateStatsModal={setAdminCreateStatsModal}/>
             <main id='admin-main-content'>
                 <button id='showAdmin-info' onClick={showAdminInfo}>+</button>
         

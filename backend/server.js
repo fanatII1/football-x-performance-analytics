@@ -123,9 +123,9 @@ app.put('/Admin', async (req, res, next) => {
 });
 
 /*Route Handles Creation of a player and their Stats*/
-app.post('/Admin', async (req, res, next)=>{
-  await createPlayer.createPlayer(req, res)
-})
+// app.post('/Admin', async (req, res, next)=>{
+//   await createPlayer.createPlayer(req, res)
+// })
 
 /*Error handling middleware which displays a rejected fieldname from the multer sinle() argument*/
 app.use((error, req, res, next) => {

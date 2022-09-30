@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import { useState } from 'react';
 
-function UpdateStatsForm({position}){
+function CreateStatsForm({playerPosition}) {
     const [userData, setUserData] = useState({});
 
     //onChange, we store the value in object
@@ -25,10 +25,11 @@ function UpdateStatsForm({position}){
         console.log(userData)
     }
 
-    if(position === 'GK'){
+    if(playerPosition === 'GK'){
         return(
             <form id='GKForm' onSubmit={submitStats} autoComplete='off'>
-                <h2 id='position-heading'>{position} :</h2>
+                <h5>fldsaufalisdufhlaisdufshal</h5>
+                <h2 id='position-heading'>{playerPosition} :</h2>
                 <div id='form-main-content'>
                 <div className='form1'>
                 <label htmlFor='name'>Name:</label>
@@ -54,10 +55,10 @@ function UpdateStatsForm({position}){
             </form>
         )
     }
-    else if(position === 'DEF'){
+    else if(playerPosition === 'DEF'){
         return(
             <form id='DEFForm' onSubmit={submitStats} autoComplete='off'>
-                <h2 id='position-heading'>{position} :</h2>
+                <h2 id='position-heading'>{playerPosition} :</h2>
                 <div id='form-main-content'>
                 <div className='form1'>
                 <label htmlFor='name'>Name: </label>
@@ -85,10 +86,10 @@ function UpdateStatsForm({position}){
             </form>
         )
     }
-    else if(position === 'MID'){
+    else if(playerPosition === 'MID'){
         return(
             <form id='MIDForm' onSubmit={submitStats} autoComplete='off'>
-                <h2 id='position-heading'>{position} :</h2>
+                <h2 id='position-heading'>{playerPosition} :</h2>
                 <div id='form-main-content'>                
                 <div className='form1'>
                 <label htmlFor='name'>Name:</label>
@@ -130,10 +131,10 @@ function UpdateStatsForm({position}){
             </form>
         )
     }
-    else if(position === 'WING'){
+    else if(playerPosition === 'WING'){
         return(
             <form id='WINGForm' onSubmit={submitStats} autoComplete='off'>
-                <h2 id='position-heading'>{position} :</h2>
+                <h2 id='position-heading'>{playerPosition} :</h2>
                 <div id='form-main-content'>                
                 <div className='form1'>
                 <label htmlFor='name'>Name:</label>
@@ -178,7 +179,7 @@ function UpdateStatsForm({position}){
     else{
         return(
             <form id='STForm' onSubmit={submitStats} autoComplete='off'>
-                <h2 id='position-heading'>{position} :</h2>
+                <h2 id='position-heading'>{playerPosition} :</h2>
                 <div id='form-main-content'>                
                 <div className='form1'>
                 <label htmlFor='name'>Name:</label>
@@ -222,4 +223,4 @@ function UpdateStatsForm({position}){
     }
 }
 
-export default UpdateStatsForm
+export default CreateStatsForm
