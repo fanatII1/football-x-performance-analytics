@@ -26,12 +26,19 @@ function Login() {
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(userData)
     })
-    .then((response)=>{
-      response.json()
-    })
+    .then((res)=> res.json())
     .then((token)=>{
-      localStorage.setItem('user_token', token);
-      navigate('/');
+      if(token.userToken){
+        localStorage.setItem('userToken', token.userToken);
+        navigate('/');
+        }
+        else if(token.adminToken){
+          localStorage.setItem('adminToken', token.adminToken);
+          navigate('/');
+        }
+        else{
+          console.log('no token')
+        }
     })
   }
 

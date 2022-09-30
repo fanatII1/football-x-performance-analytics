@@ -3,10 +3,10 @@ const Admin_model = require('../models/Admin_model');
 const jwt = require('jsonwebtoken');
 //crypto module -- hashes user passwords
 const crypto = require('crypto');
-const hash = crypto.createHash('sha256');
 
 //module checks user/admin in the db, for login.
 exports.login_user = async function (req, res) {
+  const hash = crypto.createHash('sha256');
   let username = req.body.username;
   let password = req.body.password;
   hash.update(password);
@@ -23,9 +23,9 @@ exports.login_user = async function (req, res) {
         let payload = { role: 'user' };
 
         let user_token = jwt.sign(payload, 'key', { algorithm: 'HS256' });
-        res.status(200).send(user_token);
+        res.status(200).send({userToken: user_token});
       } else {
-        //if user is not found(promise rejected) we check if they exist in admin db
+        //if user is not we check if they exist in admin db
         //if not, we send a 401 error indicating there is no such user in the system
         await Admin_model.find({
           username: username,
@@ -36,7 +36,8 @@ exports.login_user = async function (req, res) {
               let payload = { role: 'admin' };
 
               let admin_token = jwt.sign(payload, 'key', { algorithm: 'HS256' });
-              res.status(200).send(admin_token);
+              console.log(admin_token)
+              res.status(200).send({adminToken: admin_token});
             } else {
               res.status(401).send('User does not exist in the site');
             }
