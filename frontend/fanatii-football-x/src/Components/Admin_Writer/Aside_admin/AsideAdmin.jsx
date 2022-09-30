@@ -9,17 +9,28 @@ import Logo from './AdminImage/Logo.png'
 //below link will be used to go to contentful site where we are going to create article posts
 let createArticleLink = 'https://app.contentful.com/spaces/ox8fxrfb2nbi/entries?id=wbkEQq5FIO2z46qM&contentTypeId=videos&order.fieldId=updatedAt&order.direction=descending&displayedFieldIds=contentType&displayedFieldIds=updatedAt&displayedFieldIds=author&page=0';
 
-function AsideAdmin({adminInfo, setAdminInfo, setAdminModal}) {
+function AsideAdmin({adminInfo, setAdminInfo, setAdminModal, setTargetElem}) {
 
-    //onClick hides the admins aside information by applying the responsive styles('admi-information) on mobile phones that hides the aside elements(admin information)
+    //onClick hides the admins aside information
     const hideAdminInfo = (e) =>{
         e.preventDefault();
         setAdminInfo('admin-information')
     }
 
     //onClick reveals admin modal
-    const showAdminModal = () =>{
-        setAdminModal('showAdminModal')
+    //if user clicked 'create player'/'update player'(target element), we show modal and define which button was clicked
+    ///based on the button that was clicked(usage of state), we can specify if we are going to create/update a player
+    const showAdminModal = (e) =>{
+        let targetClassName = e.target.className;
+        let targetClassName_value = targetClassName.split(' ')[1];
+        if(targetClassName_value === 'create'){
+            setAdminModal('showAdminModal')
+            setTargetElem('create')
+        }
+        else{
+            setAdminModal('showAdminModal')
+            setTargetElem('update')
+        }
     }
 
   return (
@@ -49,9 +60,13 @@ function AsideAdmin({adminInfo, setAdminInfo, setAdminModal}) {
                     <i className='fa-regular fa-newspaper f-article'></i>
                    <a href={createArticleLink}>Create Article</a>
                 </li>
-                <li className='options-item' onClick={showAdminModal}>
+                <li className='options-item create' onClick={showAdminModal}>
                     <i className='fa-solid fa-futbol'></i>
-                    Update Stats
+                    Create Player
+                </li>
+                <li className='options-item update' onClick={showAdminModal}>
+                    <i className='fa-solid fa-futbol'></i>
+                    Update Player
                 </li>
                 <li className='options-item'>
                     <i className='fa-solid fa-gear'></i>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-import './StatsModal.css';
-import FormPosition from './AdminFormPosition';
+import './UpdateStatsModal.css';
+import UpdateStatsForm from './UpdateStatsForm';
 
 //modal component for admin to update stats
 //based on the position of the player, a different form will appear
 //thus we pass the value of the state(position) to the Form Position function(2ndfunc/component)
-function StatsModal({ adminModal, setAdminModal }) {
+function UpdateStatsModal({ adminModal, setAdminModal, targetElem }) {
   const [positionFormState, setPositionFormState] = useState('GK');
 
   //onChange, we will display specific form for specific position
@@ -36,11 +36,11 @@ function StatsModal({ adminModal, setAdminModal }) {
             <option className='position-option'>WING</option>
             <option className='position-option'>ST/CF</option>
           </select>
-          <FormPosition position={positionFormState} />
+          <UpdateStatsForm position={positionFormState} targetElem={targetElem}/>
         </div>
       </aside>
     </>
   );
 }
 
-export default StatsModal;
+export default UpdateStatsModal;

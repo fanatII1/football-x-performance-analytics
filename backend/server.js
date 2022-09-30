@@ -121,6 +121,11 @@ app.put('/Admin', async (req, res, next) => {
   }
 });
 
+/*Route Handles Creation of a player and their Stats*/
+app.post('/Admin', (req, res, next)=>{
+  
+})
+
 /*Error handling middleware which displays a rejected fieldname from the multer sinle() argument*/
 app.use((error, req, res, next) => {
   console.log('This is the rejected field ->', error.field, req.field);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-function FormPosition({position}){
+function UpdateStatsForm({position, targetElem}){
     const [userData, setUserData] = useState({});
 
     //onChange, we store the value in object
@@ -17,11 +17,20 @@ function FormPosition({position}){
     //we submit player Stats that we update
     const submitStats = async (e) =>{
         e.preventDefault();
-        await fetch('/Admin', {
-            method: 'PUT',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(userData)
-        })
+        if(targetElem === 'update'){
+            await fetch('/Admin', {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(userData)
+            })
+        }
+        else{
+            await fetch('/Admin', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(userData)
+            })
+        }
         console.log(userData)
     }
 
@@ -222,4 +231,4 @@ function FormPosition({position}){
     }
 }
 
-export default FormPosition
+export default UpdateStatsForm

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import AsideAdmin from './Aside_admin/AsideAdmin';
 import AdminNav from './AsideAdminNav/AdminNav';
 import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom';
-import StatsModal from './AdminStatsModal/StatsModal';
+import UpdateStatsModal from './AdminStatsModal/UpdateStats/UpdateStatsModal';
 //import client module/package, so we able to fetch data from Contentful CMS
 import  {client} from '../client'
 
@@ -24,6 +24,7 @@ function Admin() {
     const [showAside, setShowAside] = useState('admin-information')
     //state of admin modal
     const [adminModal, setAdminModal] = useState('hideModal')
+    const [targetElem, setTargetElem] = useState('');
     
     //after intial render, we fetch the content from Contentful
     useEffect(()=>{
@@ -85,9 +86,9 @@ function Admin() {
     if(localStorage.getItem('adminToken')){
         return (
             <>
-            <StatsModal adminModal={adminModal} setAdminModal={setAdminModal}/>
+            <AsideAdmin adminInfo={showAside} setAdminInfo={setShowAside} setAdminModal={setAdminModal} setTargetElem={setTargetElem}/>
+            <UpdateStatsModal adminModal={adminModal} setAdminModal={setAdminModal} targetElem={targetElem}/>
         
-            <AsideAdmin adminInfo={showAside} setAdminInfo={setShowAside} setAdminModal={setAdminModal}/>
             <main id='admin-main-content'>
                 <button id='showAdmin-info' onClick={showAdminInfo}>+</button>
         
