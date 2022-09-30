@@ -16,7 +16,6 @@ exports.createPlayer = async function(req, res, statsArray, imageDestination){
 
     await newPlayer.save()
     .then(()=>{
-        console.log('saved')
         res.status(200).send({'msg': 'saved'})
     })
     .catch((error)=>{

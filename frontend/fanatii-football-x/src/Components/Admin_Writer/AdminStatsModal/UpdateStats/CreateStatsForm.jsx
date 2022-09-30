@@ -54,7 +54,6 @@ function CreateStatsForm({playerPosition}) {
             formData.append("Linkup", statsData.Linkup);
             formData.append("shoot", statsData.shoot)
             formData.append('image', file)
-            console.log(file)
           } catch (error) {
             console.log(error);
           }

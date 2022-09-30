@@ -130,7 +130,6 @@ app.put('/Admin', async (req, res, next) => {
 */
 let diskStorage = multer.diskStorage({
     destination : (req, file, cb)=>{
-      console.log(req.body.club)
       let club = req.body.club;
         cb(null, `./public/${club}`)
     },
@@ -141,7 +140,6 @@ let diskStorage = multer.diskStorage({
 
 let upload = multer({storage: diskStorage})
 app.post('/Admin', upload.single('image'), async (req, res, next)=>{
-  console.log(req.body.club, 'm')
   
   let club = req.body.club;
   let statsData = req.body;
