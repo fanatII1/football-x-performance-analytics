@@ -144,6 +144,7 @@ app.post('/Admin', upload.single('image'), async (req, res, next)=>{
   let club = req.body.club;
   let statsData = req.body;
   let statsArray = [];
+  let imageDestination = `/${club}/${req.file.filename}`
   //for each piece of stat in the stat object, we store it in an array
   for (const key in statsData) {
     let stat = `${key}: ${statsData[key]}`;
@@ -153,11 +154,11 @@ app.post('/Admin', upload.single('image'), async (req, res, next)=>{
 
   switch (club) {
     case 'Kaizer Chiefs':
-      await createKaizerCheifsPlayer.createPlayer(req, res, statsArray )
+      await createKaizerCheifsPlayer.createPlayer(req, res, statsArray, imageDestination )
       break;
 
     case 'Orlando Pirates':
-      await createOrlandoPiratesPlayer.createPlayer(req, res, statsArray )
+      await createOrlandoPiratesPlayer.createPlayer(req, res, statsArray, imageDestination )
       break;
     default:
       break;
