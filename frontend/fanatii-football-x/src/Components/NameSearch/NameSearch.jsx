@@ -21,7 +21,10 @@ function NameSearch() {
         e.preventDefault();
         await fetch('/GlobalSearch/NameSearch', {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("adminToken") || localStorage.getItem("userToken")}`,
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify({playerName: playerName})
         })
         .then((res)=> res.json())

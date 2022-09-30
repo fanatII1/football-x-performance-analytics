@@ -1,6 +1,7 @@
 import React from 'react'
 import './Admin.css';
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom';
 import AsideAdmin from './Aside_admin/AsideAdmin';
 import AdminNav from './AsideAdminNav/AdminNav';
 import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom';
@@ -80,123 +81,128 @@ function Admin() {
         setShowAside('admin-information-show')
     }
 
-
-  return (
-    <>
-    <StatsModal adminModal={adminModal} setAdminModal={setAdminModal}/>
-
-    <AsideAdmin adminInfo={showAside} setAdminInfo={setShowAside} setAdminModal={setAdminModal}/>
-    <main id='admin-main-content'>
-        <button id='showAdmin-info' onClick={showAdminInfo}>+</button>
-
-        <section id='videos-articles-section'>
-        <AdminNav/>
-
-           <div className='videos-articles-main-container'>
-
-           <div id='videos-content'>
-           <div className='videos-wrapper'>
-                <div className='videos-latest'>
-                <h3 id='videos-main-heading'>Latest Videos : </h3>
-
-
-                    <div className='top-video'>
-                        <video src={bannerVideo} controls id='bannerVideo' ref={videoElement}>
-                            Your browser does not support the video extension type
-                        </video>
-                        <div className={showHideVideBanner}>
-                                <img src={videoImage} alt='videoImg' className='videoImage'/>
-                                <div className='videoOverlay'>
-                                    <div className='videoOverlayText'>
-                                        <h2 className='bannerVideo-heading'>
-                                            {videoHeading}
-                                        </h2>
-
-                                        <div className='video-player' onClick={handlePlay}>
-                                        <i className='fa-solid fa-play'></i>
+    //if there is admin token, we render the dom
+    if(localStorage.getItem('adminToken')){
+        return (
+            <>
+            <StatsModal adminModal={adminModal} setAdminModal={setAdminModal}/>
+        
+            <AsideAdmin adminInfo={showAside} setAdminInfo={setShowAside} setAdminModal={setAdminModal}/>
+            <main id='admin-main-content'>
+                <button id='showAdmin-info' onClick={showAdminInfo}>+</button>
+        
+                <section id='videos-articles-section'>
+                <AdminNav/>
+        
+                   <div className='videos-articles-main-container'>
+        
+                   <div id='videos-content'>
+                   <div className='videos-wrapper'>
+                        <div className='videos-latest'>
+                        <h3 id='videos-main-heading'>Latest Videos : </h3>
+        
+        
+                            <div className='top-video'>
+                                <video src={bannerVideo} controls id='bannerVideo' ref={videoElement}>
+                                    Your browser does not support the video extension type
+                                </video>
+                                <div className={showHideVideBanner}>
+                                        <img src={videoImage} alt='videoImg' className='videoImage'/>
+                                        <div className='videoOverlay'>
+                                            <div className='videoOverlayText'>
+                                                <h2 className='bannerVideo-heading'>
+                                                    {videoHeading}
+                                                </h2>
+        
+                                                <div className='video-player' onClick={handlePlay}>
+                                                <i className='fa-solid fa-play'></i>
+                                                </div>
+        
+                                            </div>
                                         </div>
-
-                                    </div>
                                 </div>
+                            </div>
+        
+                            <div className='sub-videos'>
+                            {allVideos.map((video, key)=>{
+                                
+                                    return (
+                                        <div className='video' key={key}>
+                                            <div className='sub-video-bannerImage-wrapper'>
+                                                <img src={video.fields.bannerVideoImage.fields.file.url} alt='' className='sub-video-imageBanner' />
+                                                
+                                                <div className='video-player sub-video-player'>
+                                                    <i className='fa-solid fa-play'></i>
+                                                </div>
+        
+                                            </div>
+                                            <div className='videoInfo'>
+                                                <h4 className='videoInfoHeading'>
+                                                    <i className='fa-regular fa-newspaper f-articles'></i>
+                                                    {video.fields.bannerVideoHeading}
+                                                </h4>
+                                                <p className='videoSummary' style={{color: 'black'}}>
+                                                    {video.fields.videoSummary}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </div>
                         </div>
                     </div>
-
-                    <div className='sub-videos'>
-                    {allVideos.map((video, key)=>{
+                   </div>
+        
+        
+                    <div id='articles-content'>
+                    <div className='articles-wrapper'>
                         
-                            return (
-                                <div className='video' key={key}>
-                                    <div className='sub-video-bannerImage-wrapper'>
-                                        <img src={video.fields.bannerVideoImage.fields.file.url} alt='' className='sub-video-imageBanner' />
-                                        
-                                        <div className='video-player sub-video-player'>
-                                            <i className='fa-solid fa-play'></i>
-                                        </div>
-
-                                    </div>
-                                    <div className='videoInfo'>
-                                        <h4 className='videoInfoHeading'>
-                                            <i className='fa-regular fa-newspaper f-articles'></i>
-                                            {video.fields.bannerVideoHeading}
-                                        </h4>
-                                        <p className='videoSummary' style={{color: 'black'}}>
-                                            {video.fields.videoSummary}
-                                        </p>
-                                    </div>
+                        <h3 id='articles-main-heading'>Latest Articles :</h3>
+        
+                        <div className='articles-latest'>
+        
+                            <div className='top-article'>
+                                <img src={bannerImage} alt='article-img' className='articlesBannerImage'/>
+                                <div className='articlesBannerImage-text'>
+                                    <h2 id='bannerImage-heading'>
+                                        {bannerHeading}
+                                    </h2>
                                 </div>
-                            )
-                        })}
-                    </div>
-                </div>
-            </div>
-           </div>
-
-
-            <div id='articles-content'>
-            <div className='articles-wrapper'>
-                
-                <h3 id='articles-main-heading'>Latest Articles :</h3>
-
-                <div className='articles-latest'>
-
-                    <div className='top-article'>
-                        <img src={bannerImage} alt='article-img' className='articlesBannerImage'/>
-                        <div className='articlesBannerImage-text'>
-                            <h2 id='bannerImage-heading'>
-                                {bannerHeading}
-                            </h2>
+                            </div>
+        
+                            <div className='sub-articles'>
+                                {
+                                    allImages.map((image, key)=>{
+                                        return(
+                                            <div className='image' key={key}>
+                                            <div className='sub-image-bannerImage-wrapper'>
+                                                <img src={image.fields.bannerImage.fields.file.url} alt='subImg' className='sub-image-imageBanner' />
+                                                <div className='imageInfo'>
+                                                    <h2 className='imageInfoHeading'>
+                                                        {image.fields.bannerHeading}
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        )
+                                    })
+                                }
+                            </div>
                         </div>
                     </div>
-
-                    <div className='sub-articles'>
-                        {
-                            allImages.map((image, key)=>{
-                                return(
-                                    <div className='image' key={key}>
-                                    <div className='sub-image-bannerImage-wrapper'>
-                                        <img src={image.fields.bannerImage.fields.file.url} alt='subImg' className='sub-image-imageBanner' />
-                                        <div className='imageInfo'>
-                                            <h2 className='imageInfoHeading'>
-                                                {image.fields.bannerHeading}
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                )
-                            })
-                        }
+        
                     </div>
-                </div>
-            </div>
-
-            </div>
-
-           </div>
-        </section>
-    </main>
-    <GlobalNavBottom navBottom='home-bottom-nav'/>
-    </>
-  )
+        
+                   </div>
+                </section>
+            </main>
+            <GlobalNavBottom navBottom='home-bottom-nav'/>
+            </>
+          )
+    }
+    else{
+        return <p style={{color: 'white'}}><Link to='/Login'>Not Authorised to access. Please go Login</Link></p>
+    }
 }
 
 export default Admin

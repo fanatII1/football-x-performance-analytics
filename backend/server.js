@@ -53,7 +53,6 @@ app.get('/GlobalSearch/ClubSearch/:club', async (req, res, next) => {
     const decodedToken = jwt.verify(adminToken, 'key');
     console.log(decodedToken)
     if (decodedToken) {
-        console.log('hi')
       //select which clubs data to fetch when recieve request
       switch (club) {
         case 'KaizerChiefs':
@@ -76,7 +75,17 @@ app.get('/GlobalSearch/ClubSearch/:club', async (req, res, next) => {
 /*Route Searches Player frome the database*/
 app.post('/GlobalSearch/NameSearch', async (req, res, next) => {
   console.log(req.body);
-  await findPlayer.findPlayer(req, res);
+  let adminToken = req.headers['authorization'].split(' ')[1];
+  try {
+    const decodedToken = jwt.verify(adminToken, 'key');
+    // console.log(decodedToken)
+    if (decodedToken) {
+      await findPlayer.findPlayer(req, res);
+    }
+  } catch (error) {
+    console.log(error)
+    res.status(401).send('user unknown: not authorised to access resources');
+  }
 });
 
 /*Route handles stats of player that will be updated*/

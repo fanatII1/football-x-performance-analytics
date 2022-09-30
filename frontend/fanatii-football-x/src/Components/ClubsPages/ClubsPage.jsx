@@ -1,9 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ClubsPage.css';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Navbar from '../Global_Navbar/Navbar';
-import { useRef } from 'react';
 import ModalClubPages from './Modal_ClubPages/ModalClubPages';
 
 //this component will render the specific clubs data
@@ -22,7 +21,7 @@ function ClubsPage({ clubName }) {
     fetch(`/GlobalSearch/ClubSearch/${clubName}`,{
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+        Authorization: `Bearer ${localStorage.getItem("adminToken") || localStorage.getItem("userToken")}`,
       }
     })
       .then((res) => res.json())
@@ -32,7 +31,7 @@ function ClubsPage({ clubName }) {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [clubName]);
 
   //onclick passes the players 'key', so it can be used as reference to the players data, when we want to reveal the stats of the player
   const revealStats = (e, key) => {
@@ -69,11 +68,11 @@ function ClubsPage({ clubName }) {
     setModalState('close-modal')
 }
 
-  return (
-    <>
-      {typeof playerBackendData === 'undefined' ? (
-        <p>Please wait a minute</p>
-      ) : (
+  //if there is an admin token/user, we check if the backend data has been fetched
+  //if there is no user/admin, we require a person to log in
+  if(localStorage.getItem('adminToken') || localStorage.getItem('userToken')){
+    if(typeof playerBackendData !== 'undefined'){
+      return(
         <>
           <Navbar idNav='nav-search' />
 
@@ -169,9 +168,15 @@ function ClubsPage({ clubName }) {
             <ModalClubPages modalState={modalState} closeModal={closeModal} playerBackendData={playerBackendData} playerStats={playerStats}/>
           </div>
         </>
-      )}
-    </>
-  );
+      )
+    }
+    else{
+      return  <p>Please wait a minute</p>
+    }
+  }
+  else{
+    return <p style={{color: 'white'}}><Link to='/SignUp'>Please Sign Up</Link></p>
+  }
 }
 
 export default ClubsPage;
