@@ -19,7 +19,12 @@ function ClubsPage({ clubName }) {
 
   //fetch club data after component has loaded
   useEffect(() => {
-    fetch(`/GlobalSearch/ClubSearch/${clubName}`)
+    fetch(`/GlobalSearch/ClubSearch/${clubName}`,{
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("oken")}`,
+      }
+    })
       .then((res) => res.json())
       .then((data) => {
         setplayerBackendData(data);
