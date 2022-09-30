@@ -7,6 +7,7 @@ const login_user = require('./controller/Login_user');
 const kaizerchiefs = require('./controller/KaizerChiefsController/KaizerChiefs_controller');
 const orlandopirates = require('./controller/OrlandoPiratesController/OrlandoPirates_controller');
 const findPlayer = require('./controller/FindPlayers');
+const createPlayer = require('./controller/CreatePlayer')
 const jwt = require('jsonwebtoken');
 
 //update stats modules
@@ -122,8 +123,8 @@ app.put('/Admin', async (req, res, next) => {
 });
 
 /*Route Handles Creation of a player and their Stats*/
-app.post('/Admin', (req, res, next)=>{
-  
+app.post('/Admin', async (req, res, next)=>{
+  await createPlayer.createPlayer(req, res)
 })
 
 /*Error handling middleware which displays a rejected fieldname from the multer sinle() argument*/
