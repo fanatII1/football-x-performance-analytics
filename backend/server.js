@@ -7,8 +7,9 @@ const login_user = require('./controller/Login_user');
 const kaizerchiefs = require('./controller/KaizerChiefsController/KaizerChiefs_controller');
 const orlandopirates = require('./controller/OrlandoPiratesController/OrlandoPirates_controller');
 const findPlayer = require('./controller/FindPlayers');
-const createPlayer = require('./controller/CreatePlayer')
+const createKaizerCheifsPlayer = require('./controller/KaizerChiefsController/CreateKaizerChiefsPlayer')
 const jwt = require('jsonwebtoken');
+var multer = require('multer')
 
 //update stats modules
 const updatePiratesGoalkeeper = require('./controller/OrlandoPiratesController/UpdateGoalkeeper');
@@ -122,15 +123,49 @@ app.put('/Admin', async (req, res, next) => {
   }
 });
 
-/*Route Handles Creation of a player and their Stats*/
-// app.post('/Admin', async (req, res, next)=>{
-//   await createPlayer.createPlayer(req, res)
-// })
 
-/*Error handling middleware which displays a rejected fieldname from the multer sinle() argument*/
-app.use((error, req, res, next) => {
-  console.log('This is the rejected field ->', error.field, req.field);
-});
+/*code below deinfes the destination that an image of a player will be stored
+  and defines a route that handles player data, with image uploads.
+  we used multer middleware to upload images to the server
+*/
+let diskStorage = multer.diskStorage({
+    destination : (req, file, cb)=>{
+      console.log(req.body.club)
+      let club = req.body.club;
+        cb(null, `./public/${club}`)
+    },
+    filename : (req, file, cb) =>{
+        cb(null, Date.now() + file.originalname)
+    }
+})
+
+let upload = multer({storage: diskStorage})
+app.post('/Admin', upload.single('image'), async (req, res, next)=>{
+  console.log(req.body.club, 'm')
+  
+  let club = req.body.club;
+  let statsData = req.body;
+  let statsArray = [];
+  //for each piece of stat in the stat object, we store it in an array
+  for (const key in statsData) {
+    let stat = `${key}: ${statsData[key]}`;
+    statsArray.push(stat)
+  }
+
+
+  switch (club) {
+    case 'Kaizer Chiefs':
+      await createKaizerCheifsPlayer.createPlayer(req, res, statsArray )
+      break;
+
+    case 'Orlando Pirates':
+      await createOrlandoPiratesPlayer.createPlayer(req, res, statsArray )
+      break;
+    default:
+      break;
+  }
+})
+
 
 /*server listens on PORT 3001*/
 app.listen(PORT, () => {

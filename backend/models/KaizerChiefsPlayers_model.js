@@ -1,7 +1,14 @@
 const mongoose = require('mongoose');
 
 let kc_players_schema = mongoose.Schema({
-    playersData : Array
+    playersData : Array,
+    name: String,
+    club: String,
+    dateOfBirth: String,
+    nationality: String,
+    position: String,
+    player_image: String,
+    stats: Array
 }, 
 {collection: "KaizerChiefs"});
 

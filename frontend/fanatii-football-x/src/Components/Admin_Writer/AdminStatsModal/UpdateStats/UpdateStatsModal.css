@@ -8,7 +8,8 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    background: #00000094;
+    z-index: 2;
 }
 
 .admin-form-container{
@@ -16,15 +17,13 @@
     height: 100%;
     background-color: #00000094;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
 }
 
 #GKForm, #DEFForm, #MIDForm, #WINGForm, #STForm{
-    max-width: 500px;
-    width: 50%;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 5%;
 }
 
 #form-main-content{
@@ -37,8 +36,8 @@
     text-align: center;
 }
 
-.form1, .form2{
-    width: 100%;
+.form1, .form2, .form3{
+    width: 33.33%;
 }
 
 #GKForm input, #DEFForm input, #MIDForm input, #WINGForm input, #STForm input{
@@ -67,7 +66,7 @@
 }
 
 #playerSubmit{
-    padding: 1%;
+    padding: 1% !important;
     color: #000;
     background: #fff;
     font-weight: bolder;
@@ -97,6 +96,9 @@
     cursor: pointer;
     outline: none;
     margin-right: 2%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .position-option{
