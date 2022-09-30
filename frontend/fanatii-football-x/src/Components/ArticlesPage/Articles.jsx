@@ -16,7 +16,7 @@ const podcastData = [{image: PodCastOne, heading: 'The Back 3', host: 'Mpumelelo
 function Articles() {
     const [articlesData, setArticlesData] = useState([]);
     const [allVideos, setAllVideos] = useState([])
-    const videoElement = useRef();
+    const videoElement = useRef([]);
     const [showHideVideoOverlay, setShowHideVideoOverlay] = useState('video-user-overlay')
 
     //on intial render, we fetch the data of articles(summary display) and videos that we going to show
@@ -41,10 +41,11 @@ function Articles() {
 
     //onClick, allows the video to play
     //hides the video's banner image
-    const handlePlay = () =>{
-        let videoEl = videoElement.current;
+    const handlePlay = (key) =>{
+        let videoEl = videoElement.current[key];
         videoEl.play();
         setShowHideVideoOverlay('hideVideoOverlay')
+        console.log(videoElement.current)
     }
 
   return (
@@ -90,12 +91,12 @@ function Articles() {
                         return (
                         <div className='video-display' key={key}>
                         <div className='video-wrapper'>
-                            <video src={display_vid} controls id='bannerVideo' className='bannerVideo' ref={videoElement}>
+                            <video src={display_vid} controls id='bannerVideo' className='bannerVideo' ref={(element)=> videoElement.current.push(element)}>
                                 Your browser does not support the video extension type
                              </video>
                              <div className={showHideVideoOverlay}>
                                 <img src={video.fields.bannerVideoImage.fields.file.url} alt="" className="video-user-overlay-image" />
-                                <div className="banner-video-image-overlay"  onClick={handlePlay}>
+                                <div className="banner-video-image-overlay"  onClick={()=> handlePlay(key)}>
                                     <i className='fa-solid fa-play player'></i>
                                     <h3 className="video-overlay-heading">{video.fields.bannerVideoHeading}</h3>
                                 </div>
