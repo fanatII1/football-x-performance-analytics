@@ -7,6 +7,7 @@ const login_user = require('./controller/Login_user');
 const kaizerchiefs = require('./controller/KaizerChiefsController/KaizerChiefs_controller');
 const orlandopirates = require('./controller/OrlandoPiratesController/OrlandoPirates_controller');
 const findPlayer = require('./controller/FindPlayers');
+const jwt = require('jsonwebtoken');
 
 //update stats modules
 const updatePiratesGoalkeeper = require('./controller/OrlandoPiratesController/UpdateGoalkeeper');
@@ -49,8 +50,10 @@ app.get('/GlobalSearch/ClubSearch/:club', async (req, res, next) => {
 
   let adminToken = req.headers['authorization'].split(' ')[1];
   try {
-    const decodedToken = jwt.verify(adminToken, 'jwt-secret');
+    const decodedToken = jwt.verify(adminToken, 'key');
+    console.log(decodedToken)
     if (decodedToken) {
+        console.log('hi')
       //select which clubs data to fetch when recieve request
       switch (club) {
         case 'KaizerChiefs':
@@ -65,6 +68,7 @@ app.get('/GlobalSearch/ClubSearch/:club', async (req, res, next) => {
       }
     }
   } catch (error) {
+    console.log(error)
     res.status(401).send('user unknown: not authorised to access resources');
   }
 });

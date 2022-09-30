@@ -22,7 +22,7 @@ function ClubsPage({ clubName }) {
     fetch(`/GlobalSearch/ClubSearch/${clubName}`,{
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("oken")}`,
+        Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
       }
     })
       .then((res) => res.json())
@@ -32,7 +32,7 @@ function ClubsPage({ clubName }) {
       .catch((error) => {
         console.log(error);
       });
-  }, [clubName]);
+  }, []);
 
   //onclick passes the players 'key', so it can be used as reference to the players data, when we want to reveal the stats of the player
   const revealStats = (e, key) => {
