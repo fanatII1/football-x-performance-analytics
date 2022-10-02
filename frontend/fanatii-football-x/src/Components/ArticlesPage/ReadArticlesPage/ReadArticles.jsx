@@ -1,4 +1,5 @@
 import React from 'react'
+import './ReadArticles.css'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom'
@@ -35,44 +36,58 @@ function ReadArticles() {
   const renderOptions = {
     renderNode:{
       [BLOCKS.EMBEDDED_ASSET] : (node, children)=>{
-        return <img src={node.data.target.fields.file.url} alt="rtc-img" className='rtc-img'/>
+        return <img src={node.data.target.fields.file.url} alt='rtc-img' className='rtc-img'/>
       },
       [BLOCKS.PARAGRAPH]: (node, children)=>{
         return <p className='rtc-paragraph'>{node.content[0].value}</p>
       },
       [BLOCKS.HEADING_1]: (node,children)=>{
-        return <h1 className='rtf-heading-1'>{node.content[0].value}</h1>
+        return <h1 className='rtc-heading-1'>{node.content[0].value}</h1>
       },
       [BLOCKS.HEADING_2]: (node,children)=>{
-        return <h2 className='rtf-heading-2'>{node.content[0].value}</h2>
+        return <h2 className='rtc-heading-2'>{node.content[0].value}</h2>
       },
       [BLOCKS.HEADING_3]: (node,children)=>{
-        return <h3 className='rtf-heading-3'>{node.content[0].value}</h3>
+        return <h3 className='rtc-heading-3'>{node.content[0].value}</h3>
       },
       [BLOCKS.HEADING_4]: (node,children)=>{
-        return <h4 className='rtf-heading-4'>{node.content[0].value}</h4>
+        return <h4 className='rtc-heading-4'>{node.content[0].value}</h4>
       },
       [BLOCKS.HEADING_5]: (node,children)=>{
-        return <h5 className='rtf-heading-1=5'>{node.content[0].value}</h5>
+        return <h5 className='rtc-heading-1=5'>{node.content[0].value}</h5>
       },
       [BLOCKS.HEADING_6]: (node,children)=>{
-        return <h6 className='rtf-heading-6'>{node.content[0].value}</h6>
+        return <h6 className='rtc-heading-6'>{node.content[0].value}</h6>
+      },
+      [BLOCKS.UL_LIST] : (node, children)=>{
+        return(
+          <ul className='rtc-list'>
+            <li className='rtc-list-item'>
+              {children}
+            </li>
+          </ul>
+        )
       }
     }
   }
 
   if(typeof articleBannerHeading !== 'undefined' && typeof articlBannerImage !== 'undefined'){
     return(
-      <>
-      <div id="articleBanner">
-        <img src={articlBannerImage} alt="article-read-banner-img" id="article-banner-image" />
+      <article id='article-read-main-content'>
+      <div id='articleBanner'>
+        <img src={articlBannerImage} alt='article-read-banner-img' id='article-banner-image' />
+        <div id='article-banner-heading-overlay'>
+          <h1 id='article-banner-heading'>{articleBannerHeading}</h1>
+        </div>
       </div>
-      <main id="read-article-main-content">
-        <div id="rtc-article-content">
+
+      <section id='read-content'>
+        <div id='rtc-article-content'>
+          <h1 id='main-section-article-heading'>{articleBannerHeading}</h1>
         {documentToReactComponents(richTextContentField, renderOptions)}
         </div>
-      </main>
-      </>
+      </section>
+      </article>
     )
   }
 }
