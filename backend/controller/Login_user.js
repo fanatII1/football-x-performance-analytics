@@ -36,7 +36,6 @@ exports.login_user = async function (req, res) {
               let payload = { role: 'admin' };
 
               let admin_token = jwt.sign(payload, 'key', { algorithm: 'HS256' });
-              console.log(admin_token)
               res.status(200).send({adminToken: admin_token});
             } else {
               res.status(401).send('User does not exist in the site');

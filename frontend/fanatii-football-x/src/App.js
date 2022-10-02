@@ -7,6 +7,7 @@ import GlobalSearch from './Components/GlobalSearchPage/GlobalSearch';
 import ClubSearch from './Components/ClubSearch/ClubSearch'
 import Articles from './Components/ArticlesPage/Articles';
 import EducationalPage from './Components/EducationalStatsPage/EducationalPage';
+import ReadArticles from './Components/ArticlesPage/ReadArticlesPage/ReadArticles';
 
 //club routes
 import KaizerChiefs from './Components/ClubsPages/KaizerChiefs/KaizerChiefs';
@@ -26,6 +27,7 @@ function App() {
             <Route path='/GlobalSearch' element={<GlobalSearch/>}/>
             <Route path='/GlobalSearch/ClubSearch' element={<ClubSearch/>}/>
             <Route path='/Articles' element={<Articles/>}/>
+            <Route path='/Articles/:article' element={<ReadArticles/>}/>
             <Route path='/GlobalSearch/ClubSearch/KaizerChiefs' element={<KaizerChiefs/>}/>
             <Route path='/GlobalSearch/ClubSearch/OrlandoPirates' element={<OrlandoPirates/>}/>
             <Route path='/GlobalSearch/NameSearch/' element={<NameSearch/>}/>

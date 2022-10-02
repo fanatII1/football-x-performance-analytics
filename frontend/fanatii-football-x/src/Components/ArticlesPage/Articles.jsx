@@ -7,7 +7,8 @@ import PodCastThree from './ArticlesImages/podcast(3).png'
 import PodCastFour from './ArticlesImages/podcast(3).png'
 import Footer from '../Global_Footer/Footer'
 import GlobalNavBottom from '../GlobalNavBottom/GlobalNavBottom'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef} from 'react'
+import { useNavigate } from 'react-router-dom'
 //import client module/package, so we able to fetch data from Contentful CMS
 import  {client} from '../client'
 
@@ -18,6 +19,7 @@ function Articles() {
     const [allVideos, setAllVideos] = useState([])
     const videoElement = useRef([]);
     const [showHideVideoOverlay, setShowHideVideoOverlay] = useState('video-user-overlay')
+    let navigate = useNavigate();
 
     //on intial render, we fetch the data of articles(summary display) and videos that we going to show
     useEffect(()=>{
@@ -45,7 +47,12 @@ function Articles() {
         let videoEl = videoElement.current[key];
         videoEl.play();
         setShowHideVideoOverlay('hideVideoOverlay')
-        console.log(videoElement.current)
+    }
+
+    //onClick navigates to read article route and passes article(state) to new route
+    const readArticle = (e, key)=>{
+        let articleHeading = e.target.textContent;
+        navigate(`/Articles/${articleHeading}`, {state: {article: key}})
     }
 
   return (
@@ -56,16 +63,16 @@ function Articles() {
         <h1 id="articles-section-main-heading">Articles {'&'} Analysis</h1>
         <section id='Articles-section'>
             {
-                articlesData.map((article)=>{
+                articlesData.map((article, key)=>{
                     return(
-                        <div className='Article'>
+                        <div className='Article' key={key}>
             
                             <div className='article-bannerImg-wrapper'>
                                 <img src={article.fields.bannerImage.fields.file.url} className='article-bannerImg' alt='bannerImage' />
                             </div>
                                             
                             <div className='article-summary-wrapper'>
-                                <h3 className='article-summary-heading'>
+                                <h3 className='article-summary-heading'  onClick={(e)=> readArticle(e,key)}>
                                     {article.fields.bannerHeading}
                                 </h3>
                                 <p className='article-summary-text'>
@@ -108,11 +115,6 @@ function Articles() {
                 }
             </div>
         </section>
-
-
-
-
-
 
         <section id='podcasts-section'>
             <h2 id='podcasts-heading'>Podcasts :</h2>
