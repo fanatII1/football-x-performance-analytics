@@ -11,7 +11,7 @@ function ReadArticles() {
   const location = useLocation();
   const [articleBannerHeading, setArticleBannerHeading] = useState();
   const [articlBannerImage, setArticleBannerImage] = useState();
-  const [richTextContentField, setRichTextContentField] = useState()
+  const [richTextContentField, setRichTextContentField] = useState();
 
   //we fetch specific article based of the title in location object
   //Got the title from navigate() object in Articles Component.
@@ -23,7 +23,6 @@ function ReadArticles() {
       let article = articleData.filter((article)=> article.fields.title === articleTitle);
       const articleBannerHeading = article[0].fields.title;
       const articleImage = article[0].fields.bannerImage.fields.file.url;
-      console.log(article[0].fields.mainContent)
       setArticleBannerHeading(articleBannerHeading)
       setArticleBannerImage(articleImage)
       setRichTextContentField(article[0].fields.mainContent)
@@ -31,39 +30,49 @@ function ReadArticles() {
     ArticleRead();
   },[location])
 
+  //object that defines how the documentToReactComponents() function should render its content
+  //content being the RichtTextEditor content from contentful CMS
   const renderOptions = {
     renderNode:{
       [BLOCKS.EMBEDDED_ASSET] : (node, children)=>{
-        console.log(node)
         return <img src={node.data.target.fields.file.url} alt="rtc-img" className='rtc-img'/>
       },
-
       [BLOCKS.PARAGRAPH]: (node, children)=>{
-        return <p>{children}</p>
+        return <p className='rtc-paragraph'>{node.content[0].value}</p>
+      },
+      [BLOCKS.HEADING_1]: (node,children)=>{
+        return <h1 className='rtf-heading-1'>{node.content[0].value}</h1>
       },
       [BLOCKS.HEADING_2]: (node,children)=>{
-        return <h2>{children}</h2>
+        return <h2 className='rtf-heading-2'>{node.content[0].value}</h2>
       },
       [BLOCKS.HEADING_3]: (node,children)=>{
-        return <h3>{children}</h3>
+        return <h3 className='rtf-heading-3'>{node.content[0].value}</h3>
       },
       [BLOCKS.HEADING_4]: (node,children)=>{
-        return <h4>{children}</h4>
+        return <h4 className='rtf-heading-4'>{node.content[0].value}</h4>
       },
       [BLOCKS.HEADING_5]: (node,children)=>{
-        return <h5>{children}</h5>
+        return <h5 className='rtf-heading-1=5'>{node.content[0].value}</h5>
       },
       [BLOCKS.HEADING_6]: (node,children)=>{
-        return <h6>{children}</h6>
+        return <h6 className='rtf-heading-6'>{node.content[0].value}</h6>
       }
     }
   }
 
   if(typeof articleBannerHeading !== 'undefined' && typeof articlBannerImage !== 'undefined'){
     return(
-      <div className="article-content">
-        {documentToReactComponents(richTextContentField, renderOptions)}
+      <>
+      <div id="articleBanner">
+        <img src={articlBannerImage} alt="article-read-banner-img" id="article-banner-image" />
       </div>
+      <main id="read-article-main-content">
+        <div id="rtc-article-content">
+        {documentToReactComponents(richTextContentField, renderOptions)}
+        </div>
+      </main>
+      </>
     )
   }
 }
