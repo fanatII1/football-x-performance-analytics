@@ -52,7 +52,7 @@ function Articles() {
     //onClick navigates to read article route and passes article(state) to new route
     const readArticle = (e, key)=>{
         let articleHeading = e.target.textContent;
-        navigate(`/Articles/${articleHeading}`, {state: {article: key}})
+        navigate(`/Articles/${articleHeading}`, {state: {articleKey: articleHeading}})
     }
 
   return (
