@@ -8,6 +8,7 @@ const kaizerchiefs = require('./controller/KaizerChiefsController/KaizerChiefs_c
 const orlandopirates = require('./controller/OrlandoPiratesController/OrlandoPirates_controller');
 const findPlayer = require('./controller/FindPlayers');
 const jwt = require('jsonwebtoken');
+const path = require('path');
 var multer = require('multer')
 
 //create stats module
