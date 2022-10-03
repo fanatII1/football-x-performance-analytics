@@ -9,7 +9,6 @@ import Articles from './Components/ArticlesPage/Articles';
 import EducationalPage from './Components/EducationalStatsPage/EducationalPage';
 import ReadArticles from './Components/ArticlesPage/ReadArticlesPage/ReadArticles';
 import ClubsPage from './Components/ClubsPages/ClubsPage';
-
 import NameSearch from './Components/NameSearch/NameSearch';
 import Admin from './Components/Admin_Writer/Admin';
 

@@ -7,9 +7,12 @@ const login_user = require('./controller/Login_user');
 const kaizerchiefs = require('./controller/KaizerChiefsController/KaizerChiefs_controller');
 const orlandopirates = require('./controller/OrlandoPiratesController/OrlandoPirates_controller');
 const findPlayer = require('./controller/FindPlayers');
-const createKaizerCheifsPlayer = require('./controller/KaizerChiefsController/CreateKaizerChiefsPlayer')
 const jwt = require('jsonwebtoken');
 var multer = require('multer')
+
+//create stats module
+const createKaizerCheifsPlayer = require('./controller/KaizerChiefsController/CreateKaizerChiefsPlayer')
+const createOrlandoPiratesPlayer = require('./controller/OrlandoPiratesController/CreateOrlandoPlayer')
 
 //update stats modules
 const updatePiratesGoalkeeper = require('./controller/OrlandoPiratesController/UpdateGoalkeeper');
@@ -139,6 +142,7 @@ let diskStorage = multer.diskStorage({
 })
 
 let upload = multer({storage: diskStorage})
+
 app.post('/Admin', upload.single('image'), async (req, res, next)=>{
   
   let club = req.body.club;
@@ -150,7 +154,6 @@ app.post('/Admin', upload.single('image'), async (req, res, next)=>{
     let stat = `${key}: ${statsData[key]}`;
     statsArray.push(stat)
   }
-
 
   switch (club) {
     case 'Kaizer Chiefs':
