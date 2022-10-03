@@ -55,7 +55,7 @@ function Login() {
     <main id="login-content">
      <div id='login-container'>
       <div className="company-logo-container">
-        <img src={image} className='logo-img logo-image' alt='logo' />
+        <img src={image} className='logo-image' alt='logo' />
       </div>
 
         <div id='form-wrapper'>

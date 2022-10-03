@@ -53,7 +53,7 @@ function SignUp() {
     <main id="signup-content">
      <div id='signup-container'>
       <div className="company-signup-container">
-        <img src={image} className='signup-img signup-image' alt='signup' />
+        <img src={image} className='signup-image' alt='signup' />
       </div>
 
         <div id='form-wrapper'>
