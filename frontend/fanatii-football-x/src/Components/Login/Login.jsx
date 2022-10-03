@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import image from './LoginImages/Logo.png'
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 function Login() {
   const [userData, setUserData] = useState();
@@ -65,6 +66,7 @@ function Login() {
             <label htmlFor="Password">Password:</label>
             <input type='password' id='Password' className='form-input' placeholder='Password' name='password' onChange={handleChange}/>
             <input type='submit' className='login-btn' value='LOG-in' />
+            <Link to='/Login'>Don't have an account? SignUp</Link>
           </form>
         </div>
 
