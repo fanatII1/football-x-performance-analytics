@@ -38,6 +38,7 @@
     overflow: hidden;
     line-height: 2;
     font-weight: lighter;
+    transition: .4s;
 }
 
 #articles-section-main-heading{
@@ -83,6 +84,7 @@
     height: 100%;
     position: relative;
     animation: slideIn 1s;
+    transform: .4s;
 }
 
 .article-bannerImg-wrapper img{
@@ -91,6 +93,11 @@
     height: 100%;
     object-fit: cover;
     overflow: hidden;
+}
+
+.Article:hover .article-bannerImg-wrapper{
+    height: 110%;
+    width: 110%;
 }
 
 .article-summary-wrapper{
@@ -104,6 +111,12 @@
     color: white;
     background: #06065082;
     padding-left: 5%;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.Article:hover .article-summary-wrapper{
+    transform: scale(1.04);
 }
 
 .summary-animation{
@@ -258,6 +271,8 @@
     top: 0;
     height: 100%;
     background: #00000061;
+    cursor: pointer;
+    transition: .4s;
 }
 
 .video-user-overlay-image{
@@ -278,11 +293,26 @@
     align-items: center;
     background: #00000061;
     text-align: center;
+    transition: .4s;
+}
+
+.video-overlay-heading{
+    transition: .4s;
+}
+
+.banner-video-image-overlay:hover .video-overlay-heading{
+    transform: scale(1.04);
 }
 
 .hideVideoOverlay{
     display: none;
 }
+
 .player{
     color: #ff008d !important;
+    transition: .1s;
+}
+
+.banner-video-image-overlay:hover .player{
+    transform: scale(1.2);
 }
