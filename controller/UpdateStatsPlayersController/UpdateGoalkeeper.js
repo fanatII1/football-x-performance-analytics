@@ -1,6 +1,25 @@
 const orlando_model = require('../../models/OrlandoPiratesPlayers_model')
+const kc_players_model = require('../../models/KaizerChiefsPlayers_model')
+let club_model;
 
-exports.updatePiratesGoalkeeprStats = async function (req, res) {
+//a function that specifies the club model to use based on the club value it recieves
+function ClubModel(club){
+    switch (club) {
+        case 'Kaizer Chiefs':
+            club_model = kc_players_model;
+            break;
+        
+        case 'Orlando Pirates':
+            club_model = orlando_model;
+            break;
+    
+        default:
+            break;
+    }
+}
+
+exports.updateGoalkeeprStats = async function (req, res, club) {
+    ClubModel(club)
     const {
         name,
         position,
@@ -21,7 +40,7 @@ exports.updatePiratesGoalkeeprStats = async function (req, res) {
         DefActionsOutsidePen
     } = req.body;
 
-    await orlando_model.updateOne({
+    await club_model.updateOne({
         name: name,
         position: position
     }, {

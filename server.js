@@ -15,11 +15,11 @@ const createKaizerCheifsPlayer = require('./controller/KaizerChiefsController/Cr
 const createOrlandoPiratesPlayer = require('./controller/OrlandoPiratesController/CreateOrlandoPlayer')
 
 //update stats modules
-const updatePiratesGoalkeeper = require('./controller/OrlandoPiratesController/UpdateGoalkeeper');
-const updatePiratesDefender = require('./controller/OrlandoPiratesController/UpdateDefenderStats');
-const updatePiratesMidfielder = require('./controller/OrlandoPiratesController/UpdateMidfielderStats');
-const updatePiratesWinger = require('./controller/OrlandoPiratesController/UpdateWingerStats');
-const updatePiratesStriker = require('./controller/OrlandoPiratesController/UpdateStrikerStats');
+const updateGoalKeeper = require('./controller/UpdateStatsPlayersController/UpdateGoalkeeper');
+const updateDefender = require('./controller/UpdateStatsPlayersController/UpdateDefenderStats');
+const updateMidfielder = require('./controller/UpdateStatsPlayersController/UpdateMidfielderStats');
+const updateWinger = require('./controller/UpdateStatsPlayersController/UpdateWingerStats');
+const updateStriker = require('./controller/UpdateStatsPlayersController/UpdateStrikerStats');
 const mongoose = require('mongoose');
 
 app.use(cors());
@@ -94,31 +94,34 @@ app.post('/GlobalSearch/NameSearch', async (req, res, next) => {
 });
 
 /*Route handles stats of player that will be updated*/
-/*we chek the position of the player that the admin wants to update, thus directing them to correct controller*/
+/*we chek the position of the player that the admin wants to update.
+  based on the position, we can handle the updates of the player's stats using on of the update controllers.
+*/
 app.put('/Admin', async (req, res, next) => {
   const { position } = req.body;
-  console.log(req.body);
+  const { club } = req.body;
+  console.log(req.body.club);
 
   //select which players stats to update when recieve request, based on player position
   switch (position) {
     case 'Goalkeeper':
-      await updatePiratesGoalkeeper.updatePiratesGoalkeeprStats(req, res);
+      await updateGoalKeeper.updatePiratesGoalkeeprStats(req, res, club);
       break;
 
     case 'Defender':
-      await updatePiratesDefender.updatePiratesDefenderStats(req, res);
+      await updateDefender.updateDefenderStats(req, res, club);
       break;
 
     case 'Midfielder':
-      await updatePiratesMidfielder.updatePiratesMidfielderStats(req, res);
+      await updateMidfielder.updateMidfielderStats(req, res, club);
       break;
 
     case 'Winger':
-      await updatePiratesWinger.updatePiratesWingerStats(req, res);
+      await updateWinger.updateWingerStats(req, res, club);
       break;
 
     case 'Striker':
-      updatePiratesStriker.updatePiratesStrikerStats(req, res);
+      updateStriker.updateStrikerStats(req, res, club);
       break;
 
     default:

@@ -1,20 +1,13 @@
 const orlando_model = require('../../models/OrlandoPiratesPlayers_model')
 
-exports.updatePiratesStrikerStats = async function (req, res) {
+exports.updateDefenderStats = async function (req, res) {
     const {
         name,
         position,
-        xG,
-        xA,
-        RecieveInBox,
-        Recover,
-        Aerial,
-        Dribble,
+        AerialDeadBalls,
         AttackingOutput,
-        PassTowardsGoal,
         DefensiveActionsPer90,
-        Linkup,
-        shoot,
+        TacklesPer90,
         BallRetention
     } = req.body;
 
@@ -23,18 +16,11 @@ exports.updatePiratesStrikerStats = async function (req, res) {
         position: position
     }, {
         stats: [
-            `xG: ${xG}`,
-            `xA: ${xA}`,
-            `Shoot: ${shoot}`, 
             `Defensive Actions Per 90: ${DefensiveActionsPer90}`,
-            `Linkup: ${Linkup}`,
+            `Tackles Per 90: ${TacklesPer90}`,
             `Attacking Output: ${AttackingOutput}`,
-            `Pass Towards Goal: ${PassTowardsGoal}`,
-            `Recieve In Box: ${RecieveInBox}`,
-            `Aerial: ${Aerial}`,
-            `Dribble: ${Dribble}`,
-            `Recover: ${Recover}`,
-            `Ball Retention: ${BallRetention}`
+            `Aerial Dead Balls: ${AerialDeadBalls}`,
+            `Ball Retention: ${BallRetention}`,
         ]
     })
     .then((data)=>{
