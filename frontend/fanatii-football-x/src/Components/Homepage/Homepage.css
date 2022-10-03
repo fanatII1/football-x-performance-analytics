@@ -19,7 +19,10 @@ html{
 #Homepage-main-container {
   animation: none;
   height: 100%;
-  font-weight: 300;
+  background: #fff;
+  color: #000;
+  line-height: 1.5;
+  font-weight: lighter;
 }
 
 /*Intro Section Styles*/

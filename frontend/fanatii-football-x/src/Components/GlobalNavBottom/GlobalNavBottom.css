@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #232232;
+    background: #474bff;
+    background: linear-gradient(79deg, #2023af 0%, #9073a1 100%); 
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -12,7 +13,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #232232;
+    background: #474bff;
+    background: linear-gradient(79deg, #2023af 0%, #9073a1 100%); 
     position: fixed;
     bottom: 0;
     width: 100%;

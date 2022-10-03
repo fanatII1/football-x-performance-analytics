@@ -36,6 +36,8 @@
     background: #ffffff5c;
     position: relative;
     overflow: hidden;
+    line-height: 2;
+    font-weight: lighter;
 }
 
 #articles-section-main-heading{
@@ -275,6 +277,7 @@
     justify-content: center;
     align-items: center;
     background: #00000061;
+    text-align: center;
 }
 
 .hideVideoOverlay{
