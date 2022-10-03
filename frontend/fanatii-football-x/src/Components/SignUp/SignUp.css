@@ -25,20 +25,20 @@
 }
 
 #signup-content{
-    height: 90%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #1e1d32;
 }
 
 #signup-container{
     min-width: 255px;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-auto-columns: 45%;
     width: 50%;
-    background: #37003c;
     border-radius: 20px;
+    height: 40%;
 }
 
 .signup-img{
@@ -101,10 +101,10 @@ input, label{
     #signup-container {
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 50%;
+        grid-template-rows: 45% 55%;
         width: 50%;
         border-radius: 20px;
-        height: 85%;
+        height: 95%;
     }
 
     .signup-image{

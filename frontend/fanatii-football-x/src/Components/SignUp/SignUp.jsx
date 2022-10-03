@@ -64,7 +64,7 @@ function SignUp() {
             <label htmlFor="Password">Password:</label>
             <input type='password' id='Password' className='form-input' placeholder='Password' name='password' onChange={handleChange}/>
             <input type='submit' className='signup-btn' value='SIGN-UP' />
-            <Link to='/Login'>Have an account? Login</Link>
+            <Link to='/Login'>Login</Link>
           </form>
         </div>
 
