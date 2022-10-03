@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './ClubsPage.css';
 import { useState, useEffect, useRef } from 'react';
 import Navbar from '../Global_Navbar/Navbar';
@@ -7,7 +7,8 @@ import ModalClubPages from './Modal_ClubPages/ModalClubPages';
 
 //this component will render the specific clubs data
 //and make a request via the clubs name, which is passed by state
-function ClubsPage({ clubName }) {
+function ClubsPage() {
+  const location = useLocation();
   const [playerBackendData, setplayerBackendData] = useState();
   const [playerStats, setPlayerStats] = useState();
   const [playerSection, setPlayerSection] = useState('Players-club-pages-section-full');
@@ -18,7 +19,9 @@ function ClubsPage({ clubName }) {
 
   //fetch club data after component has loaded
   useEffect(() => {
-    fetch(`/GlobalSearch/ClubSearch/${clubName}`,{
+    let url = location.pathname
+    async function fetchClubPlayers(){
+    fetch(url ,{
       method: 'GET',
       headers: {
         Authorization: `Bearer ${localStorage.getItem("adminToken") || localStorage.getItem("userToken")}`,
@@ -31,7 +34,10 @@ function ClubsPage({ clubName }) {
       .catch((error) => {
         console.log(error);
       });
-  }, [clubName]);
+    }
+
+    fetchClubPlayers()
+  }, [location]);
 
   //onclick passes the players 'key', so it can be used as reference to the players data, when we want to reveal the stats of the player
   const revealStats = (e, key) => {

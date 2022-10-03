@@ -67,7 +67,7 @@ function ClubSearch() {
                   </div>
 
                   <div className='team-name-wrapper'>
-                    <p className='name-title'><Link to={club.linkClubname}>{club.clubName}</Link></p>
+                    <p className='name-title'><Link to={`/GlobalSearch/ClubSearch/${club.linkClubname}`}>{club.clubName}</Link></p>
                   </div>
 
                   <div className='league'>

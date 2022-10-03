@@ -8,10 +8,8 @@ import ClubSearch from './Components/ClubSearch/ClubSearch'
 import Articles from './Components/ArticlesPage/Articles';
 import EducationalPage from './Components/EducationalStatsPage/EducationalPage';
 import ReadArticles from './Components/ArticlesPage/ReadArticlesPage/ReadArticles';
+import ClubsPage from './Components/ClubsPages/ClubsPage';
 
-//club routes
-import KaizerChiefs from './Components/ClubsPages/KaizerChiefs/KaizerChiefs';
-import OrlandoPirates from './Components/ClubsPages/OrlandoPirates/OrlandoPirates';
 import NameSearch from './Components/NameSearch/NameSearch';
 import Admin from './Components/Admin_Writer/Admin';
 
@@ -28,8 +26,7 @@ function App() {
             <Route path='/GlobalSearch/ClubSearch' element={<ClubSearch/>}/>
             <Route path='/Articles' element={<Articles/>}/>
             <Route path='/Articles/:article' element={<ReadArticles/>}/>
-            <Route path='/GlobalSearch/ClubSearch/KaizerChiefs' element={<KaizerChiefs/>}/>
-            <Route path='/GlobalSearch/ClubSearch/OrlandoPirates' element={<OrlandoPirates/>}/>
+            <Route path='/GlobalSearch/ClubSearch/:club' element={<ClubsPage/>}/>
             <Route path='/GlobalSearch/NameSearch/' element={<NameSearch/>}/>
             <Route path='/Admin' element={<Admin/>}/>
             <Route path='/Education' element={<EducationalPage/>}/>
