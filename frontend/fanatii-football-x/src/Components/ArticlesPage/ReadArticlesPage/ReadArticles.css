@@ -34,6 +34,7 @@
 #article-banner-heading{
     color: #fff;
     text-align: center;
+    padding: 1%;
 }
 
 /*Styles focusing on the main content section(#read-content section)*/
@@ -101,9 +102,6 @@
 .rtc-list{
     padding: 3.5%;
     list-style-type: circle;
-}
-
-.rtc-list-item{
     color: #000;
-    font-weight: 500;
+    font-weight: 450;
 }

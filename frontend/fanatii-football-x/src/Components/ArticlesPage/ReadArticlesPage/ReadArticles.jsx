@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom'
 import { client } from '../../client';
+import Navbar from '../../Global_Navbar/Navbar';
+import Footer from '../../Global_Footer/Footer';
+import GlobalNavBottom from '../../GlobalNavBottom/GlobalNavBottom';
 //we import rich text editor content renderer from contentful package
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
@@ -54,7 +57,7 @@ function ReadArticles() {
         return <h4 className='rtc-heading-4'>{node.content[0].value}</h4>
       },
       [BLOCKS.HEADING_5]: (node,children)=>{
-        return <h5 className='rtc-heading-1=5'>{node.content[0].value}</h5>
+        return <h5 className='rtc-heading-5'>{node.content[0].value}</h5>
       },
       [BLOCKS.HEADING_6]: (node,children)=>{
         return <h6 className='rtc-heading-6'>{node.content[0].value}</h6>
@@ -62,17 +65,25 @@ function ReadArticles() {
       [BLOCKS.UL_LIST] : (node, children)=>{
         return(
           <ul className='rtc-list'>
-            <li className='rtc-list-item'>
-              {children}
-            </li>
+            {children}
           </ul>
         )
+      },
+      [INLINES.HYPERLINK]: (node, children) => {
+        
+        return <a href={node.data.url} target='_blank' rel='noopener noreferrer'>{node.content[0].value}</a>
+      },
+      [MARKS.UNDERLINE]: (node, children)=>{
+        console.log(node)
+        return <u></u>
       }
     }
   }
 
   if(typeof articleBannerHeading !== 'undefined' && typeof articlBannerImage !== 'undefined'){
     return(
+      <>
+      <Navbar idNav='nav-search'/>
       <article id='article-read-main-content'>
       <div id='articleBanner'>
         <img src={articlBannerImage} alt='article-read-banner-img' id='article-banner-image' />
@@ -88,6 +99,9 @@ function ReadArticles() {
         </div>
       </section>
       </article>
+      <Footer idFooter='home-footer'/>
+      <GlobalNavBottom navBottom='articles-nav-bottom'/>
+      </>
     )
   }
 }
