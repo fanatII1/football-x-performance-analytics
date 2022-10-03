@@ -2,7 +2,7 @@ import React from 'react'
 import './ReadArticles.css'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import { client } from '../../client';
 import Navbar from '../../Global_Navbar/Navbar';
 import Footer from '../../Global_Footer/Footer';
@@ -80,30 +80,38 @@ function ReadArticles() {
     }
   }
 
-  if(typeof articleBannerHeading !== 'undefined' && typeof articlBannerImage !== 'undefined'){
-    return(
-      <>
-      <Navbar idNav='nav-search'/>
-      <article id='article-read-main-content'>
-      <div id='articleBanner'>
-        <img src={articlBannerImage} alt='article-read-banner-img' id='article-banner-image' />
-        <div id='article-banner-heading-overlay'>
-          <h1 id='article-banner-heading'>{articleBannerHeading}</h1>
-        </div>
-      </div>
 
-      <section id='read-content'>
-        <div id='rtc-article-content'>
-          <h1 id='main-section-article-heading'>{articleBannerHeading}</h1>
-        {documentToReactComponents(richTextContentField, renderOptions)}
+  if(localStorage.getItem('adminToken') || localStorage.getItem('userToken')){
+    if(typeof articleBannerHeading !== 'undefined' && typeof articlBannerImage !== 'undefined'){
+      return(
+        <>
+        <Navbar idNav='nav-search'/>
+        <article id='article-read-main-content'>
+        <div id='articleBanner'>
+          <img src={articlBannerImage} alt='article-read-banner-img' id='article-banner-image' />
+          <div id='article-banner-heading-overlay'>
+            <h1 id='article-banner-heading'>{articleBannerHeading}</h1>
+          </div>
         </div>
-      </section>
-      </article>
-      <Footer idFooter='home-footer'/>
-      <GlobalNavBottom navBottom='articles-nav-bottom'/>
-      </>
-    )
+  
+        <section id='read-content'>
+          <div id='rtc-article-content'>
+            <h1 id='main-section-article-heading'>{articleBannerHeading}</h1>
+          {documentToReactComponents(richTextContentField, renderOptions)}
+          </div>
+        </section>
+        </article>
+        <Footer idFooter='home-footer'/>
+        <GlobalNavBottom navBottom='articles-nav-bottom'/>
+        </>
+      )
+    }
   }
+  else{
+    return <p style={{color: 'white'}}><Link to='/SignUp'>Please Sign Up</Link></p>
+  }
+
+
 }
 
 export default ReadArticles
