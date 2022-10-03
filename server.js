@@ -165,6 +165,13 @@ app.post('/Admin', upload.single('image'), async (req, res, next)=>{
   }
 })
 
+//Serve static files in production
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('frontend/fanatii-football-x/build'))
+  app.get('*', (req,res)=>{
+    res.sendFile(path.resolve(__dirname, 'frontend/fanatii-football-x', 'build', 'index.html'))
+  })
+}
 
 /*server listens on PORT 3001*/
 app.listen(PORT, () => {
