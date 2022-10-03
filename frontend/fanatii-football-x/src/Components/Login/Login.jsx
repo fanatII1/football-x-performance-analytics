@@ -66,7 +66,7 @@ function Login() {
             <label htmlFor="Password">Password:</label>
             <input type='password' id='Password' className='form-input' placeholder='Password' name='password' onChange={handleChange}/>
             <input type='submit' className='login-btn' value='LOG-in' />
-            <Link to='/Login'>Don't have an account? SignUp</Link>
+            <Link to='/SignUp'>Don't have an account? SignUp</Link>
           </form>
         </div>
 
