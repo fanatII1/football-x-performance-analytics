@@ -1,11 +1,11 @@
 /*admin-nav styling*/
 #admin-nav{
-    height: 10%;
+    height: 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 #admin-nav-list-wrapper{
@@ -17,7 +17,6 @@
     background: -webkit-linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
     background: linear-gradient(79deg, #474bff 0%, #bc48ff 100%);
     background-attachment: fixed;
-    margin-bottom: 0.7%;
 }
 
 #admin-nav-list{
@@ -85,4 +84,13 @@
     #admin-nav-list{
         width: 100%;
     }
+}
+
+/*on smaller screens, the league images scale down*/
+@media screen and (max-width: 425px) {
+    .league-image-align {
+        width: 59%;
+        height: 65%;
+        margin: 0 auto;
+    }    
 }

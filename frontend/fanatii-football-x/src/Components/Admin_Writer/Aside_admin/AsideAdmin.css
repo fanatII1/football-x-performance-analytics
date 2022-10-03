@@ -45,11 +45,11 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: 2%;
-    border-radius: 100%;
+    padding: 1.2%;
     background: #ffffff75;
     color: #fff;
     border: 1px solid #fff;
+    cursor: pointer;
 }
 
 #company-logo{
@@ -132,13 +132,13 @@
         .admin-information{
             display: none !important;
         }
-        
-        #hideAdmin-info{
-            display: none !important;
-        }
     
         #admin-main-content{
             display: block;
+        }
+
+        .admin-image-wrapper{
+            width: 30%;
         }
     
         #videos-articles-section{

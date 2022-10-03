@@ -20,6 +20,7 @@
     border: 1px solid #fff;
     background: none;
     color: #fff;
+    cursor: pointer;
 }
 
 /*background attachment here ensures that the divs background gradient stays fixed*/
