@@ -18,11 +18,21 @@ function Navbar({idNav}) {
               <li className='list-item li-3'><Link to='/Articles'>Articles</Link><span className="nav-hr"></span></li>
               <li className='list-item li-3'><Link to='/Education'>Stats Education</Link><span className="nav-hr"></span></li>
               {
-                (localStorage.getItem('adminToken')) ? (
-                  <li className='list-item li-3'><Link to='/Admin'>Admin</Link><span className="nav-hr"></span></li>
-                ):
+                (localStorage.getItem('adminToken')) ? 
+                  (
+                  <>
+                    <li className='list-item li-3'><Link to='/Admin'>Admin</Link><span className="nav-hr"></span></li>                  </>
+                  ): (<></>)
+              }
+              
+              {
+                (localStorage.getItem('adminToken') || localStorage.getItem('userToken')) ?
+                (<></>) :
                 (
-                  <></>
+                  <>
+                    <li className='list-item li-3'><Link to='/Login'>Login</Link><span className="nav-hr"></span></li>
+                    <li className='list-item li-3'><Link to='/SignUp'>SignUp</Link><span className="nav-hr"></span></li>
+                  </>
                 )
               }
             </ul>
