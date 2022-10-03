@@ -91,7 +91,7 @@
 }
 
 /*hide bottom nav when in tablet, laptop, desktop and tv screen sizes*/
-@media screen and (min-width: 426px) {
+@media screen and (min-width: 520px) {
     #home-bottom-nav, #search-nav-bottom, #club-search-nav-bottom, #articles-nav-bottom{
         display: none;
     }

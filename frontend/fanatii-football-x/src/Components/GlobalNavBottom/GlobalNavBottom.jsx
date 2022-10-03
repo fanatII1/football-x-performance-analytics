@@ -34,7 +34,7 @@ function GlobalNavBottom({ navBottom }) {
           <li className='list'>
             <Link to='/Admin'>
               <span className='icon'>
-                <i className="fa-solid fa-user-plus"></i>
+                <i className='fa-solid fa-user-plus'></i>
               </span>
               <span className='text'>Admin</span>
             </Link>
@@ -43,18 +43,18 @@ function GlobalNavBottom({ navBottom }) {
           <></>
         )}
         {localStorage.getItem('adminToken') || localStorage.getItem('userToken') ? (
+          <></>
+        ) : (
           <>
             <li className='list'>
               <Link to='/Login'>
                 <span className='icon'>
-                    <i class="fa-solid fa-right-to-bracket"></i>
+                  <i class='fa-solid fa-right-to-bracket'></i>
                 </span>
                 <span className='text'>Articles</span>
               </Link>
             </li>
           </>
-        ):(
-            <></>
         )}
       </ul>
     </div>
