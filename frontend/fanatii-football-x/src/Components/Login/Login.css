@@ -129,3 +129,7 @@ input[type="submit"]{
     border-radius: 5px;
     width: 100%;
 }
+
+.login-btn{
+    cursor: pointer;
+}

@@ -28,31 +28,31 @@ function CreateStatsForm({playerPosition}) {
         e.preventDefault();
         let formData = new FormData();
         try {
-            formData.append("name", statsData.name);
-            formData.append("position", statsData.position);
-            formData.append("club", statsData.club);
-            formData.append("dateOfBirth", statsData.dateOfBirth);
-            formData.append("foot", statsData.foot);
-            formData.append("league", statsData.league);
-            formData.append("nationality", statsData.nationality);
-            formData.append("age", statsData.age);
-            formData.append("PSxGSoT", statsData.PSxGSoT);
-            formData.append("PSxGGA", statsData.PSxGGA);
-            formData.append("DefActionsOutsidePen", statsData.DefensiveActionsOutsidePen);
-            formData.append("GoalAgainst", statsData.GoalAgainst);
-            formData.append("xA", statsData.xA);
-            formData.append("xG ", statsData.xG);
-            formData.append("BallRetention", statsData.BallRetention);
-            formData.append("AttackingOutput", statsData.AttackingOutput);
-            formData.append("AerialDeadBalls", statsData.AerialDeadBalls);
-            formData.append("DefensiveActionsPer90 ", statsData.DefensiveActionsPer90);
-            formData.append("RecieveInBox", statsData.RecieveInBox);
-            formData.append("PassTowardsGoal ", statsData.PassTowardsGoal);
-            formData.append("Recover", statsData.Recover);
-            formData.append("Aerial", statsData.Aerial);
-            formData.append("Dribble", statsData.Dribble);
-            formData.append("Linkup", statsData.Linkup);
-            formData.append("shoot", statsData.shoot)
+            formData.append('name', statsData.name);
+            formData.append('position', statsData.position);
+            formData.append('club', statsData.club);
+            formData.append('dateOfBirth', statsData.dateOfBirth);
+            formData.append('foot', statsData.foot);
+            formData.append('league', statsData.league);
+            formData.append('nationality', statsData.nationality);
+            formData.append('age', statsData.age);
+            formData.append('PSxGSoT', statsData.PSxGSoT);
+            formData.append('PSxGGA', statsData.PSxGGA);
+            formData.append('DefActionsOutsidePen', statsData.DefensiveActionsOutsidePen);
+            formData.append('GoalAgainst', statsData.GoalAgainst);
+            formData.append('xA', statsData.xA);
+            formData.append('xG ', statsData.xG);
+            formData.append('BallRetention', statsData.BallRetention);
+            formData.append('AttackingOutput', statsData.AttackingOutput);
+            formData.append('AerialDeadBalls', statsData.AerialDeadBalls);
+            formData.append('DefensiveActionsPer90 ', statsData.DefensiveActionsPer90);
+            formData.append('RecieveInBox', statsData.RecieveInBox);
+            formData.append('PassTowardsGoal ', statsData.PassTowardsGoal);
+            formData.append('Recover', statsData.Recover);
+            formData.append('Aerial', statsData.Aerial);
+            formData.append('Dribble', statsData.Dribble);
+            formData.append('Linkup', statsData.Linkup);
+            formData.append('shoot', statsData.shoot)
             formData.append('image', file)
           } catch (error) {
             console.log(error);
@@ -65,21 +65,21 @@ function CreateStatsForm({playerPosition}) {
 
     if(playerPosition === 'GK'){
         return(
-            <form id='GKForm' onSubmit={submitStats} autoComplete='off' enctype="multipart/form-data">
+            <form id='GKForm' onSubmit={submitStats} autoComplete='off' encType='multipart/form-data'>
                 <h2 id='position-heading'>{playerPosition} :</h2>
                 <div id='form-main-content'>
                 <div className='form1'>
                 <label htmlFor='name'>Name:</label>
                 <input type='text' name='name' id='name' placeholder='Name' onChange={handleChange}/>
-                <label htmlFor="Age">Age:</label>
+                <label htmlFor='Age'>Age:</label>
                 <input type='text' name='age' id='age'  placeholder='Age' onChange={handleChange}/>
-                <label htmlFor="dateOfBirth">DoB:</label>
+                <label htmlFor='dateOfBirth'>DoB:</label>
                 <input type='text' name='dateOfBirth' id='dateOfBirth'  placeholder='DoB' onChange={handleChange}/>
                 <label htmlFor='position'>Position:</label>
                 <input type='text' name='position'id='position' placeholder='Position' onChange={handleChange}/>
                 <label htmlFor='club'>Club:</label>
                 <input type='text' name='club' id='club'  placeholder='Club' onChange={handleChange}/>
-                <label htmlFor="Nationality">Nationality:</label>
+                <label htmlFor='Nationality'>Nationality:</label>
                 <input type='text' name='nationality' id='nationality'  placeholder='Nationality' onChange={handleChange}/>
                 </div>
 
@@ -92,11 +92,11 @@ function CreateStatsForm({playerPosition}) {
                 <input type='text' name='PSxGGA' id='PSxGGA' placeholder='PSxGGA' onChange={handleStatsChange}/>
                 <label htmlFor='PSxGSoT'>PSxGSoT</label>
                 <input type='text' name='PSxGSoT' id='PSxGSoT' placeholder='PSxGSoT' onChange={handleStatsChange}/>
-                <label htmlFor="Nationality">Foot:</label>
+                <label htmlFor='Nationality'>Foot:</label>
                 <input type='text' name='foot' id='foot'  placeholder='foot' onChange={handleChange}/>
-                <label htmlFor="Nationality">League:</label>
+                <label htmlFor='Nationality'>League:</label>
                 <input type='text' name='league' id='league'  placeholder='League' onChange={handleChange}/>
-                <label htmlFor="Nationality">Image:</label>
+                <label htmlFor='Nationality'>Image:</label>
                 <input type='file' name='image' id='file' onChange={(e) => setFile(e.target.files[0])}/>
                 </div>
                 </div>
@@ -106,21 +106,21 @@ function CreateStatsForm({playerPosition}) {
     }
     else if(playerPosition === 'DEF'){
         return(
-            <form id='DEFForm' onSubmit={submitStats} autoComplete='off' enctype="multipart/form-data">
+            <form id='DEFForm' onSubmit={submitStats} autoComplete='off' encType='multipart/form-data'>
                 <h2 id='position-heading'>{playerPosition} :</h2>
                 <div id='form-main-content'>
                 <div className='form1'>
                 <label htmlFor='name'>Name:</label>
                 <input type='text' name='name' id='name' placeholder='Name' onChange={handleChange}/>
-                <label htmlFor="Age">Age:</label>
+                <label htmlFor='Age'>Age:</label>
                 <input type='text' name='age' id='age'  placeholder='Age' onChange={handleChange}/>
-                <label htmlFor="dateOfBirth">DoB:</label>
+                <label htmlFor='dateOfBirth'>DoB:</label>
                 <input type='text' name='dateOfBirth' id='dateOfBirth'  placeholder='DoB' onChange={handleChange}/>
                 <label htmlFor='position'>Position:</label>
                 <input type='text' name='position'id='position' placeholder='Position' onChange={handleChange}/>
                 <label htmlFor='club'>Club:</label>
                 <input type='text' name='club' id='club'  placeholder='Club' onChange={handleChange}/>
-                <label htmlFor="Nationality">Nationality:</label>
+                <label htmlFor='Nationality'>Nationality:</label>
                 <input type='text' name='nationality' id='nationality'  placeholder='Nationality' onChange={handleChange}/>
                 </div>
 
@@ -135,9 +135,9 @@ function CreateStatsForm({playerPosition}) {
                 <input type='text' name='AttackingOutput' id='AttackingOutput' placeholder='AttackingOutput' onChange={handleStatsChange}/>
                 <label htmlFor='BallRetention'>Ball Retention:</label>
                 <input type='text' name='BallRetention' id='BallRetention' placeholder='BallRetention' onChange={handleStatsChange}/>
-                <label htmlFor="Nationality">Foot:</label>
+                <label htmlFor='Nationality'>Foot:</label>
                 <input type='text' name='foot' id='foot'  placeholder='foot' onChange={handleChange}/>
-                <label htmlFor="Nationality">League:</label>
+                <label htmlFor='Nationality'>League:</label>
                 <input type='text' name='league' id='league'  placeholder='League' onChange={handleChange}/>
                 </div>
                 </div>
@@ -147,21 +147,21 @@ function CreateStatsForm({playerPosition}) {
     }
     else if(playerPosition === 'MID'){
         return(
-            <form id='MIDForm' onSubmit={submitStats} autoComplete='off' enctype="multipart/form-data">
+            <form id='MIDForm' onSubmit={submitStats} autoComplete='off' encType='multipart/form-data'>
                 <h2 id='position-heading'>{playerPosition} :</h2>
                 <div id='form-main-content'>                
                 <div className='form1'>
                 <label htmlFor='name'>Name:</label>
                 <input type='text' name='name' id='name' placeholder='Name' onChange={handleChange}/>
-                <label htmlFor="Age">Age:</label>
+                <label htmlFor='Age'>Age:</label>
                 <input type='text' name='age' id='age'  placeholder='Age' onChange={handleChange}/>
-                <label htmlFor="dateOfBirth">DoB:</label>
+                <label htmlFor='dateOfBirth'>DoB:</label>
                 <input type='text' name='dateOfBirth' id='dateOfBirth'  placeholder='DoB' onChange={handleChange}/>
                 <label htmlFor='position'>Position:</label>
                 <input type='text' name='position'id='position' placeholder='Position' onChange={handleChange}/>
                 <label htmlFor='club'>Club:</label>
                 <input type='text' name='club' id='club'  placeholder='Club' onChange={handleChange}/>
-                <label htmlFor="Nationality">Nationality:</label>
+                <label htmlFor='Nationality'>Nationality:</label>
                 <input type='text' name='nationality' id='nationality'  placeholder='Nationality' onChange={handleChange}/>
                 </div>
 
@@ -182,7 +182,7 @@ function CreateStatsForm({playerPosition}) {
                 <input type='text' name='BallRetention' id='BallRetention' placeholder='BallRetention' onChange={handleStatsChange}/>
                 </div>
 
-                <div className="form3">
+                <div className='form3'>
                 <label htmlFor='Dribble'>Dribbling:</label>
                 <input type='text' name='Dribble' id='Dribble' placeholder='Dribble' onChange={handleStatsChange}/>
                 <label htmlFor='Aerial'>Aerial:</label>
@@ -193,9 +193,9 @@ function CreateStatsForm({playerPosition}) {
                 <input type='text' name='PassTowardsGoal' id='PassTowardsGoal' placeholder='PassTowardsGoal' onChange={handleStatsChange}/>
                 <label htmlFor='ReceiveInBox'>Recieve In Box:</label>
                 <input type='text' name='RecieveInBox' id='RecieveInBox' placeholder='RecieveInBox' onChange={handleStatsChange}/>
-                <label htmlFor="Nationality">Foot:</label>
+                <label htmlFor='Nationality'>Foot:</label>
                 <input type='text' name='foot' id='foot'  placeholder='foot' onChange={handleChange}/>
-                <label htmlFor="Nationality">League:</label>
+                <label htmlFor='Nationality'>League:</label>
                 <input type='text' name='league' id='league'  placeholder='League' onChange={handleChange}/>
                 </div>
                 </div>
@@ -205,21 +205,21 @@ function CreateStatsForm({playerPosition}) {
     }
     else if(playerPosition === 'WING'){
         return(
-            <form id='WINGForm' onSubmit={submitStats} autoComplete='off' enctype="multipart/form-data">
+            <form id='WINGForm' onSubmit={submitStats} autoComplete='off' encType='multipart/form-data'>
                 <h2 id='position-heading'>{playerPosition} :</h2>
                 <div id='form-main-content'>                
                 <div className='form1'>
                 <label htmlFor='name'>Name:</label>
                 <input type='text' name='name' id='name' placeholder='Name' onChange={handleChange}/>
-                <label htmlFor="Age">Age:</label>
+                <label htmlFor='Age'>Age:</label>
                 <input type='text' name='age' id='age'  placeholder='Age' onChange={handleChange}/>
-                <label htmlFor="dateOfBirth">DoB:</label>
+                <label htmlFor='dateOfBirth'>DoB:</label>
                 <input type='text' name='dateOfBirth' id='dateOfBirth'  placeholder='DoB' onChange={handleChange}/>
                 <label htmlFor='position'>Position:</label>
                 <input type='text' name='position'id='position' placeholder='Position' onChange={handleChange}/>
                 <label htmlFor='club'>Club:</label>
                 <input type='text' name='club' id='club'  placeholder='Club' onChange={handleChange}/>
-                <label htmlFor="Nationality">Nationality:</label>
+                <label htmlFor='Nationality'>Nationality:</label>
                 <input type='text' name='nationality' id='nationality'  placeholder='Nationality' onChange={handleChange}/>
                 </div>
 
@@ -240,7 +240,7 @@ function CreateStatsForm({playerPosition}) {
                 <input type='text' name='BallRetention' id='BallRetention' placeholder='BallRetention' onChange={handleStatsChange}/>
                 </div>
 
-                <div className="form3">
+                <div className='form3'>
                 <label htmlFor='Dribble'>Dribbling:</label>
                 <input type='text' name='Dribble' id='Dribble' placeholder='Dribble' onChange={handleStatsChange}/>
                 <label htmlFor='Aerial'>Aerial:</label>
@@ -251,9 +251,9 @@ function CreateStatsForm({playerPosition}) {
                 <input type='text' name='PassTowardsGoal' id='PassTowardsGoal' placeholder='PassTowardsGoal' onChange={handleStatsChange}/>
                 <label htmlFor='ReceiveInBox'>Recieve In Box:</label>
                 <input type='text' name='RecieveInBox' id='RecieveInBox' placeholder='RecieveInBox' onChange={handleStatsChange}/>
-                <label htmlFor="Nationality">Foot:</label>
+                <label htmlFor='Nationality'>Foot:</label>
                 <input type='text' name='foot' id='foot'  placeholder='foot' onChange={handleChange}/>
-                <label htmlFor="Nationality">League:</label>
+                <label htmlFor='Nationality'>League:</label>
                 <input type='text' name='league' id='league'  placeholder='League' onChange={handleChange}/>
                 </div>
                 </div>
@@ -263,21 +263,21 @@ function CreateStatsForm({playerPosition}) {
     }
     else{
         return(
-            <form id='STForm' onSubmit={submitStats} autoComplete='off' enctype="multipart/form-data">
+            <form id='STForm' onSubmit={submitStats} autoComplete='off' encType='multipart/form-data'>
                 <h2 id='position-heading'>{playerPosition} :</h2>
                 <div id='form-main-content'>                
                 <div className='form1'>
                 <label htmlFor='name'>Name:</label>
                 <input type='text' name='name' id='name' placeholder='Name' onChange={handleChange}/>
-                <label htmlFor="Age">Age:</label>
+                <label htmlFor='Age'>Age:</label>
                 <input type='text' name='age' id='age'  placeholder='Age' onChange={handleChange}/>
-                <label htmlFor="dateOfBirth">DoB:</label>
+                <label htmlFor='dateOfBirth'>DoB:</label>
                 <input type='text' name='dateOfBirth' id='dateOfBirth'  placeholder='DoB' onChange={handleChange}/>
                 <label htmlFor='position'>Position:</label>
                 <input type='text' name='position'id='position' placeholder='Position' onChange={handleChange}/>
                 <label htmlFor='club'>Club:</label>
                 <input type='text' name='club' id='club'  placeholder='Club' onChange={handleChange}/>
-                <label htmlFor="Nationality">Nationality:</label>
+                <label htmlFor='Nationality'>Nationality:</label>
                 <input type='text' name='nationality' id='nationality'  placeholder='Nationality' onChange={handleChange}/>
                 </div>
 
@@ -298,7 +298,7 @@ function CreateStatsForm({playerPosition}) {
                 <input type='text' name='BallRetention' id='BallRetention' placeholder='BallRetention' onChange={handleStatsChange}/>
                 </div>
 
-                <div className="form3">
+                <div className='form3'>
                 <label htmlFor='Dribble'>Dribbling:</label>
                 <input type='text' name='Dribble' id='Dribble' placeholder='Dribble' onChange={handleStatsChange}/>
                 <label htmlFor='Aerial'>Aerial:</label>
@@ -309,9 +309,9 @@ function CreateStatsForm({playerPosition}) {
                 <input type='text' name='PassTowardsGoal' id='PassTowardsGoal' placeholder='PassTowardsGoal' onChange={handleStatsChange}/>
                 <label htmlFor='ReceiveInBox'>Recieve In Box:</label>
                 <input type='text' name='RecieveInBox' id='RecieveInBox' placeholder='RecieveInBox' onChange={handleStatsChange}/>
-                <label htmlFor="Nationality">Foot:</label>
+                <label htmlFor='Nationality'>Foot:</label>
                 <input type='text' name='foot' id='foot'  placeholder='foot' onChange={handleChange}/>
-                <label htmlFor="Nationality">League:</label>
+                <label htmlFor='Nationality'>League:</label>
                 <input type='text' name='league' id='league'  placeholder='League' onChange={handleChange}/>
                 </div>
                 </div>

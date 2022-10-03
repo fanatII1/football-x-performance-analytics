@@ -43,7 +43,6 @@ function Admin() {
             let imagesRmFirst = imageResponseData;
             imagesRmFirst.shift();
             let first3Images = imagesRmFirst.filter((video, index)=> index <= 1); //return first 2 images data
-            console.log(first3Images)
             setAllImages(first3Images)
 
             //we fetch the  VIdeos and Data related to the video that's going to be on display

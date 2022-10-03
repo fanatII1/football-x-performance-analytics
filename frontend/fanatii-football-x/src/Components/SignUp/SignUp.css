@@ -126,3 +126,7 @@ input[type="submit"]{
     border: none;
     border-radius: 5px;
 }
+
+.signup-btn{
+    cursor: pointer;
+}

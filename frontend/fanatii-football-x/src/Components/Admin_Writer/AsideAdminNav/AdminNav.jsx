@@ -24,9 +24,9 @@ function AdminNav() {
 
         <div id='leagues'>
             {
-                leagueImage.map((league)=>{
+                leagueImage.map((league, key)=>{
                     return(
-                        <div className='league-image-wrapper'>
+                        <div className='league-image-wrapper' key={key}>
                             <div className='league-image-align'>
                                 <img src={league} alt='' className='leagueImage' />
                             </div>
