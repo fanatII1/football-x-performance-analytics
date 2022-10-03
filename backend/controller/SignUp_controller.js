@@ -1,4 +1,4 @@
-const User_model = require('../models/User_model');
+const User_model = require('../models/User_model')
 const jwt = require('jsonwebtoken');
 //crypto module -- hashes user passwords
 const crypto = require('crypto');

@@ -166,14 +166,6 @@ app.post('/Admin', upload.single('image'), async (req, res, next)=>{
 })
 
 
-//ALLOW EXPRESS to server up static resources in production build
-if (process.env.NODE_ENV === 'production'){
-  app.use(express.static(path.join(__dirname, 'fanatii-football-x/build')));
-  app.get('*',(req,res)=> {res.sendFile(path.resolve(__dirname,
-  'fanatii-football-x', 'build','index.html'));
-  });
-}
-
 /*server listens on PORT 3001*/
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
