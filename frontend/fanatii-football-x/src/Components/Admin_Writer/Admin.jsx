@@ -31,7 +31,7 @@ function Admin() {
     useEffect(()=>{
         async function fetchData(){
             //we fetch Images and Data related to the articles
-            const imageresponse =  await client.getEntries({content_type: 'postBannerImage'});
+            const imageresponse =  await client.getEntries({content_type: 'articles'});
             const imageResponseData = imageresponse.items;
             const bannerHeading = imageResponseData[0].fields.bannerHeading;
             const bannerImage = imageResponseData[0].fields.bannerImage.fields.file.url;

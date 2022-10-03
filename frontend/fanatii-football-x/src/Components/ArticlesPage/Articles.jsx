@@ -25,7 +25,7 @@ function Articles() {
     useEffect(()=>{
         async function fetchData(){
             //we fetch Images and Data related to the article and return only first 3 images
-            const imageresponse =  await client.getEntries({content_type: 'postBannerImage'});
+            const imageresponse =  await client.getEntries({content_type: 'articles'});
             const imageResponseData = imageresponse.items;
             let images = imageResponseData;
             let first3Images = images.filter((video, index)=> index <= 2); //return first 3 images data
