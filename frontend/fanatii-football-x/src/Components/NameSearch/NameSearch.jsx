@@ -57,10 +57,10 @@ function NameSearch() {
                                     <img src={typeof playerBackendData === 'undefined' ? Avatar : playerBackendData[0].player_image } alt='player' className='searched-image' />
                                 </div>
                                 <div className='searched-player-summary'>
-                                    <p className="player-name">Name: <span className='player-searched-info'>{typeof playerBackendData === 'undefined' ? ' ' : playerBackendData[0].name}</span></p>
-                                    <p className="player-dOb">Date of Birth: <span className='player-searched-info'>{typeof playerBackendData === 'undefined' ? ' ' : playerBackendData[0].dateOfBirth}</span></p>
-                                    <p className="player-nationality">Nationality: <span className='player-searched-info'>{typeof playerBackendData === 'undefined' ? ' ' : playerBackendData[0].nationality}</span></p>
-                                    <p className="player-position">Position: <span className='player-searched-info'>{typeof playerBackendData === 'undefined' ? ' ' : playerBackendData[0].position}</span></p>
+                                    <p className="player-name">Name : <span className='player-searched-info'>{typeof playerBackendData === 'undefined' ? ' ' : playerBackendData[0].name}</span></p>
+                                    <p className="player-dOb">Date of Birth : <span className='player-searched-info'>{typeof playerBackendData === 'undefined' ? ' ' : playerBackendData[0].dateOfBirth}</span></p>
+                                    <p className="player-nationality">Nationality : <span className='player-searched-info'>{typeof playerBackendData === 'undefined' ? ' ' : playerBackendData[0].nationality}</span></p>
+                                    <p className="player-position">Position : <span className='player-searched-info'>{typeof playerBackendData === 'undefined' ? ' ' : playerBackendData[0].position}</span></p>
                                 </div>
                             </div>
                         </div>
