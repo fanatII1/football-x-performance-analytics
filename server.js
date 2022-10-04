@@ -57,7 +57,6 @@ app.get('/GlobalSearch/ClubSearch/:club', async (req, res, next) => {
   let adminToken = req.headers['authorization'].split(' ')[1];
   try {
     const decodedToken = jwt.verify(adminToken, 'key');
-    console.log(decodedToken)
     if (decodedToken) {
       //select which clubs data to fetch when recieve request
       switch (club) {
@@ -80,11 +79,9 @@ app.get('/GlobalSearch/ClubSearch/:club', async (req, res, next) => {
 
 /*Route Searches Player frome the database*/
 app.post('/GlobalSearch/NameSearch', async (req, res, next) => {
-  console.log(req.body);
   let adminToken = req.headers['authorization'].split(' ')[1];
   try {
     const decodedToken = jwt.verify(adminToken, 'key');
-    // console.log(decodedToken)
     if (decodedToken) {
       await findPlayer.findPlayer(req, res);
     }
@@ -101,7 +98,6 @@ app.post('/GlobalSearch/NameSearch', async (req, res, next) => {
 app.put('/Admin', async (req, res, next) => {
   const { position } = req.body;
   const { club } = req.body;
-  console.log(req.body.club);
 
   //select which players stats to update when recieve request, based on player position
   switch (position) {

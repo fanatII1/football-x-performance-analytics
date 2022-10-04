@@ -8,7 +8,6 @@ function UpdateStatsForm({position}){
     const handleChange = (e) =>{
         const name = e.target.name;
         const userValue = e.target.value;
-        console.log(name, userValue)
         setUserData((prevData)=>{
           return {...prevData, [name]: userValue} 
         })
@@ -22,7 +21,6 @@ function UpdateStatsForm({position}){
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(userData)
         })
-        console.log(userData)
     }
 
     if(position === 'GK'){

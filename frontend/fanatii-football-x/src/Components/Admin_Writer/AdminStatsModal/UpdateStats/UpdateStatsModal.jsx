@@ -11,7 +11,6 @@ function UpdateStatsModal({ adminModal, setAdminModal}) {
 
   //onChange, we will display specific form for specific position
   const handlePositionChange = (e) => {
-    console.log(e.target.value);
     setPositionFormState(e.target.value);
   };
 

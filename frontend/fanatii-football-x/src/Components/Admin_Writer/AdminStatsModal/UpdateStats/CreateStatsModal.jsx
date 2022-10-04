@@ -7,7 +7,6 @@ function CreateStatsModal({adminCreateStatsModal, setAdminCreateStatsModal}) {
 
   //onChange, we will display specific form for specific position
   const handlePositionChange = (e) => {
-    console.log(e.target.value);
     setPlayerPosition(e.target.value);
   };
 

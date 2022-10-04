@@ -74,7 +74,6 @@ function ReadArticles() {
         return <a href={node.data.url} target='_blank' rel='noopener noreferrer'>{node.content[0].value}</a>
       },
       [MARKS.UNDERLINE]: (node, children)=>{
-        console.log(node)
         return <u></u>
       }
     }

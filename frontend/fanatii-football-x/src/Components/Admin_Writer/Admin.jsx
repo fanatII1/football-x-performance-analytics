@@ -78,7 +78,6 @@ function Admin() {
     //onClick, we reveal the aside element(adminInfo)
     const showAdminInfo = (e) =>{
         e.preventDefault()
-        console.log(showAside)
         setShowAside('admin-information-show')
     }
 

@@ -1,7 +1,6 @@
 const PlayersModel  = require('../models/Players');
 
 exports.createPlayer = async function(req, res){
-    console.log(req.body.position)
     let newPlayer = new PlayersModel({
         name: req.body.name,
         club: req.body.club,
