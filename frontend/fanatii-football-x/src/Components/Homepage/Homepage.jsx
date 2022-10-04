@@ -19,12 +19,12 @@ function Homepage() {
         <div className='overlay'></div>
         <div id='intro-description'>
           <h1>
-            LEADERS IN SOUTH AFRICAN FOOTBALL DATA
+            LEADERS IN SOUTH AFRICAN FOOTBALL DATA,
             <br />
-            AND PERFORMANCE.
+            PERFORMANCE AND ANALYTICS
           </h1>
           <p>Be the first to find the best players</p>
-          <p>ARTICLES | PLAYER {'&'} TEAM ANALYSIS | PODCASTS</p>
+          <p>ARTICLES | PLAYER {'&'} TEAM ANALYSIS | PODCASTS | COACHES STORIES</p>
         </div>
       </section>
 
