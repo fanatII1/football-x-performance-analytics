@@ -57,6 +57,7 @@ function Articles() {
     
     //onchange sets article filter type value.
     const filterArticle = (e) =>{
+        console.log(e.target.value)
         setFilterArticlesType(e.target.value)
     }
 
@@ -66,8 +67,9 @@ function Articles() {
             console.log(typeof allArt)
         }
         else{
-            let articlesType = allArt.filter((articleType, index)=> articleType.fields.articleType === filterArticlesType && index <=2)
-            setArticlesData(articlesType)
+            let articlesType = allArt.filter((articleType)=> articleType.fields.articleType === filterArticlesType)
+            let first3Articles = articlesType.filter((article, index)=> index <= 2)
+            setArticlesData(first3Articles)
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[filterArticlesType])
@@ -86,7 +88,7 @@ function Articles() {
             <label htmlFor='big data'>Big Data</label>
             <input type='radio' name='articlesFilter' id='big data' className='radio' value='big data' onChange={filterArticle}/>
             <label htmlFor="coach's pov">Coach's POV</label>
-            <input type='radio' name='articlesFilter' id="coach's pov" className='radio' value="coaches's pov" onChange={filterArticle}/>
+            <input type='radio' name='articlesFilter' id="coach's pov" className='radio' value="coach's pov" onChange={filterArticle}/>
             <label htmlFor='stories'>Stories</label>
             <input type='radio' name='articlesFilter' id='stories' className='radio' value='stories' onChange={filterArticle}/>
         </div>
