@@ -39,7 +39,6 @@ function NameSearch() {
 
 
     if(localStorage.getItem('adminToken') || localStorage.getItem('userToken')){
-        if(typeof playerBackendData !== 'undefined'){
             return (
                 <>
                     <Navbar idNav='nav-search' />
@@ -71,7 +70,6 @@ function NameSearch() {
                     <GlobalNavBottom navBottom='articles-nav-bottom'/>
                 </>
               )
-        }
     }
     else{
       return <p style={{color: 'white'}}><Link to='/SignUp'>Please Sign Up</Link></p>
