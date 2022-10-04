@@ -15,52 +15,75 @@ import  {client} from '../client'
 const podcastData = [{image: PodCastOne, heading: 'The Back 3', host: 'Mpumelelo Lobelo | Ryan Mason | Melissa Partick'}, {image: PodCastTwo, heading: 'Fox Football Podcast', host: 'Ray Zondi | Lebogang Mofokeng'}, {image: PodCastThree, heading: 'The truth Football show', host: 'Gabrielle Noorodien | Ian Gonzalez'}, {image: PodCastFour, heading: 'Total Soccer show', host: 'Katie Parris'}];
 
 function Articles() {
+    const [allArt, setAllArt] = useState();
     const [articlesData, setArticlesData] = useState([]);
+    const [filterArticlesType, setFilterArticlesType] = useState()
     const [allVideos, setAllVideos] = useState([])
-    const videoElement = useRef([]);
     const [showHideVideoOverlay, setShowHideVideoOverlay] = useState('video-user-overlay')
     let navigate = useNavigate();
+    const videoElement = useRef([]);
 
-    //on intial render, we fetch the data of articles(summary display) and videos that we going to show
     useEffect(()=>{
         async function fetchData(){
             //we fetch Images and Data related to the article and return only first 3 images
-            const imageresponse =  await client.getEntries({content_type: 'articles'});
-            const imageResponseData = imageresponse.items;
-            let images = imageResponseData;
-            let first3Images = images.filter((video, index)=> index <= 2); //return first 3 images data
-            setArticlesData(first3Images)
+            const contentfulResponse =  await client.getEntries({content_type: 'articles'});
+            const allContentfulArticles = contentfulResponse.items;
+            setAllArt(allContentfulArticles);
+            let first3Articles = allContentfulArticles.filter((video, index)=> index <= 2);
+            setArticlesData(first3Articles)
             
             //we fetch videos we need and return only the first 3
-            const Videoresponse =  await client.getEntries({content_type: 'videos'});
-            const Video_reponseData = Videoresponse.items;
-            let videos = Video_reponseData;
-            let first3Videos = videos.filter((video, index)=> index <= 3); //return first 3 videos data.
+            const videoResponse =  await client.getEntries({content_type: 'videos'});
+            const videoReponseData = videoResponse.items;
+            let first3Videos = videoReponseData.filter((video, index)=> index <= 3);
             setAllVideos(first3Videos)
         }
         fetchData()
     },[])
 
-    //onClick, allows the video to play
-    //hides the video's banner image
+    //onClick, plays video. hides banner
     const handlePlay = (key) =>{
-        let videoEl = videoElement.current[key];
-        videoEl.play();
+        let video_element = videoElement.current[key];
+        video_element.play();
         setShowHideVideoOverlay('hideVideoOverlay')
     }
 
-    //onClick navigates to read article route and passes article(state) to new route
+    //onClick navigates to read article route. passes article(state) to new route
     const readArticle = (e, key)=>{
         let articleHeading = e.target.textContent;
         navigate(`/Articles/${articleHeading}`, {state: {articleKey: articleHeading}})
     }
+
+    
+    //onchange sets article filter type value.
+    const filterArticle = (e) =>{
+        setFilterArticlesType(e.target.value)
+    }
+
+    //after filter value is set, we return 3 articles that match article type
+    useEffect(()=>{
+        if(typeof allArt === 'undefined'){
+            console.log(typeof allArt)
+        }
+        else{
+            let articlesType = allArt.filter((articleType, index)=> articleType.fields.articleType === filterArticlesType && index <=2)
+            setArticlesData(articlesType)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[filterArticlesType])
 
   return (
     <>
     <Navbar idNav='nav-search'/>
 
     <div id='Articles-main-container'>
-        <h1 id="articles-section-main-heading">Articles {'&'} Analysis</h1>
+        <h1 id='articles-section-main-heading'>Articles {'&'} Analysis</h1>
+        <input type='radio' name='articlesFilter' className='radio' value='player analysis' onChange={filterArticle} />
+        <input type='radio' name='articlesFilter' className='radio' value='scouting' onChange={filterArticle}/>
+        <input type='radio' name='articlesFilter' className='radio' value='big data' onChange={filterArticle}/>
+        <input type='radio' name='articlesFilter' className='radio' value="coaches's pov" onChange={filterArticle}/>
+        <input type='radio' name='articlesFilter' className='radio' value='stories' onChange={filterArticle}/>
+
         <section id='Articles-section'>
             {
                 articlesData.map((article, key)=>{
@@ -102,10 +125,10 @@ function Articles() {
                                 Your browser does not support the video extension type
                              </video>
                              <div className={showHideVideoOverlay}>
-                                <img src={video.fields.bannerVideoImage.fields.file.url} alt="" className="video-user-overlay-image" />
-                                <div className="banner-video-image-overlay"  onClick={()=> handlePlay(key)}>
+                                <img src={video.fields.bannerVideoImage.fields.file.url} alt='' className='video-user-overlay-image' />
+                                <div className='banner-video-image-overlay'  onClick={()=> handlePlay(key)}>
                                     <i className='fa-solid fa-play player'></i>
-                                    <h3 className="video-overlay-heading">{video.fields.bannerVideoHeading}</h3>
+                                    <h3 className='video-overlay-heading'>{video.fields.bannerVideoHeading}</h3>
                                 </div>
                              </div>
                         </div>
