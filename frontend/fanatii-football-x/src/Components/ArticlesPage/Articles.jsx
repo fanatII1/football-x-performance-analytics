@@ -105,10 +105,10 @@ function Articles() {
                                             
                             <div className='article-summary-wrapper'>
                                 <h3 className='article-summary-heading'  onClick={(e)=> readArticle(e,key)}>
-                                    {article.fields.bannerHeading}
+                                    {article.fields.title}
                                 </h3>
                                 <p className='article-summary-text'>
-                                   {article.fields.title}
+                                   {article.fields.bannerHeading}
                                 </p>
                             </div>
 
