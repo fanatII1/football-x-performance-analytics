@@ -108,7 +108,7 @@ function Articles() {
                                     {article.fields.bannerHeading}
                                 </h3>
                                 <p className='article-summary-text'>
-                                   {article.fields.bannerHeading}
+                                   {article.fields.title}
                                 </p>
                             </div>
 
