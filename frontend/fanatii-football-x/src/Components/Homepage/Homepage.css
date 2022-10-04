@@ -54,26 +54,37 @@ html{
 
 #intro-description {
   height: 100%;
-  width: 70%;
+  width: 50%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   animation: fadeIn 1.5s;
-  text-align: left;
+  text-align: center;
 }
 
 #intro-description h1{
-  font-size: 0.7rem;
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
   z-index: 1;
 }
 
 #intro-description p{
-  font-size: 0.7rem;
+  font-size: 1.1rem;
   width: 100%;
-  text-align: left;
+  text-align: center;
   z-index: 1;
+}
+
+@media screen and (max-width: 500px) {
+  #intro-description h1{
+    font-size: 0.9rem;
+  }
+  #intro-description p{
+    font-size: 0.7rem;
+  }
 }
 
 .cont {
