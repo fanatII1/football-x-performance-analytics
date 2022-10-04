@@ -108,8 +108,7 @@ function Articles() {
                                     {article.fields.bannerHeading}
                                 </h3>
                                 <p className='article-summary-text'>
-                                   Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                   Consequatur sunt sit accusantium quos molestias optio?
+                                   {article.fields.title}
                                 </p>
                             </div>
 
