@@ -21,6 +21,23 @@
     height: 100%;
 }
 
+#filter-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 70%;
+    margin: 0 auto;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    #filter-buttons{
+        width: 95%;
+        font-size: 0.5rem;
+    }
+}
+
 #Articles-section{
     height: 50%;
     display: flex;
@@ -38,6 +55,7 @@
     overflow: hidden;
     line-height: 2;
     font-weight: lighter;
+    font-size: 0.9rem;
     transition: .4s;
 }
 
@@ -93,11 +111,11 @@
     height: 100%;
     object-fit: cover;
     overflow: hidden;
+    transition: .4s;
 }
 
 .Article:hover .article-bannerImg-wrapper{
-    height: 110%;
-    width: 110%;
+    transform: scale(1.05);
 }
 
 .article-summary-wrapper{

@@ -78,11 +78,18 @@ function Articles() {
 
     <div id='Articles-main-container'>
         <h1 id='articles-section-main-heading'>Articles {'&'} Analysis</h1>
-        <input type='radio' name='articlesFilter' className='radio' value='player analysis' onChange={filterArticle} />
-        <input type='radio' name='articlesFilter' className='radio' value='scouting' onChange={filterArticle}/>
-        <input type='radio' name='articlesFilter' className='radio' value='big data' onChange={filterArticle}/>
-        <input type='radio' name='articlesFilter' className='radio' value="coaches's pov" onChange={filterArticle}/>
-        <input type='radio' name='articlesFilter' className='radio' value='stories' onChange={filterArticle}/>
+        <div id="filter-buttons">
+            <label htmlFor='player analysis'>Player Analysis</label>
+            <input type='radio' name='articlesFilter' id='player analysis' className='radio' value='player analysis' onChange={filterArticle} />
+            <label htmlFor='scouting'>Scouting</label>
+            <input type='radio' name='articlesFilter' id='scouting' className='radio' value='scouting' onChange={filterArticle}/>
+            <label htmlFor='big data'>Big Data</label>
+            <input type='radio' name='articlesFilter' id='big data' className='radio' value='big data' onChange={filterArticle}/>
+            <label htmlFor="coach's pov">Coach's POV</label>
+            <input type='radio' name='articlesFilter' id="coach's pov" className='radio' value="coaches's pov" onChange={filterArticle}/>
+            <label htmlFor='stories'>Stories</label>
+            <input type='radio' name='articlesFilter' id='stories' className='radio' value='stories' onChange={filterArticle}/>
+        </div>
 
         <section id='Articles-section'>
             {
