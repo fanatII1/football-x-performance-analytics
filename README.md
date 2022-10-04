@@ -27,16 +27,16 @@ Footabll-x-analytics is a South African footabll focused platform/web app that m
  
  ## Usage: 
  * On initial render you'll be navigated to the Homepage, and from there you can select where you want to go (on navbar)
-   ## key note: you have the option to login if you want to use the full functionalities of the web app
+   * ### key note: you have the option to login if you want to use the full functionalities of the web app
  
  * On the search page, you'll have the option to choose whether you want to search by club/name
-   ## key note: you have to be logged in for the functionalities to work
+   * ### key note: you have to be logged in for the functionalities to work
    
  * On the signup page you'll have the option to be registered onto the database so that you can use the web app
-  ## key note: the admin page/functionality will not be available to you
+  * ### key note: the admin page/functionality will not be available to you
   
  * On the login page, you'll have the option to login, if you have been signed into the web app
-  ## key note: if you want to be logged in as admin, make sure you use the `username : Admin1` and `password : Admin1`
+  * ### key note: if you want to be logged in as admin, make sure you use the `username : Admin1` and `password : Admin1`
   
  * On articles/videos page, you have the option to view the first 3 latest articles/videos of your choosing
  
