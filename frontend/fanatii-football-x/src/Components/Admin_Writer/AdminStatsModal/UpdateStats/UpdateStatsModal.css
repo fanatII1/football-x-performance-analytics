@@ -17,7 +17,20 @@
     height: 100%;
     background-color: #00000094;
     color: #fff;
+    overflow-y: scroll;
     position: relative;
+}
+
+.admin-form-container::-webkit-scrollbar{
+    width: 10px;
+    height: 100px;
+    background-color: #fff;
+    color: #fff;
+}
+
+.admin-form-container::-webkit-scrollbar-thumb{
+    background-color: gray;
+    border-radius: 10px;
 }
 
 #GKForm, #DEFForm, #MIDForm, #WINGForm, #STForm{
