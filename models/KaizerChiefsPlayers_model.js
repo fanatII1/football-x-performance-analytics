@@ -7,6 +7,9 @@ let kc_players_schema = mongoose.Schema({
     dateOfBirth: String,
     nationality: String,
     position: String,
+    league: String,
+    age: String,
+    foot: String,
     player_image: String,
     stats: Array
 }, 

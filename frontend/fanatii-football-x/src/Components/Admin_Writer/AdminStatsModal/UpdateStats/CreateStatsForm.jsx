@@ -139,6 +139,7 @@ function CreateStatsForm({playerPosition}) {
                 <input type='text' name='foot' id='foot'  placeholder='foot' onChange={handleChange}/>
                 <label htmlFor='Nationality'>League:</label>
                 <input type='text' name='league' id='league'  placeholder='League' onChange={handleChange}/>
+                <input type='file' name='image' id='file' onChange={(e) => setFile(e.target.files[0])}/>
                 </div>
                 </div>
                 <input type='submit' id='playerSubmit' value='Submit' />
@@ -197,6 +198,7 @@ function CreateStatsForm({playerPosition}) {
                 <input type='text' name='foot' id='foot'  placeholder='foot' onChange={handleChange}/>
                 <label htmlFor='Nationality'>League:</label>
                 <input type='text' name='league' id='league'  placeholder='League' onChange={handleChange}/>
+                <input type='file' name='image' id='file' onChange={(e) => setFile(e.target.files[0])}/>
                 </div>
                 </div>
                 <input type='submit' id='playerSubmit' value='Submit' />
@@ -255,6 +257,7 @@ function CreateStatsForm({playerPosition}) {
                 <input type='text' name='foot' id='foot'  placeholder='foot' onChange={handleChange}/>
                 <label htmlFor='Nationality'>League:</label>
                 <input type='text' name='league' id='league'  placeholder='League' onChange={handleChange}/>
+                <input type='file' name='image' id='file' onChange={(e) => setFile(e.target.files[0])}/>
                 </div>
                 </div>
                 <input type='submit' id='playerSubmit' value='Submit' />
@@ -313,6 +316,7 @@ function CreateStatsForm({playerPosition}) {
                 <input type='text' name='foot' id='foot'  placeholder='foot' onChange={handleChange}/>
                 <label htmlFor='Nationality'>League:</label>
                 <input type='text' name='league' id='league'  placeholder='League' onChange={handleChange}/>
+                <input type='file' name='image' id='file' onChange={(e) => setFile(e.target.files[0])}/>
                 </div>
                 </div>
                 <input type='submit' id='playerSubmit' value='Submit' />

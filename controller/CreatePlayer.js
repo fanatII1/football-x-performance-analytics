@@ -5,6 +5,13 @@ exports.createPlayer = async function(req, res){
         name: req.body.name,
         club: req.body.club,
         position: req.body.position,
+        age: req.body.age,
+        league: req.body.league,
+        playersData : Array,
+        dateOfBirth: String,
+        nationality: String,
+        foot: req.body.foot,
+        player_image: String,
         stats: []
     })
 

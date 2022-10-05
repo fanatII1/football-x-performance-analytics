@@ -149,10 +149,20 @@ app.post('/Admin', upload.single('image'), async (req, res, next)=>{
   let statsData = req.body;
   let statsArray = [];
   let imageDestination = `/${club}/${req.file.filename}`
-  //for each piece of stat in the stat object, we store it in an array
+  let newStatsData;
+  //for each piece of stat in the stat object, we check if undefined or not
+  //if it is, delete the key & make sure that we end up only defined values object
   for (const key in statsData) {
-    let stat = `${key}: ${statsData[key]}`;
-    statsArray.push(stat)
+    if(statsData[key] === 'undefined'){
+      delete statsData[key]
+      newStatsData = statsData;
+    }
+  }
+
+  //for each piece of stat in the newStats object, we store it in an array
+  for (const key in newStatsData) {
+      let stat = `${key}: ${newStatsData[key]}`;
+      statsArray.push(stat)
   }
 
   switch (club) {

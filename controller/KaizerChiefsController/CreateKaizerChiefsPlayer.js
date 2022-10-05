@@ -6,6 +6,7 @@ exports.createPlayer = async function(req, res, statsArray, imageDestination){
         name: req.body.name,
         club: req.body.club,
         dateOfBirth: req.body.dateOfBirth,
+        age: req.body.age,
         nationality: req.body.nationality,
         position:req.body.position,
         foot: req.body.foot,
