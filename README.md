@@ -28,7 +28,8 @@ Footabll-x-analytics is a South African footabll focused platform/web app that m
  ## Usage: 
  * On initial render you'll be navigated to the Homepage, and from there you can select where you want to go (on navbar)
    * ### key note: you have the option to login if you want to use the full functionalities of the web app
- 
+   * ![Homepage](https://github.com/fanatII1/football-x-performance-analytics/blob/main/Documentation%20Images/Screenshot%20(703).png)
+
  
  * On the search page, you'll have the option to choose whether you want to search by club/name
    * #### key note: you have to be logged in for the functionalities to work
@@ -40,14 +41,15 @@ Footabll-x-analytics is a South African footabll focused platform/web app that m
   
  * On the login page, you'll have the option to login, if you have been signed into the web app
    * #### key note: if you want to be logged in as admin, make sure you use the `username : Admin1` and `password : Admin1`
+   * ![Login](https://github.com/fanatII1/football-x-performance-analytics/blob/main/Documentation%20Images/Screenshot%20(704).png)
   
   
  * On articles/videos page, you have the option to view the first 3 latest articles/videos of your choosing
- 
+   ![Articles&Videos](https://github.com/fanatII1/football-x-performance-analytics/blob/main/Documentation%20Images/Screenshot%20(705).png)
  
  * The stats education page is a static page that educates you about the type of data we use and what each piece of data means
  
-   
+   ![StatsEducation](https://github.com/fanatII1/football-x-performance-analytics/blob/main/Documentation%20Images/Screenshot%20(705).png)
  
  
  
