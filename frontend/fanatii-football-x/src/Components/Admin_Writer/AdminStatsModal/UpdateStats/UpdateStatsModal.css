@@ -121,3 +121,23 @@
     font-size: 1.1rem;
     font-weight: 550;
 }
+
+@media screen and (max-width: 600px) {
+    .admin-form-container{
+        font-size: 0.7rem;
+    }
+    
+    #GKForm, #DEFForm, #MIDForm, #WINGForm, #STForm{
+        width: 100%;
+    }
+
+    #position-select{
+        top:auto;
+        bottom: 0;
+    }
+
+    #closeAdminModal{
+        right: 2%;
+        width: 6.5%;
+    }
+}
