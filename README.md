@@ -33,6 +33,7 @@ Footabll-x-analytics is a South African footabll focused platform/web app that m
  
  * On the search page, you'll have the option to choose whether you want to search by club/name
    * #### key note: you have to be logged in for the functionalities to work
+   ![Search](https://github.com/fanatII1/football-x-performance-analytics/blob/main/Documentation%20Images/Screenshot%20(706).png)
    
    
  * On the signup page you'll have the option to be registered onto the database so that you can use the web app
@@ -42,6 +43,7 @@ Footabll-x-analytics is a South African footabll focused platform/web app that m
  * On the login page, you'll have the option to login, if you have been signed into the web app
    * #### key note: if you want to be logged in as admin, make sure you use the `username : Admin1` and `password : Admin1`
    * ![Login](https://github.com/fanatII1/football-x-performance-analytics/blob/main/Documentation%20Images/Screenshot%20(704).png)
+   ![Login](https://github.com/fanatII1/football-x-performance-analytics/blob/main/Documentation%20Images/Screenshot%20(707).png)
   
   
  * On articles/videos page, you have the option to view the first 3 latest articles/videos of your choosing
@@ -54,7 +56,7 @@ Footabll-x-analytics is a South African footabll focused platform/web app that m
  
  
 # Contributors to the project:
-[Mandlenkosi Marwanqana](https://www.linkedin.com/in/mandlenkosi-marwanqana-b08357218/)
+[Mandlenkosi George Marwanqana](https://www.linkedin.com/in/mandlenkosi-marwanqana-b08357218/)
  
  
  
