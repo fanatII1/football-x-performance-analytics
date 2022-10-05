@@ -80,6 +80,7 @@ app.get('/GlobalSearch/ClubSearch/:club', async (req, res, next) => {
 /*Route Searches Player frome the database*/
 app.post('/GlobalSearch/NameSearch', async (req, res, next) => {
   let adminToken = req.headers['authorization'].split(' ')[1];
+    
   try {
     const decodedToken = jwt.verify(adminToken, 'key');
     if (decodedToken) {

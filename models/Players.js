@@ -12,7 +12,6 @@ let playersModel = mongoose.Schema({
         age: String,
         foot: String,
         player_image: String,
-        stats: Array
 }, {collection: 'Players'})
 
 module.exports = mongoose.model('PlayersModel', playersModel)
