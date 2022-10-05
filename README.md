@@ -56,6 +56,8 @@ Footabll-x-analytics is a South African footabll focused platform/web app that m
  
    ![StatsEducation](https://github.com/fanatII1/football-x-performance-analytics/blob/main/Documentation%20Images/Screenshot%20(706).png)
  
+ * The Aritcles Page allows you to create/update player stats and view the latest articles that you can create as admin:
+  ![Admin](https://github.com/fanatII1/football-x-performance-analytics/blob/main/Documentation%20Images/Screenshot%20(709).png)
  
  
 # Contributors to the project:
