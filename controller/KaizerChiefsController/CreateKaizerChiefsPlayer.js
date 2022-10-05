@@ -1,5 +1,5 @@
 const kc_players_model = require('../../models/KaizerChiefsPlayers_model')
-const PlayersModel = require('../../models/Players');
+const PlayersModel = require('../../models/AllLeaguePlayers');
 
 
 exports.createPlayer = async function(req, res, statsArray, imageDestination){

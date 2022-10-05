@@ -1,5 +1,5 @@
 const orlando_model = require('../../models/OrlandoPiratesPlayers_model')
-const PlayersModel = require('../../models/Players');
+const PlayersModel = require('../../models/AllLeaguePlayers');
 
 
 exports.createPlayer = async function(req, res, statsArray, imageDestination){

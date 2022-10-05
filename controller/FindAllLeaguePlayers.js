@@ -1,4 +1,4 @@
-const PlayersModel  = require('../models/Players');
+const PlayersModel  = require('../models/AllLeaguePlayers');
 
 exports.findPlayer = async function(req, res){
     await PlayersModel.find({
