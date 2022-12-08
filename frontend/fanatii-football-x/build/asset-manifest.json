@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.aefd5ed8.css",
+    "main.js": "/static/js/main.e95a78aa.js",
+    "static/media/HomeBackground.jpg": "/static/media/HomeBackground.6d78032f2e05b8876b6e.jpg",
+    "static/media/Chippa.png": "/static/media/Chippa.3f20dfc4e12319627d6e.png",
+    "static/media/MarumoGallants.png": "/static/media/MarumoGallants.bdf206f6d597b7f5cf06.png",
+    "static/media/Pirates.png": "/static/media/Pirates.627a4eecf0958f647f5b.png",
+    "static/media/Chiefs.png": "/static/media/Chiefs.5241ca95da365b40e0f8.png",
+    "static/media/analytics4.png": "/static/media/analytics4.f9f46a0eade2c79cb9a1.png",
+    "static/media/article-image.jpg": "/static/media/article-image.3c0f6c09897b2085324d.jpg",
+    "static/media/search-name-image.png": "/static/media/search-name-image.ad2b82a2d1e8fea7f973.png",
+    "static/media/Stellenbosch.png": "/static/media/Stellenbosch.edb55188896c9adb1d5f.png",
+    "static/media/Sekhukhune.jpg": "/static/media/Sekhukhune.9d36dc14790f69873ad7.jpg",
+    "static/media/psl-logo.png": "/static/media/psl-logo.ce84a7fae4fef9849b7c.png",
+    "static/media/search-club-image.png": "/static/media/search-club-image.0ffe79003d73b236fa21.png",
+    "static/media/Maritzburg.png": "/static/media/Maritzburg.238a63aca4422e2549db.png",
+    "static/media/JournalistReporter.jpg": "/static/media/JournalistReporter.9a20b9cb42580ea04c4b.jpg",
+    "static/media/Royal AM.png": "/static/media/Royal AM.d2e743c2610050d8afb0.png",
+    "static/media/Amazulu.png": "/static/media/Amazulu.27d22026a8b6f2718342.png",
+    "static/media/Golden Arrows.png": "/static/media/Golden Arrows.612ca4db2df367095a46.png",
+    "static/media/SuperSport(1).png": "/static/media/SuperSport(1).076781dee4f6ac786c82.png",
+    "static/media/Sundowns.png": "/static/media/Sundowns.6dcdd01b022abdeafcc7.png",
+    "static/media/podcast(2).jpg": "/static/media/podcast(2).5885fc1d9c5dae4267a0.jpg",
+    "static/media/MDC.jpg": "/static/media/MDC.05ecc47d09dcd7971100.jpg",
+    "static/media/RichardsBay.png": "/static/media/RichardsBay.b2d64d116589357288c5.png",
+    "static/media/Logo.png": "/static/media/Logo.5a3d2ea3a1b7749aafb2.png",
+    "static/media/DSTV-League.jpg": "/static/media/DSTV-League.2b051883ad84ab00f37a.jpg",
+    "static/media/podcast(3).png": "/static/media/podcast(3).845888758930b75c1f90.png",
+    "static/media/TsGalaxy.png": "/static/media/TsGalaxy.24aa911106fe0ebf18f3.png",
+    "static/media/Swallows.png": "/static/media/Swallows.ba0a3fab86c83c5435d6.png",
+    "static/media/avatar.webp": "/static/media/avatar.efadb13dba95b5bc918b.webp",
+    "index.html": "/index.html",
+    "main.aefd5ed8.css.map": "/static/css/main.aefd5ed8.css.map",
+    "main.e95a78aa.js.map": "/static/js/main.e95a78aa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aefd5ed8.css",
+    "static/js/main.e95a78aa.js"
+  ]
+}
