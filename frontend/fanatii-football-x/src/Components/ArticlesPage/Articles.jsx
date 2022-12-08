@@ -57,7 +57,6 @@ function Articles() {
     
     //onchange sets article filter type value.
     const filterArticle = (e) =>{
-        console.log(e.target.value)
         setFilterArticlesType(e.target.value)
     }
 
