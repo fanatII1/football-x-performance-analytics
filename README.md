@@ -5,6 +5,7 @@ Footabll-x-analytics is a South African footabll focused platform/web app that m
  * Serving summarised articles/video content for analysis on a specific player to allow end users to read, rather than having to go in and analyse the data themselves
  * Serving up video content from real managers and their success at clubs they've been on and some drills/sesssions that brought them success
  * Paving a way for football journalism/writing in South African football
+ * Giving Youth Players some exposure to professional teams
  
 ## Project Link: 
  * [football-x-analytics](https://fanatii-football-x-analytics.herokuapp.com/)
@@ -56,6 +57,8 @@ Footabll-x-analytics is a South African footabll focused platform/web app that m
  
    ![StatsEducation](https://github.com/fanatII1/football-x-performance-analytics/blob/main/Documentation%20Images/Screenshot%20(706).png)
  
+ * The Aritcles Page allows you to create/update player stats and view the latest articles that you can create as admin:
+  ![Admin](https://github.com/fanatII1/football-x-performance-analytics/blob/main/Documentation%20Images/Screenshot%20(709).png)
  
  
 # Contributors to the project:
